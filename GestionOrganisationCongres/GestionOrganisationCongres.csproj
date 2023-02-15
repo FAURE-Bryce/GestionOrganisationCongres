@@ -46,14 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmGestionInscriptions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmGestionInscriptions.Designer.cs">
+      <DependentUpon>FrmGestionInscriptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionSession.Designer.cs">
+      <DependentUpon>FrmGestionSession.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmGestionInscriptions.resx">
+      <DependentUpon>FrmGestionInscriptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionSession.resx">
+      <DependentUpon>FrmGestionSession.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

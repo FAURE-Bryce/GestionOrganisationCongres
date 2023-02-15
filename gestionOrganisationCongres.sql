@@ -203,7 +203,121 @@ INSERT INTO Activite (designation, prix, date, heureDebut, nbPlacesMax) VALUES
 				
 
 	
-	
-	
+select * from Session
+select * from Congressiste
 
+--FAURE Bryce Trigger
+go
+Create or alter Trigger TIU_Participer on Participer
+after insert, update
+as 
+begin
+	if (exists(select S.numSession from Participer P JOIN Session S on S.numSession = P.numSession group by S.numSession, S.nbPlacesMax Having COUNT(numInscription)>S.nbPlacesMax) )
+		throw 50001, 'insertion ou update non valide dans la table Participer (Incription > nbPlacesMax) ! ! !', 0
+end
+go
+Create or alter Trigger TIU_Inscrire on Inscrire
+after insert, update
+as 
+begin
+	if (exists(select I.idActivite, COUNT(numInscription) from Inscrire I JOIN Activite A on I.idActivite = A.idActivite group by I.idActivite, A.nbPlacesMax Having COUNT(numInscription)>A.nbPlacesMax) )
+		throw 50002, 'insertion ou update non valide dans la table Inscrire (Incription > nbPlacesMax) ! ! !', 0
+end
+go
+--FAURE Bryce Trigger Fin
 
+--FAURE Bryce Procedure
+Create or alter Procedure nbPlacesActivite
+@uneActivite int
+AS
+BEGIN
+	Select nbPlacesMax
+	from Activite
+	where idActivite = @uneActivite
+END;
+
+exec nbPlacesActivite '1'
+go 
+--FAURE Bryce Procedure Fin
+
+Create or alter Procedure montantTotal
+@numInscription int, @total int output
+AS
+BEGIN
+	Declare @sumActivite int, @sumSession int, @priHotel int
+	
+	select @sumActivite = SUM(prix)
+	from Inscrire I
+	JOIN Activite A on A.idActivite = I.idActivite
+	where numInscription = @numInscription
+
+	select @sumSession = SUM(prix)
+	from Participer P
+	JOIN Session S on S.numSession = P.numSession
+	where numInscription = @numInscription
+
+	select @priHotel = prixChambre 
+	from Hotel H 
+	JOIN Congressiste C on C.idHotel = H.idHotel 
+	where numInscription = @numInscription
+
+	set @total = @sumActivite + @sumSession + (@priHotel*4)
+
+	--select (prixChambre*4) + SUM(S.prix) + SUM(A.prix)
+	--From Congressiste C 
+	--	JOIN Hotel H on C.idHotel = H.idHotel 
+	--	JOIN Inscrire I on I.numInscription = C.numInscription 
+	--	JOIN Participer P on P.numInscription = C.numInscription 
+	--	JOIN Activite A on A.idActivite = I.idActivite
+	--	JOIN Session S on S.numSession = P.numSession 
+	--where C.numInscription = 1
+	--group by H.idHotel,H.prixChambre
+
+END;
+go
+
+Declare @total2 int;
+exec montantTotal '1',@total2 output
+print @total2
+go 
+
+select * from Participer
+
+select * from Inscrire
+delete from Inscrire where idActivite = 1 or idActivite = 3 or idActivite = 4 or idActivite = 5 or idActivite = 6 or idActivite = 7 or idActivite = 8 or idActivite = 9 or idActivite = 10 or idActivite = 11 or idActivite = 12 or idActivite = 13 or idActivite = 14 or  idActivite = 15
+
+INSERT INTO INSCRIRE(idActivite,numInscription) 
+VALUES (1,1),(1,2),(1,4),(1,6),(1,8),(1,10),(1,12),(1,14),(1,16),(1,18),(1,20),(1,22),
+(3,17),(3,19),(3,21),(3,23),(3,25),(3,27),(3,29),                                                       
+(4,5),(4,6),(4,8),                                                       
+(5,3),(5,7),(5,9),(5,11),(5,13),(5,15),                                                       
+(6,25),(6,27),(6,29),(6,30),                                                       
+(7,16),(7,18),(7,20),(7,21),                                                       
+(8,2),(8,24),(8,26),(8,28),                                                       
+(9,4),(9,5),(9,6),(9,16),                                                       
+(10,6),(10,12),(10,14),                                                       
+(11,6),(11,12),(11,14),(11,22),                                                       
+(12,5),(12,7),(12,9),(12,30),                                                       
+(13,13),(13,22),(13,26),                                                       
+(14,8),(14,9),(14,13),(14,15),                                                       
+(15,1),(15,2),(15,3),(15,4),(15,5),(15,6),(15,7),(15,8),(15,9),(15,10),(15,11),(15,12),(15,13),(15,14),(15,15),(15,16),
+(15,17),(15,18),(15,19),(15,20),(15,21),(15,22),(15,23),(15,24),(15,25),(15,26),(15,27),(15,28),(15,29),(15,30);
+
+INSERT INTO Participer(numSession,numInscription) VALUES 
+(1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),(1,11),(1,12),(1,13),(1,14),(1,15),(1,16),
+(1,17),(1,18),(1,19),(1,20),(1,21),(1,22),(1,23),(1,24),(1,25),(1,26),(1,27),(1,28),(1,29),(1,30),                                                         
+(2,1),(2,2),(2,3),(2,4),(2,5),(2,6),(2,7),(2,8),(2,9),                                                         
+(3,11),(3,12),(3,13),(3,14),(3,15),(3,16),(3,17),(3,18),(3,19),                                                         
+(5,21),(5,22),(5,23),                                                        
+(6,10),(6,20),(6,30),                                                         
+(7,3),(7,5),(7,7),                                                         
+(8,13),(8,15),                                                         
+(9,26),(9,28),                                                         
+(10,24),(10,30),                                                         
+(11,9),(11,11),(11,17),                                                         
+(12,19),(12,21),(12,23),(12,24),                                                         
+(13,1),(13,16),(13,26),(13,30),                                                         
+(14,2),(14,17),(14,27),(14,29),                                                         
+(15,3),(15,8),(15,12),(15,20),                                                         
+(16,4),(16,10),(16,14),(16,21),                                                         
+(18,1),(18,2),(18,3),(18,4),(18,5),(18,6),(18,7),(18,8),(18,9),(18,10),(18,11),(18,12),(18,13),(18,14),(18,15),(18,16);
