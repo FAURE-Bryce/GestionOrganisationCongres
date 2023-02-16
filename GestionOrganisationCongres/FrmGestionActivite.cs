@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GestionOrganisationCongres
 {
-    public partial class FrmActivite : Form
+    public partial class FrmGestionActivite : Form
     {
-        public FrmActivite()
+        public FrmGestionActivite()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace GestionOrganisationCongres
 {
-    partial class FrmActivite
+    partial class FrmGestionActivite
     {
         /// <summary>
         /// Required designer variable.
