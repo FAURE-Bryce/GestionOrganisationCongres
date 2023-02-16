@@ -121,25 +121,25 @@ INSERT INTO Hotel (nom, adresse, cp, ville, tel, prixChambre, idCateg) VALUES
 
 INSERT INTO SALLE (nomSalle) VALUES ('Salle 101'),('Salle 102'),('Salle 103'),('Salle 104'),('Salle 105');
 INSERT INTO SESSION (theme, heureDebut, date, nbPlacesMax, prix, nomPresident, idSalle) VALUES 
-					('Session d''inauguration','09:00','17/06/2023',30,5,'Mendes',1),
-					('Pratique sportive chez le diabétique de type 1','14:30','17/06/2023',10,20,'Dufour',1),
-					('Jambe douloureuse du sportif','14:30','17/06/2023',15,15,'Garcia',2),
-					('Valvulopathies du sportif','14:30','17/06/2023',25,10,'Leblanc',3),
-					('Symposium lipides et sport','14:30','17/06/2023',5,25,'Aubert',4),
-					('Evaluation psychologique du sportif','14:30','17/06/2023',20,15,'Martin',5),
-					('Comment optimiser la performance ?','9:00','18/06/2023',20,20,'Mendes',1),
-					('Entrainement en altitude et stress thermique','9:00','18/06/2023',15,10,'Garcia',2),
-					('Hydratation autour d''épreuve sportive','9:00','18/06/2023',10,5,'Dufour',3),
-					('Utilité de l''oxygène dans la récupération et la performance','9:00','18/06/2023',5,10,'Aubert',4),
-					('Traumatologie du sport','9:00','18/06/2023',25,20,'Martin',5),
-					('Pratiques sportives et usages de drogues','14:30','18/06/2023',30,25,'Leblanc',3),
-					('Le burnout sportif comparé au syndrome de surentraînement','9:00','20/06/2023',10,30,'Durant',4),
-					('Psychologie du sportif','9:00','20/06/2023',15,25,'Leblanc',3),
-					('Laser en médecine du sport','14:30','20/06/2023',20,20,'Aubert',5),
-					('L''autoévaluation des habitudes nutritionnelles','14:30','20/06/2023',25,20,'Mendes',3),
-					('Quel contrôle médical préalable à la pratique sportive à l’étranger ?','09:00','21/06/2023',25,10,'Dufour',4),
-					('Session de fermeture','14:30','21/06/2023',20,15,'Garcia',2);
-					
+					('Session d''inauguration','09:00','17/06/2023',30,5.00,'Mendes',1),
+					('Pratique sportive chez le diabétique de type 1','14:30','17/06/2023',10,20.00,'Dufour',1),
+					('Jambe douloureuse du sportif','14:30','17/06/2023',15,15.00,'Garcia',2),
+					('Valvulopathies du sportif','14:30','17/06/2023',25,10.00,'Leblanc',3),
+					('Symposium lipides et sport','14:30','17/06/2023',5,25.00,'Aubert',4),
+					('Evaluation psychologique du sportif','14:30','17/06/2023',20,15.00,'Martin',5),
+					('Comment optimiser la performance ?','9:00','18/06/2023',20,20.00,'Mendes',1),
+					('Entrainement en altitude et stress thermique','9:00','18/06/2023',15,10.00,'Garcia',2),
+					('Hydratation autour d''épreuve sportive','9:00','18/06/2023',10,5.00,'Dufour',3),
+					('Utilité de l''oxygène dans la récupération et la performance','9:00','18/06/2023',5,10.00,'Aubert',4),
+					('Traumatologie du sport','9:00','18/06/2023',25,20.00,'Martin',5),
+					('Pratiques sportives et usages de drogues','14:30','18/06/2023',30,25.00,'Leblanc',3),
+					('Le burnout sportif comparé au syndrome de surentraînement','9:00','20/06/2023',10,30.00,'Durant',4),
+					('Psychologie du sportif','9:00','20/06/2023',15,25.00,'Leblanc',3),
+					('Laser en médecine du sport','14:30','20/06/2023',20,20.00,'Aubert',5),
+					('L''autoévaluation des habitudes nutritionnelles','14:30','20/06/2023',25,20.00,'Mendes',3),
+					('Quel contrôle médical préalable à la pratique sportive à l’étranger ?','09:00','21/06/2023',25,10.00,'Dufour',4),
+					('Session de fermeture','14:30','21/06/2023',20,15.00,'Garcia',2);
+select * from Session					
 INSERT INTO LIGUE (nomLigue, adresse, cp, ville) VALUES 
 				  ('Ligue Lorraine de Tennis','Maison Régionale des Sports de Lorraine 13 Rue Jean Moulin',54510,'Tomblaine'),
 				  ('Ligue Football Occitanie','615 Avenue Dr Jacques Fourcade',34000,'Montpellier'),
@@ -200,124 +200,177 @@ INSERT INTO Activite (designation, prix, date, heureDebut, nbPlacesMax) VALUES
 					 ('Découverte de la Pelote Basque', 7.00, '2023-06-20', '14:30', 25),
 					 ('Séance de méditation : Le sport et moi', 20.00, '2023-06-20', '09:00', 20), 
 				     ('Rencontre finale intersportive', 5.00, '2023-06-21', '09:00', 200);						
-				
 
+INSERT INTO INSCRIRE(idActivite,numInscription) VALUES (1,1),(1,2),(1,4),(1,6),(1,8),(1,10),(1,12),(1,14),(1,16),(1,18),(1,20),(1,22),
+													   (3,17),(3,19),(3,21),(3,23),(3,25),(3,27),(3,29),
+													   (4,5),(4,6),(4,8),
+													   (5,3),(5,7),(5,9),(5,11),(5,13),(5,15),
+													   (6,25),(6,27),(6,29),(6,30),
+													   (7,16),(7,18),(7,20),(7,21),
+													   (8,2),(8,24),(8,26),(8,28),
+													   (9,4),(9,5),(9,6),(9,16),
+													   (10,6),(10,12),(10,14),
+													   (11,6),(11,12),(11,14),(11,22),
+													   (12,5),(12,7),(12,9),(12,30),
+													   (13,13),(13,22),(13,26),
+													   (14,8),(14,9),(14,13),(14,15),
+													   (15,1),(15,2),(15,3),(15,4),(15,5),(15,6),(15,7),(15,8),(15,9),(15,10),(15,11),(15,12),(15,13),(15,14),(15,15),(15,16),
+													   (15,17),(15,18),(15,19),(15,20),(15,21),(15,22),(15,23),(15,24),(15,25),(15,26),(15,27),(15,28),(15,29),(15,30);
 	
-select * from Session
-select * from Congressiste
+INSERT INTO Participer(numSession,numInscription) VALUES (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),(1,11),(1,12),(1,13),(1,14),(1,15),(1,16),
+													     (1,17),(1,18),(1,19),(1,20),(1,21),(1,22),(1,23),(1,24),(1,25),(1,26),(1,27),(1,28),(1,29),(1,30),
+														 (2,1),(2,2),(2,3),(2,4),(2,5),(2,6),(2,7),(2,8),(2,9),
+														 (3,11),(3,12),(3,13),(3,14),(3,15),(3,16),(3,17),(3,18),(3,19),
+														 (5,21),(5,22),(5,23),
+														 (6,10),(6,20),(6,30),
+														 (7,3),(7,5),(7,7),
+														 (8,13),(8,15),
+														 (9,26),(9,28),
+														 (10,24),(10,30),
+														 (11,9),(11,11),
+														 (12,19),(12,21),(12,23),(12,24),
+														 (13,1),(13,16),(13,26),(13,30),
+														 (14,2),(14,17),(14,27),(14,29),
+														 (15,3),(15,8),(15,12),(15,20),
+														 (16,4),(16,10),(16,14),(16,21),
+														 (18,1),(18,2),(18,3),(18,4),(18,5),(18,6),(18,7),(18,8),(18,9),(18,10),(18,11),(18,12),(18,13),(18,14),(18,15),(18,16),
+													     (18,17),(18,18),(18,19);
 
---FAURE Bryce Trigger
-go
-Create or alter Trigger TIU_Participer on Participer
-after insert, update
-as 
-begin
-	if (exists(select S.numSession from Participer P JOIN Session S on S.numSession = P.numSession group by S.numSession, S.nbPlacesMax Having COUNT(numInscription)>S.nbPlacesMax) )
-		throw 50001, 'insertion ou update non valide dans la table Participer (Incription > nbPlacesMax) ! ! !', 0
-end
-go
-Create or alter Trigger TIU_Inscrire on Inscrire
-after insert, update
-as 
-begin
-	if (exists(select I.idActivite, COUNT(numInscription) from Inscrire I JOIN Activite A on I.idActivite = A.idActivite group by I.idActivite, A.nbPlacesMax Having COUNT(numInscription)>A.nbPlacesMax) )
-		throw 50002, 'insertion ou update non valide dans la table Inscrire (Incription > nbPlacesMax) ! ! !', 0
-end
-go
---FAURE Bryce Trigger Fin
 
---FAURE Bryce Procedure
-Create or alter Procedure nbPlacesActivite
+/*Création des triggers et des procédures stockées */
+
+/*Deux sessions ne peuvent pas se dérouler dans la même salle Adeline*/
+go
+CREATE OR ALTER TRIGGER TIU_Session ON Session
+AFTER INSERT,UPDATE
+AS 
+BEGIN 
+	IF(EXISTS(SELECT * FROM Session S
+			  JOIN inserted I ON i.date = s.date
+			  WHERE I.heureDebut=S.heureDebut AND S.idSalle=I.idSalle AND i.numSession != s.numSession ))
+			throw 50001, 'Deux sessions ne peuvent pas se dérouler en même temps dans la même salle',0
+END 
+
+
+/*Un congressiste n'est pas inscrire à deux activités se déroulant en même temps ou à une activité et à une session Adeline*/
+go
+CREATE OR ALTER TRIGGER TIU_Inscrire ON Inscrire
+AFTER INSERT,UPDATE
+AS
+BEGIN 
+	DECLARE cursSesActivites cursor
+	FOR
+		SELECT A.idActivite,date,heureDebut,C.numInscription 
+		FROM Activite A
+		JOIN INSCRIRE I ON I.idActivite=A.idActivite
+		JOIN INSERTED INSER ON I.numInscription=INSER.numInscription
+		JOIN CONGRESSISTE C ON C.numInscription=I.numInscription
+		WHERE C.numInscription=Inser.numInscription 
+	DECLARE @idA int, @date date, @heureD time, @numI int
+	OPEN cursSesActivites
+	FETCH NEXT FROM cursSesActivites INTO @idA,@date,@heureD,@numI
+	BEGIN
+		WHILE(@@FETCH_STATUS=0)
+		BEGIN	
+			IF(EXISTS(SELECT * FROM Activite A
+					  JOIN INSERTED I ON I.idActivite=A.idActivite
+					  WHERE I.idActivite!=@idA AND  I.numInscription = @numI AND A.heureDebut=@heureD AND A.date=@date))
+				throw 50001, 'Un congressiste ne peut pas participer à 2 activités qui se déroulent en même temps',0
+			ELSE IF (EXISTS(SELECT * FROM Session S
+							JOIN PARTICIPER P ON P.numSession=S.numSession
+						    JOIN INSERTED I ON I.numInscription=P.numInscription
+							WHERE I.numInscription = @numI AND S.heureDebut=@heureD AND S.date=@date))
+				throw 50001, 'Un congressiste ne peut pas participer à 1 activité et 1 session qui se déroulent en même temps',0
+			FETCH NEXT FROM cursSesActivites INTO @idA,@date,@heureD,@numI
+		END 
+	END
+	close cursSesActivites
+	deallocate cursSesActivites
+END
+	
+/*Obtient le nombre de places disponibles à une session donnée Adeline*/
+go
+CREATE OR ALTER PROCEDURE NbPlacesBySession (@numSession int)
+AS
+	declare @nbPlacesDispo int;
+	SELECT @nbPlacesDispo=(S.nbPlacesMax-COUNT(numInscription)) 
+	FROM Participer P
+	JOIN Session S ON S.numSession=P.numSession
+	WHERE s.numSession=@numSession
+	GROUP BY S.nbPlacesMax
+
+	IF(@nbPlacesDispo < 0 OR @nbPlacesDispo is null)
+	BEGIN
+		SET @nbPlacesDispo = 0;
+	END
+
+/* Création de la procédure stockée Montant total       Nina*/
+
+go
+CREATE OR ALTER PROCEDURE montantTotal @idCongressiste int, @total decimal(10,2) output
+AS
+BEGIN  
+	DECLARE @prixActivite decimal(10,2), @prixSession decimal(10,2), @prixHotel decimal(10,2)    
+	SELECT @prixActivite = SUM(prix)    
+	FROM Inscrire I
+    JOIN Activite A on A.idActivite = I.idActivite
+    WHERE numInscription = @idCongressiste    
+	
+	SELECT @prixSession = SUM(prix)    
+	FROM Participer P
+    JOIN Session S on S.numSession = P.numSession
+    WHERE numInscription = @idCongressiste    
+	
+	SELECT @prixHotel = (prixChambre*4) 
+    FROM Hotel H 
+    JOIN Congressiste C on C.idHotel = H.idHotel 
+    WHERE numInscription = @idCongressiste    
+	
+	SET @total = @prixActivite + @prixSession + @prixHotel
+END;	
+
+go
+/*Création du trigger vérifiant que l'inscription à une activité se fait au moins 24H avant     Nina*/
+
+CREATE OR ALTER TRIGGER TI_Inscrire ON Inscrire
+AFTER INSERT
+AS
+BEGIN
+    if (exists (Select I.idActivite 
+                from inserted I
+                join Activite A on I.idActivite=A.idActivite
+                where  DATEDIFF(day,GETDATE(),date)<1))
+        throw 50001, 'La date limite d''inscription est dépassée', 0
+END		
+
+/*Création du trigger limitant les sessions à 5 par demi-journée        Nina*/
+
+go
+CREATE OR ALTER TRIGGER TIU_Session ON Session
+AFTER INSERT, UPDATE
+AS
+BEGIN
+    if ((Select count (numSession)
+        from Session
+        where date=(Select date from inserted)
+        AND heureDebut=(Select heureDebut from inserted))>5)
+        throw 50002, 'Il ne peut pas y avoir plus de 5 sessions sur une même demi-journée', 0
+END
+
+/* Obtient le nombre de places disponibles à une activité donnée Bryce*/
+go
+CREATE or ALTER Procedure nbPlacesActivite
 @uneActivite int
 AS
-BEGIN
-	Select nbPlacesMax
-	from Activite
-	where idActivite = @uneActivite
-END;
+BEGIN    
+	declare @nbPlacesDispo int;
+	SELECT @nbPlacesDispo=(A.nbPlacesMax-COUNT(numInscription)) 
+	FROM INSCRIRE I
+	JOIN Activite A ON A.idActivite=I.idActivite
+	WHERE A.idActivite=@uneActivite
+	GROUP BY A.nbPlacesMax
 
-exec nbPlacesActivite '1'
-go 
---FAURE Bryce Procedure Fin
-
-Create or alter Procedure montantTotal
-@numInscription int, @total int output
-AS
-BEGIN
-	Declare @sumActivite int, @sumSession int, @priHotel int
+	IF(@nbPlacesDispo < 0 OR @nbPlacesDispo is null)
+	SET @nbPlacesDispo = 0;
 	
-	select @sumActivite = SUM(prix)
-	from Inscrire I
-	JOIN Activite A on A.idActivite = I.idActivite
-	where numInscription = @numInscription
-
-	select @sumSession = SUM(prix)
-	from Participer P
-	JOIN Session S on S.numSession = P.numSession
-	where numInscription = @numInscription
-
-	select @priHotel = prixChambre 
-	from Hotel H 
-	JOIN Congressiste C on C.idHotel = H.idHotel 
-	where numInscription = @numInscription
-
-	set @total = @sumActivite + @sumSession + (@priHotel*4)
-
-	--select (prixChambre*4) + SUM(S.prix) + SUM(A.prix)
-	--From Congressiste C 
-	--	JOIN Hotel H on C.idHotel = H.idHotel 
-	--	JOIN Inscrire I on I.numInscription = C.numInscription 
-	--	JOIN Participer P on P.numInscription = C.numInscription 
-	--	JOIN Activite A on A.idActivite = I.idActivite
-	--	JOIN Session S on S.numSession = P.numSession 
-	--where C.numInscription = 1
-	--group by H.idHotel,H.prixChambre
-
 END;
-go
-
-Declare @total2 int;
-exec montantTotal '1',@total2 output
-print @total2
-go 
-
-select * from Participer
-
-select * from Inscrire
-delete from Inscrire where idActivite = 1 or idActivite = 3 or idActivite = 4 or idActivite = 5 or idActivite = 6 or idActivite = 7 or idActivite = 8 or idActivite = 9 or idActivite = 10 or idActivite = 11 or idActivite = 12 or idActivite = 13 or idActivite = 14 or  idActivite = 15
-
-INSERT INTO INSCRIRE(idActivite,numInscription) 
-VALUES (1,1),(1,2),(1,4),(1,6),(1,8),(1,10),(1,12),(1,14),(1,16),(1,18),(1,20),(1,22),
-(3,17),(3,19),(3,21),(3,23),(3,25),(3,27),(3,29),                                                       
-(4,5),(4,6),(4,8),                                                       
-(5,3),(5,7),(5,9),(5,11),(5,13),(5,15),                                                       
-(6,25),(6,27),(6,29),(6,30),                                                       
-(7,16),(7,18),(7,20),(7,21),                                                       
-(8,2),(8,24),(8,26),(8,28),                                                       
-(9,4),(9,5),(9,6),(9,16),                                                       
-(10,6),(10,12),(10,14),                                                       
-(11,6),(11,12),(11,14),(11,22),                                                       
-(12,5),(12,7),(12,9),(12,30),                                                       
-(13,13),(13,22),(13,26),                                                       
-(14,8),(14,9),(14,13),(14,15),                                                       
-(15,1),(15,2),(15,3),(15,4),(15,5),(15,6),(15,7),(15,8),(15,9),(15,10),(15,11),(15,12),(15,13),(15,14),(15,15),(15,16),
-(15,17),(15,18),(15,19),(15,20),(15,21),(15,22),(15,23),(15,24),(15,25),(15,26),(15,27),(15,28),(15,29),(15,30);
-
-INSERT INTO Participer(numSession,numInscription) VALUES 
-(1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),(1,11),(1,12),(1,13),(1,14),(1,15),(1,16),
-(1,17),(1,18),(1,19),(1,20),(1,21),(1,22),(1,23),(1,24),(1,25),(1,26),(1,27),(1,28),(1,29),(1,30),                                                         
-(2,1),(2,2),(2,3),(2,4),(2,5),(2,6),(2,7),(2,8),(2,9),                                                         
-(3,11),(3,12),(3,13),(3,14),(3,15),(3,16),(3,17),(3,18),(3,19),                                                         
-(5,21),(5,22),(5,23),                                                        
-(6,10),(6,20),(6,30),                                                         
-(7,3),(7,5),(7,7),                                                         
-(8,13),(8,15),                                                         
-(9,26),(9,28),                                                         
-(10,24),(10,30),                                                         
-(11,9),(11,11),(11,17),                                                         
-(12,19),(12,21),(12,23),(12,24),                                                         
-(13,1),(13,16),(13,26),(13,30),                                                         
-(14,2),(14,17),(14,27),(14,29),                                                         
-(15,3),(15,8),(15,12),(15,20),                                                         
-(16,4),(16,10),(16,14),(16,21),                                                         
-(18,1),(18,2),(18,3),(18,4),(18,5),(18,6),(18,7),(18,8),(18,9),(18,10),(18,11),(18,12),(18,13),(18,14),(18,15),(18,16);
