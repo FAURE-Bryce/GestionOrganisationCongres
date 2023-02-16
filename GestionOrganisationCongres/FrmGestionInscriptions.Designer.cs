@@ -61,14 +61,14 @@
             this.lbRestePayerValeur = new System.Windows.Forms.Label();
             this.dataGridViewActiviteCongressiste = new System.Windows.Forms.DataGridView();
             this.lbActivite = new System.Windows.Forms.Label();
-            this.btSupprimerInscriptionCongrssiste = new System.Windows.Forms.Button();
-            this.btAjouterInscriptionCongrssiste = new System.Windows.Forms.Button();
+            this.btSupprimerActiviteCongressiste = new System.Windows.Forms.Button();
+            this.btAjouterActiviteCongressiste = new System.Windows.Forms.Button();
             this.lbAjouterActiviteCongressiste = new System.Windows.Forms.Label();
-            this.comboBoxActiviteCongressiste = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.comboBoxAjouterActiviteCongressiste = new System.Windows.Forms.ComboBox();
+            this.btSupprimerSessionCongressiste = new System.Windows.Forms.Button();
+            this.btAjouterSessionCongressiste = new System.Windows.Forms.Button();
             this.lbAjouterSessionCongressiste = new System.Windows.Forms.Label();
-            this.ActiviteCongressiste = new System.Windows.Forms.ComboBox();
+            this.comboBoxAjouterSessionCongressiste = new System.Windows.Forms.ComboBox();
             this.lbSession = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
@@ -358,16 +358,16 @@
             // 
             // ListParticipationCongrssiste
             // 
-            this.ListParticipationCongrssiste.Controls.Add(this.button1);
-            this.ListParticipationCongrssiste.Controls.Add(this.button2);
+            this.ListParticipationCongrssiste.Controls.Add(this.btSupprimerSessionCongressiste);
+            this.ListParticipationCongrssiste.Controls.Add(this.btAjouterSessionCongressiste);
             this.ListParticipationCongrssiste.Controls.Add(this.lbAjouterSessionCongressiste);
-            this.ListParticipationCongrssiste.Controls.Add(this.ActiviteCongressiste);
+            this.ListParticipationCongrssiste.Controls.Add(this.comboBoxAjouterSessionCongressiste);
             this.ListParticipationCongrssiste.Controls.Add(this.lbSession);
             this.ListParticipationCongrssiste.Controls.Add(this.dataGridView1);
-            this.ListParticipationCongrssiste.Controls.Add(this.btSupprimerInscriptionCongrssiste);
-            this.ListParticipationCongrssiste.Controls.Add(this.btAjouterInscriptionCongrssiste);
+            this.ListParticipationCongrssiste.Controls.Add(this.btSupprimerActiviteCongressiste);
+            this.ListParticipationCongrssiste.Controls.Add(this.btAjouterActiviteCongressiste);
             this.ListParticipationCongrssiste.Controls.Add(this.lbAjouterActiviteCongressiste);
-            this.ListParticipationCongrssiste.Controls.Add(this.comboBoxActiviteCongressiste);
+            this.ListParticipationCongrssiste.Controls.Add(this.comboBoxAjouterActiviteCongressiste);
             this.ListParticipationCongrssiste.Controls.Add(this.lbActivite);
             this.ListParticipationCongrssiste.Controls.Add(this.dataGridViewActiviteCongressiste);
             this.ListParticipationCongrssiste.Location = new System.Drawing.Point(4, 25);
@@ -436,23 +436,23 @@
             this.lbActivite.TabIndex = 1;
             this.lbActivite.Text = "Activités : ";
             // 
-            // btSupprimerInscriptionCongrssiste
+            // btSupprimerActiviteCongressiste
             // 
-            this.btSupprimerInscriptionCongrssiste.Location = new System.Drawing.Point(69, 356);
-            this.btSupprimerInscriptionCongrssiste.Name = "btSupprimerInscriptionCongrssiste";
-            this.btSupprimerInscriptionCongrssiste.Size = new System.Drawing.Size(86, 23);
-            this.btSupprimerInscriptionCongrssiste.TabIndex = 18;
-            this.btSupprimerInscriptionCongrssiste.Text = "Supprimer";
-            this.btSupprimerInscriptionCongrssiste.UseVisualStyleBackColor = true;
+            this.btSupprimerActiviteCongressiste.Location = new System.Drawing.Point(69, 356);
+            this.btSupprimerActiviteCongressiste.Name = "btSupprimerActiviteCongressiste";
+            this.btSupprimerActiviteCongressiste.Size = new System.Drawing.Size(86, 23);
+            this.btSupprimerActiviteCongressiste.TabIndex = 18;
+            this.btSupprimerActiviteCongressiste.Text = "Supprimer";
+            this.btSupprimerActiviteCongressiste.UseVisualStyleBackColor = true;
             // 
-            // btAjouterInscriptionCongrssiste
+            // btAjouterActiviteCongressiste
             // 
-            this.btAjouterInscriptionCongrssiste.Location = new System.Drawing.Point(196, 356);
-            this.btAjouterInscriptionCongrssiste.Name = "btAjouterInscriptionCongrssiste";
-            this.btAjouterInscriptionCongrssiste.Size = new System.Drawing.Size(86, 23);
-            this.btAjouterInscriptionCongrssiste.TabIndex = 17;
-            this.btAjouterInscriptionCongrssiste.Text = "Ajouter";
-            this.btAjouterInscriptionCongrssiste.UseVisualStyleBackColor = true;
+            this.btAjouterActiviteCongressiste.Location = new System.Drawing.Point(196, 356);
+            this.btAjouterActiviteCongressiste.Name = "btAjouterActiviteCongressiste";
+            this.btAjouterActiviteCongressiste.Size = new System.Drawing.Size(86, 23);
+            this.btAjouterActiviteCongressiste.TabIndex = 17;
+            this.btAjouterActiviteCongressiste.Text = "Ajouter";
+            this.btAjouterActiviteCongressiste.UseVisualStyleBackColor = true;
             // 
             // lbAjouterActiviteCongressiste
             // 
@@ -463,31 +463,31 @@
             this.lbAjouterActiviteCongressiste.TabIndex = 19;
             this.lbAjouterActiviteCongressiste.Text = "Ajouter Activité : ";
             // 
-            // comboBoxActiviteCongressiste
+            // comboBoxAjouterActiviteCongressiste
             // 
-            this.comboBoxActiviteCongressiste.FormattingEnabled = true;
-            this.comboBoxActiviteCongressiste.Location = new System.Drawing.Point(161, 322);
-            this.comboBoxActiviteCongressiste.Name = "comboBoxActiviteCongressiste";
-            this.comboBoxActiviteCongressiste.Size = new System.Drawing.Size(167, 24);
-            this.comboBoxActiviteCongressiste.TabIndex = 16;
+            this.comboBoxAjouterActiviteCongressiste.FormattingEnabled = true;
+            this.comboBoxAjouterActiviteCongressiste.Location = new System.Drawing.Point(161, 322);
+            this.comboBoxAjouterActiviteCongressiste.Name = "comboBoxAjouterActiviteCongressiste";
+            this.comboBoxAjouterActiviteCongressiste.Size = new System.Drawing.Size(167, 24);
+            this.comboBoxAjouterActiviteCongressiste.TabIndex = 16;
             // 
-            // button1
+            // btSupprimerSessionCongressiste
             // 
-            this.button1.Location = new System.Drawing.Point(464, 356);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 23);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Supprimer";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btSupprimerSessionCongressiste.Location = new System.Drawing.Point(464, 356);
+            this.btSupprimerSessionCongressiste.Name = "btSupprimerSessionCongressiste";
+            this.btSupprimerSessionCongressiste.Size = new System.Drawing.Size(86, 23);
+            this.btSupprimerSessionCongressiste.TabIndex = 24;
+            this.btSupprimerSessionCongressiste.Text = "Supprimer";
+            this.btSupprimerSessionCongressiste.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btAjouterSessionCongressiste
             // 
-            this.button2.Location = new System.Drawing.Point(591, 356);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 23);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Ajouter";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btAjouterSessionCongressiste.Location = new System.Drawing.Point(591, 356);
+            this.btAjouterSessionCongressiste.Name = "btAjouterSessionCongressiste";
+            this.btAjouterSessionCongressiste.Size = new System.Drawing.Size(86, 23);
+            this.btAjouterSessionCongressiste.TabIndex = 23;
+            this.btAjouterSessionCongressiste.Text = "Ajouter";
+            this.btAjouterSessionCongressiste.UseVisualStyleBackColor = true;
             // 
             // lbAjouterSessionCongressiste
             // 
@@ -498,13 +498,13 @@
             this.lbAjouterSessionCongressiste.TabIndex = 25;
             this.lbAjouterSessionCongressiste.Text = "Ajouter Session : ";
             // 
-            // ActiviteCongressiste
+            // comboBoxAjouterSessionCongressiste
             // 
-            this.ActiviteCongressiste.FormattingEnabled = true;
-            this.ActiviteCongressiste.Location = new System.Drawing.Point(556, 322);
-            this.ActiviteCongressiste.Name = "ActiviteCongressiste";
-            this.ActiviteCongressiste.Size = new System.Drawing.Size(167, 24);
-            this.ActiviteCongressiste.TabIndex = 22;
+            this.comboBoxAjouterSessionCongressiste.FormattingEnabled = true;
+            this.comboBoxAjouterSessionCongressiste.Location = new System.Drawing.Point(556, 322);
+            this.comboBoxAjouterSessionCongressiste.Name = "comboBoxAjouterSessionCongressiste";
+            this.comboBoxAjouterSessionCongressiste.Size = new System.Drawing.Size(167, 24);
+            this.comboBoxAjouterSessionCongressiste.TabIndex = 22;
             // 
             // lbSession
             // 
@@ -581,14 +581,14 @@
         private System.Windows.Forms.Label lbMontantTotal;
         private System.Windows.Forms.DataGridView dataGridViewActiviteCongressiste;
         private System.Windows.Forms.Label lbActivite;
-        private System.Windows.Forms.Button btSupprimerInscriptionCongrssiste;
-        private System.Windows.Forms.Button btAjouterInscriptionCongrssiste;
+        private System.Windows.Forms.Button btSupprimerActiviteCongressiste;
+        private System.Windows.Forms.Button btAjouterActiviteCongressiste;
         private System.Windows.Forms.Label lbAjouterActiviteCongressiste;
-        private System.Windows.Forms.ComboBox comboBoxActiviteCongressiste;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBoxAjouterActiviteCongressiste;
+        private System.Windows.Forms.Button btSupprimerSessionCongressiste;
+        private System.Windows.Forms.Button btAjouterSessionCongressiste;
         private System.Windows.Forms.Label lbAjouterSessionCongressiste;
-        private System.Windows.Forms.ComboBox ActiviteCongressiste;
+        private System.Windows.Forms.ComboBox comboBoxAjouterSessionCongressiste;
         private System.Windows.Forms.Label lbSession;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
