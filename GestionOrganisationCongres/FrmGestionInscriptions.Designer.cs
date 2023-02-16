@@ -54,28 +54,37 @@
             this.lbAdresseCongressiste = new System.Windows.Forms.Label();
             this.lbNomCongressiste = new System.Windows.Forms.Label();
             this.btSupprimerCongressiste = new System.Windows.Forms.Button();
-            this.ListInscritsSession = new System.Windows.Forms.TabPage();
-            this.DetailInscriptionsSession = new System.Windows.Forms.TabPage();
-            this.DetailInscriptionsActivites = new System.Windows.Forms.TabPage();
-            this.ListInscriptionsActivites = new System.Windows.Forms.TabPage();
+            this.ListParticipationCongrssiste = new System.Windows.Forms.TabPage();
             this.lbMontantTotal = new System.Windows.Forms.Label();
             this.lbRestePayer = new System.Windows.Forms.Label();
             this.lbMontantTotalValue = new System.Windows.Forms.Label();
             this.lbRestePayerValeur = new System.Windows.Forms.Label();
+            this.dataGridViewActiviteCongressiste = new System.Windows.Forms.DataGridView();
+            this.lbActivite = new System.Windows.Forms.Label();
+            this.btSupprimerInscriptionCongrssiste = new System.Windows.Forms.Button();
+            this.btAjouterInscriptionCongrssiste = new System.Windows.Forms.Button();
+            this.lbAjouterActiviteCongressiste = new System.Windows.Forms.Label();
+            this.comboBoxActiviteCongressiste = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.lbAjouterSessionCongressiste = new System.Windows.Forms.Label();
+            this.ActiviteCongressiste = new System.Windows.Forms.ComboBox();
+            this.lbSession = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.ListCongressiste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListCongressiste)).BeginInit();
             this.DetailCongressiste.SuspendLayout();
+            this.ListParticipationCongrssiste.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActiviteCongressiste)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.ListCongressiste);
             this.tabControl1.Controls.Add(this.DetailCongressiste);
-            this.tabControl1.Controls.Add(this.ListInscritsSession);
-            this.tabControl1.Controls.Add(this.DetailInscriptionsSession);
-            this.tabControl1.Controls.Add(this.DetailInscriptionsActivites);
-            this.tabControl1.Controls.Add(this.ListInscriptionsActivites);
+            this.tabControl1.Controls.Add(this.ListParticipationCongrssiste);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -90,7 +99,7 @@
             this.ListCongressiste.Name = "ListCongressiste";
             this.ListCongressiste.Size = new System.Drawing.Size(768, 397);
             this.ListCongressiste.TabIndex = 4;
-            this.ListCongressiste.Text = "List Congre";
+            this.ListCongressiste.Text = "List Congressiste";
             this.ListCongressiste.UseVisualStyleBackColor = true;
             // 
             // btAjouterCongressiste
@@ -145,7 +154,7 @@
             this.DetailCongressiste.Padding = new System.Windows.Forms.Padding(3);
             this.DetailCongressiste.Size = new System.Drawing.Size(768, 397);
             this.DetailCongressiste.TabIndex = 1;
-            this.DetailCongressiste.Text = "Detail Congre";
+            this.DetailCongressiste.Text = "Detail Congressiste";
             this.DetailCongressiste.UseVisualStyleBackColor = true;
             // 
             // btValider
@@ -347,42 +356,26 @@
             this.btSupprimerCongressiste.Text = "Supprimer Congressiste";
             this.btSupprimerCongressiste.UseVisualStyleBackColor = false;
             // 
-            // ListInscritsSession
+            // ListParticipationCongrssiste
             // 
-            this.ListInscritsSession.Location = new System.Drawing.Point(4, 25);
-            this.ListInscritsSession.Name = "ListInscritsSession";
-            this.ListInscritsSession.Size = new System.Drawing.Size(768, 397);
-            this.ListInscritsSession.TabIndex = 2;
-            this.ListInscritsSession.Text = "List Inscrits Session";
-            this.ListInscritsSession.UseVisualStyleBackColor = true;
-            // 
-            // DetailInscriptionsSession
-            // 
-            this.DetailInscriptionsSession.Location = new System.Drawing.Point(4, 25);
-            this.DetailInscriptionsSession.Name = "DetailInscriptionsSession";
-            this.DetailInscriptionsSession.Size = new System.Drawing.Size(768, 397);
-            this.DetailInscriptionsSession.TabIndex = 5;
-            this.DetailInscriptionsSession.Text = "Detail Inscriptions Session";
-            this.DetailInscriptionsSession.UseVisualStyleBackColor = true;
-            // 
-            // DetailInscriptionsActivites
-            // 
-            this.DetailInscriptionsActivites.Location = new System.Drawing.Point(4, 25);
-            this.DetailInscriptionsActivites.Name = "DetailInscriptionsActivites";
-            this.DetailInscriptionsActivites.Size = new System.Drawing.Size(768, 397);
-            this.DetailInscriptionsActivites.TabIndex = 3;
-            this.DetailInscriptionsActivites.Text = "Detail Inscriptions Acti";
-            this.DetailInscriptionsActivites.UseVisualStyleBackColor = true;
-            // 
-            // ListInscriptionsActivites
-            // 
-            this.ListInscriptionsActivites.Location = new System.Drawing.Point(4, 25);
-            this.ListInscriptionsActivites.Name = "ListInscriptionsActivites";
-            this.ListInscriptionsActivites.Padding = new System.Windows.Forms.Padding(3);
-            this.ListInscriptionsActivites.Size = new System.Drawing.Size(768, 397);
-            this.ListInscriptionsActivites.TabIndex = 0;
-            this.ListInscriptionsActivites.Text = "List Inscriptions Acti";
-            this.ListInscriptionsActivites.UseVisualStyleBackColor = true;
+            this.ListParticipationCongrssiste.Controls.Add(this.button1);
+            this.ListParticipationCongrssiste.Controls.Add(this.button2);
+            this.ListParticipationCongrssiste.Controls.Add(this.lbAjouterSessionCongressiste);
+            this.ListParticipationCongrssiste.Controls.Add(this.ActiviteCongressiste);
+            this.ListParticipationCongrssiste.Controls.Add(this.lbSession);
+            this.ListParticipationCongrssiste.Controls.Add(this.dataGridView1);
+            this.ListParticipationCongrssiste.Controls.Add(this.btSupprimerInscriptionCongrssiste);
+            this.ListParticipationCongrssiste.Controls.Add(this.btAjouterInscriptionCongrssiste);
+            this.ListParticipationCongrssiste.Controls.Add(this.lbAjouterActiviteCongressiste);
+            this.ListParticipationCongrssiste.Controls.Add(this.comboBoxActiviteCongressiste);
+            this.ListParticipationCongrssiste.Controls.Add(this.lbActivite);
+            this.ListParticipationCongrssiste.Controls.Add(this.dataGridViewActiviteCongressiste);
+            this.ListParticipationCongrssiste.Location = new System.Drawing.Point(4, 25);
+            this.ListParticipationCongrssiste.Name = "ListParticipationCongrssiste";
+            this.ListParticipationCongrssiste.Size = new System.Drawing.Size(768, 397);
+            this.ListParticipationCongrssiste.TabIndex = 2;
+            this.ListParticipationCongrssiste.Text = "Participation";
+            this.ListParticipationCongrssiste.UseVisualStyleBackColor = true;
             // 
             // lbMontantTotal
             // 
@@ -424,6 +417,114 @@
             this.lbRestePayerValeur.TabIndex = 49;
             this.lbRestePayerValeur.Text = "-";
             // 
+            // dataGridViewActiviteCongressiste
+            // 
+            this.dataGridViewActiviteCongressiste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewActiviteCongressiste.Location = new System.Drawing.Point(17, 33);
+            this.dataGridViewActiviteCongressiste.Name = "dataGridViewActiviteCongressiste";
+            this.dataGridViewActiviteCongressiste.RowHeadersWidth = 51;
+            this.dataGridViewActiviteCongressiste.RowTemplate.Height = 24;
+            this.dataGridViewActiviteCongressiste.Size = new System.Drawing.Size(343, 275);
+            this.dataGridViewActiviteCongressiste.TabIndex = 0;
+            // 
+            // lbActivite
+            // 
+            this.lbActivite.AutoSize = true;
+            this.lbActivite.Location = new System.Drawing.Point(14, 14);
+            this.lbActivite.Name = "lbActivite";
+            this.lbActivite.Size = new System.Drawing.Size(66, 16);
+            this.lbActivite.TabIndex = 1;
+            this.lbActivite.Text = "Activités : ";
+            // 
+            // btSupprimerInscriptionCongrssiste
+            // 
+            this.btSupprimerInscriptionCongrssiste.Location = new System.Drawing.Point(69, 356);
+            this.btSupprimerInscriptionCongrssiste.Name = "btSupprimerInscriptionCongrssiste";
+            this.btSupprimerInscriptionCongrssiste.Size = new System.Drawing.Size(86, 23);
+            this.btSupprimerInscriptionCongrssiste.TabIndex = 18;
+            this.btSupprimerInscriptionCongrssiste.Text = "Supprimer";
+            this.btSupprimerInscriptionCongrssiste.UseVisualStyleBackColor = true;
+            // 
+            // btAjouterInscriptionCongrssiste
+            // 
+            this.btAjouterInscriptionCongrssiste.Location = new System.Drawing.Point(196, 356);
+            this.btAjouterInscriptionCongrssiste.Name = "btAjouterInscriptionCongrssiste";
+            this.btAjouterInscriptionCongrssiste.Size = new System.Drawing.Size(86, 23);
+            this.btAjouterInscriptionCongrssiste.TabIndex = 17;
+            this.btAjouterInscriptionCongrssiste.Text = "Ajouter";
+            this.btAjouterInscriptionCongrssiste.UseVisualStyleBackColor = true;
+            // 
+            // lbAjouterActiviteCongressiste
+            // 
+            this.lbAjouterActiviteCongressiste.AutoSize = true;
+            this.lbAjouterActiviteCongressiste.Location = new System.Drawing.Point(45, 325);
+            this.lbAjouterActiviteCongressiste.Name = "lbAjouterActiviteCongressiste";
+            this.lbAjouterActiviteCongressiste.Size = new System.Drawing.Size(104, 16);
+            this.lbAjouterActiviteCongressiste.TabIndex = 19;
+            this.lbAjouterActiviteCongressiste.Text = "Ajouter Activité : ";
+            // 
+            // comboBoxActiviteCongressiste
+            // 
+            this.comboBoxActiviteCongressiste.FormattingEnabled = true;
+            this.comboBoxActiviteCongressiste.Location = new System.Drawing.Point(161, 322);
+            this.comboBoxActiviteCongressiste.Name = "comboBoxActiviteCongressiste";
+            this.comboBoxActiviteCongressiste.Size = new System.Drawing.Size(167, 24);
+            this.comboBoxActiviteCongressiste.TabIndex = 16;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(464, 356);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 23);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Supprimer";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(591, 356);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(86, 23);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Ajouter";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // lbAjouterSessionCongressiste
+            // 
+            this.lbAjouterSessionCongressiste.AutoSize = true;
+            this.lbAjouterSessionCongressiste.Location = new System.Drawing.Point(440, 325);
+            this.lbAjouterSessionCongressiste.Name = "lbAjouterSessionCongressiste";
+            this.lbAjouterSessionCongressiste.Size = new System.Drawing.Size(110, 16);
+            this.lbAjouterSessionCongressiste.TabIndex = 25;
+            this.lbAjouterSessionCongressiste.Text = "Ajouter Session : ";
+            // 
+            // ActiviteCongressiste
+            // 
+            this.ActiviteCongressiste.FormattingEnabled = true;
+            this.ActiviteCongressiste.Location = new System.Drawing.Point(556, 322);
+            this.ActiviteCongressiste.Name = "ActiviteCongressiste";
+            this.ActiviteCongressiste.Size = new System.Drawing.Size(167, 24);
+            this.ActiviteCongressiste.TabIndex = 22;
+            // 
+            // lbSession
+            // 
+            this.lbSession.AutoSize = true;
+            this.lbSession.Location = new System.Drawing.Point(409, 14);
+            this.lbSession.Name = "lbSession";
+            this.lbSession.Size = new System.Drawing.Size(65, 16);
+            this.lbSession.TabIndex = 21;
+            this.lbSession.Text = "Session : ";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(412, 33);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(343, 275);
+            this.dataGridView1.TabIndex = 20;
+            // 
             // FrmGestionInscriptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -437,6 +538,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListCongressiste)).EndInit();
             this.DetailCongressiste.ResumeLayout(false);
             this.DetailCongressiste.PerformLayout();
+            this.ListParticipationCongrssiste.ResumeLayout(false);
+            this.ListParticipationCongrssiste.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActiviteCongressiste)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -444,12 +549,9 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage ListInscriptionsActivites;
         private System.Windows.Forms.TabPage DetailCongressiste;
-        private System.Windows.Forms.TabPage ListInscritsSession;
-        private System.Windows.Forms.TabPage DetailInscriptionsActivites;
+        private System.Windows.Forms.TabPage ListParticipationCongrssiste;
         private System.Windows.Forms.TabPage ListCongressiste;
-        private System.Windows.Forms.TabPage DetailInscriptionsSession;
         private System.Windows.Forms.Button btAjouterCongressiste;
         private System.Windows.Forms.DataGridView dataGridViewListCongressiste;
         private System.Windows.Forms.ComboBox comboBoxHotelCongressiste;
@@ -477,5 +579,17 @@
         private System.Windows.Forms.Label lbMontantTotalValue;
         private System.Windows.Forms.Label lbRestePayer;
         private System.Windows.Forms.Label lbMontantTotal;
+        private System.Windows.Forms.DataGridView dataGridViewActiviteCongressiste;
+        private System.Windows.Forms.Label lbActivite;
+        private System.Windows.Forms.Button btSupprimerInscriptionCongrssiste;
+        private System.Windows.Forms.Button btAjouterInscriptionCongrssiste;
+        private System.Windows.Forms.Label lbAjouterActiviteCongressiste;
+        private System.Windows.Forms.ComboBox comboBoxActiviteCongressiste;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lbAjouterSessionCongressiste;
+        private System.Windows.Forms.ComboBox ActiviteCongressiste;
+        private System.Windows.Forms.Label lbSession;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
