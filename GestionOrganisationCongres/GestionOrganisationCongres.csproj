@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activite.cs">
+      <DependentUpon>ModeleGestion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Congressiste.cs">
+      <DependentUpon>ModeleGestion.tt</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionActivite.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,8 +85,29 @@
     <Compile Include="FrmGestionSession.Designer.cs">
       <DependentUpon>FrmGestionSession.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hotel.cs">
+      <DependentUpon>ModeleGestion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeleGestion.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeleGestion.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeleGestion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeleGestion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeleGestion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeleGestion.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session.cs">
+      <DependentUpon>ModeleGestion.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmGestionActivite.resx">
       <DependentUpon>FrmGestionActivite.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +129,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="ModeleGestion.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeleGestion.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModeleGestion.edmx.diagram">
+      <DependentUpon>ModeleGestion.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -105,6 +149,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModeleGestion.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModeleGestion.Context.cs</LastGenOutput>
+      <DependentUpon>ModeleGestion.edmx</DependentUpon>
+    </Content>
+    <Content Include="ModeleGestion.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeleGestion.edmx</DependentUpon>
+      <LastGenOutput>ModeleGestion.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
