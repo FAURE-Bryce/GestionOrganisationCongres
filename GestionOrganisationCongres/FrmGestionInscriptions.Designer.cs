@@ -33,6 +33,13 @@
             this.btAjouterCongressiste = new System.Windows.Forms.Button();
             this.dataGridViewListCongressiste = new System.Windows.Forms.DataGridView();
             this.DetailCongressiste = new System.Windows.Forms.TabPage();
+            this.btValider = new System.Windows.Forms.Button();
+            this.btAnnuler = new System.Windows.Forms.Button();
+            this.maskedTxtBoxAcompteCongressiste = new System.Windows.Forms.MaskedTextBox();
+            this.comboBoxLigueCongressiste = new System.Windows.Forms.ComboBox();
+            this.textBoxVilleCongressiste = new System.Windows.Forms.TextBox();
+            this.textBoxAdresseCongressiste = new System.Windows.Forms.TextBox();
+            this.textBoxPrenomCongressiste = new System.Windows.Forms.TextBox();
             this.lbHotelCongressiste = new System.Windows.Forms.Label();
             this.lbLigueCongressiste = new System.Windows.Forms.Label();
             this.lbAcompteCongressiste = new System.Windows.Forms.Label();
@@ -51,13 +58,10 @@
             this.DetailInscriptionsSession = new System.Windows.Forms.TabPage();
             this.DetailInscriptionsActivites = new System.Windows.Forms.TabPage();
             this.ListInscriptionsActivites = new System.Windows.Forms.TabPage();
-            this.textBoxPrenomCongressiste = new System.Windows.Forms.TextBox();
-            this.textBoxAdresseCongressiste = new System.Windows.Forms.TextBox();
-            this.textBoxVilleCongressiste = new System.Windows.Forms.TextBox();
-            this.comboBoxLigueCongressiste = new System.Windows.Forms.ComboBox();
-            this.maskedTxtBoxAcompteCongressiste = new System.Windows.Forms.MaskedTextBox();
-            this.btAnnuler = new System.Windows.Forms.Button();
-            this.btValider = new System.Windows.Forms.Button();
+            this.lbMontantTotal = new System.Windows.Forms.Label();
+            this.lbRestePayer = new System.Windows.Forms.Label();
+            this.lbMontantTotalValue = new System.Windows.Forms.Label();
+            this.lbRestePayerValeur = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.ListCongressiste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListCongressiste)).BeginInit();
@@ -111,6 +115,10 @@
             // 
             // DetailCongressiste
             // 
+            this.DetailCongressiste.Controls.Add(this.lbRestePayerValeur);
+            this.DetailCongressiste.Controls.Add(this.lbMontantTotalValue);
+            this.DetailCongressiste.Controls.Add(this.lbRestePayer);
+            this.DetailCongressiste.Controls.Add(this.lbMontantTotal);
             this.DetailCongressiste.Controls.Add(this.btValider);
             this.DetailCongressiste.Controls.Add(this.btAnnuler);
             this.DetailCongressiste.Controls.Add(this.maskedTxtBoxAcompteCongressiste);
@@ -139,6 +147,69 @@
             this.DetailCongressiste.TabIndex = 1;
             this.DetailCongressiste.Text = "Detail Congre";
             this.DetailCongressiste.UseVisualStyleBackColor = true;
+            // 
+            // btValider
+            // 
+            this.btValider.BackColor = System.Drawing.Color.LawnGreen;
+            this.btValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btValider.Location = new System.Drawing.Point(276, 329);
+            this.btValider.Name = "btValider";
+            this.btValider.Size = new System.Drawing.Size(75, 30);
+            this.btValider.TabIndex = 45;
+            this.btValider.Text = "Valider";
+            this.btValider.UseVisualStyleBackColor = false;
+            // 
+            // btAnnuler
+            // 
+            this.btAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btAnnuler.Location = new System.Drawing.Point(500, 329);
+            this.btAnnuler.Name = "btAnnuler";
+            this.btAnnuler.Size = new System.Drawing.Size(75, 30);
+            this.btAnnuler.TabIndex = 44;
+            this.btAnnuler.Text = "Annuler";
+            this.btAnnuler.UseVisualStyleBackColor = true;
+            // 
+            // maskedTxtBoxAcompteCongressiste
+            // 
+            this.maskedTxtBoxAcompteCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.maskedTxtBoxAcompteCongressiste.Location = new System.Drawing.Point(312, 214);
+            this.maskedTxtBoxAcompteCongressiste.Mask = "99999";
+            this.maskedTxtBoxAcompteCongressiste.Name = "maskedTxtBoxAcompteCongressiste";
+            this.maskedTxtBoxAcompteCongressiste.Size = new System.Drawing.Size(60, 26);
+            this.maskedTxtBoxAcompteCongressiste.TabIndex = 43;
+            // 
+            // comboBoxLigueCongressiste
+            // 
+            this.comboBoxLigueCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.comboBoxLigueCongressiste.FormattingEnabled = true;
+            this.comboBoxLigueCongressiste.Location = new System.Drawing.Point(312, 276);
+            this.comboBoxLigueCongressiste.Name = "comboBoxLigueCongressiste";
+            this.comboBoxLigueCongressiste.Size = new System.Drawing.Size(143, 28);
+            this.comboBoxLigueCongressiste.TabIndex = 42;
+            // 
+            // textBoxVilleCongressiste
+            // 
+            this.textBoxVilleCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBoxVilleCongressiste.Location = new System.Drawing.Point(312, 117);
+            this.textBoxVilleCongressiste.Name = "textBoxVilleCongressiste";
+            this.textBoxVilleCongressiste.Size = new System.Drawing.Size(263, 26);
+            this.textBoxVilleCongressiste.TabIndex = 41;
+            // 
+            // textBoxAdresseCongressiste
+            // 
+            this.textBoxAdresseCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBoxAdresseCongressiste.Location = new System.Drawing.Point(312, 85);
+            this.textBoxAdresseCongressiste.Name = "textBoxAdresseCongressiste";
+            this.textBoxAdresseCongressiste.Size = new System.Drawing.Size(263, 26);
+            this.textBoxAdresseCongressiste.TabIndex = 40;
+            // 
+            // textBoxPrenomCongressiste
+            // 
+            this.textBoxPrenomCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBoxPrenomCongressiste.Location = new System.Drawing.Point(312, 53);
+            this.textBoxPrenomCongressiste.Name = "textBoxPrenomCongressiste";
+            this.textBoxPrenomCongressiste.Size = new System.Drawing.Size(263, 26);
+            this.textBoxPrenomCongressiste.TabIndex = 39;
             // 
             // lbHotelCongressiste
             // 
@@ -313,68 +384,45 @@
             this.ListInscriptionsActivites.Text = "List Inscriptions Acti";
             this.ListInscriptionsActivites.UseVisualStyleBackColor = true;
             // 
-            // textBoxPrenomCongressiste
+            // lbMontantTotal
             // 
-            this.textBoxPrenomCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxPrenomCongressiste.Location = new System.Drawing.Point(312, 53);
-            this.textBoxPrenomCongressiste.Name = "textBoxPrenomCongressiste";
-            this.textBoxPrenomCongressiste.Size = new System.Drawing.Size(263, 26);
-            this.textBoxPrenomCongressiste.TabIndex = 39;
+            this.lbMontantTotal.AutoSize = true;
+            this.lbMontantTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lbMontantTotal.Location = new System.Drawing.Point(6, 254);
+            this.lbMontantTotal.Name = "lbMontantTotal";
+            this.lbMontantTotal.Size = new System.Drawing.Size(126, 20);
+            this.lbMontantTotal.TabIndex = 46;
+            this.lbMontantTotal.Text = "Montant Total : ";
             // 
-            // textBoxAdresseCongressiste
+            // lbRestePayer
             // 
-            this.textBoxAdresseCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxAdresseCongressiste.Location = new System.Drawing.Point(312, 85);
-            this.textBoxAdresseCongressiste.Name = "textBoxAdresseCongressiste";
-            this.textBoxAdresseCongressiste.Size = new System.Drawing.Size(263, 26);
-            this.textBoxAdresseCongressiste.TabIndex = 40;
+            this.lbRestePayer.AutoSize = true;
+            this.lbRestePayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lbRestePayer.Location = new System.Drawing.Point(6, 284);
+            this.lbRestePayer.Name = "lbRestePayer";
+            this.lbRestePayer.Size = new System.Drawing.Size(128, 20);
+            this.lbRestePayer.TabIndex = 47;
+            this.lbRestePayer.Text = "Reste à payer : ";
             // 
-            // textBoxVilleCongressiste
+            // lbMontantTotalValue
             // 
-            this.textBoxVilleCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxVilleCongressiste.Location = new System.Drawing.Point(312, 117);
-            this.textBoxVilleCongressiste.Name = "textBoxVilleCongressiste";
-            this.textBoxVilleCongressiste.Size = new System.Drawing.Size(263, 26);
-            this.textBoxVilleCongressiste.TabIndex = 41;
+            this.lbMontantTotalValue.AutoSize = true;
+            this.lbMontantTotalValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lbMontantTotalValue.Location = new System.Drawing.Point(138, 254);
+            this.lbMontantTotalValue.Name = "lbMontantTotalValue";
+            this.lbMontantTotalValue.Size = new System.Drawing.Size(15, 20);
+            this.lbMontantTotalValue.TabIndex = 48;
+            this.lbMontantTotalValue.Text = "-";
             // 
-            // comboBoxLigueCongressiste
+            // lbRestePayerValeur
             // 
-            this.comboBoxLigueCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.comboBoxLigueCongressiste.FormattingEnabled = true;
-            this.comboBoxLigueCongressiste.Location = new System.Drawing.Point(312, 276);
-            this.comboBoxLigueCongressiste.Name = "comboBoxLigueCongressiste";
-            this.comboBoxLigueCongressiste.Size = new System.Drawing.Size(143, 28);
-            this.comboBoxLigueCongressiste.TabIndex = 42;
-            // 
-            // maskedTxtBoxAcompteCongressiste
-            // 
-            this.maskedTxtBoxAcompteCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.maskedTxtBoxAcompteCongressiste.Location = new System.Drawing.Point(312, 214);
-            this.maskedTxtBoxAcompteCongressiste.Mask = "99999";
-            this.maskedTxtBoxAcompteCongressiste.Name = "maskedTxtBoxAcompteCongressiste";
-            this.maskedTxtBoxAcompteCongressiste.Size = new System.Drawing.Size(60, 26);
-            this.maskedTxtBoxAcompteCongressiste.TabIndex = 43;
-            // 
-            // btAnnuler
-            // 
-            this.btAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btAnnuler.Location = new System.Drawing.Point(500, 329);
-            this.btAnnuler.Name = "btAnnuler";
-            this.btAnnuler.Size = new System.Drawing.Size(75, 30);
-            this.btAnnuler.TabIndex = 44;
-            this.btAnnuler.Text = "Annuler";
-            this.btAnnuler.UseVisualStyleBackColor = true;
-            // 
-            // btValider
-            // 
-            this.btValider.BackColor = System.Drawing.Color.LawnGreen;
-            this.btValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btValider.Location = new System.Drawing.Point(276, 329);
-            this.btValider.Name = "btValider";
-            this.btValider.Size = new System.Drawing.Size(75, 30);
-            this.btValider.TabIndex = 45;
-            this.btValider.Text = "Valider";
-            this.btValider.UseVisualStyleBackColor = false;
+            this.lbRestePayerValeur.AutoSize = true;
+            this.lbRestePayerValeur.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lbRestePayerValeur.Location = new System.Drawing.Point(140, 284);
+            this.lbRestePayerValeur.Name = "lbRestePayerValeur";
+            this.lbRestePayerValeur.Size = new System.Drawing.Size(15, 20);
+            this.lbRestePayerValeur.TabIndex = 49;
+            this.lbRestePayerValeur.Text = "-";
             // 
             // FrmGestionInscriptions
             // 
@@ -425,5 +473,9 @@
         private System.Windows.Forms.TextBox textBoxPrenomCongressiste;
         private System.Windows.Forms.Button btValider;
         private System.Windows.Forms.Button btAnnuler;
+        private System.Windows.Forms.Label lbRestePayerValeur;
+        private System.Windows.Forms.Label lbMontantTotalValue;
+        private System.Windows.Forms.Label lbRestePayer;
+        private System.Windows.Forms.Label lbMontantTotal;
     }
 }
