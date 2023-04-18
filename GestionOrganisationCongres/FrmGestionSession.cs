@@ -16,5 +16,10 @@ namespace GestionOrganisationCongres
         {
             InitializeComponent();
         }
+
+        private void comboBoxNonInscrits_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

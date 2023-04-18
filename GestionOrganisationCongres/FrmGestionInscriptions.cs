@@ -16,5 +16,10 @@ namespace GestionOrganisationCongres
         {
             InitializeComponent();
         }
+
+        private void btValider_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
