@@ -38,3 +38,4 @@ C:\Users\n.pauly\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrgani
 C:\Users\n.pauly\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.csproj.CopyComplete
 C:\Users\n.pauly\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.exe
 C:\Users\n.pauly\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.pdb
+C:\Users\a.dugas\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\bin\Debug\fr\EntityFramework.SqlServer.resources.dll

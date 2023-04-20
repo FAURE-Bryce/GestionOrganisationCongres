@@ -31,16 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.tabControlActivite = new System.Windows.Forms.TabControl();
             this.listeActivite = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.btAjouterActivite = new System.Windows.Forms.Button();
             this.dataGridViewActiviter = new System.Windows.Forms.DataGridView();
-            this.idActiviteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.designationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prixDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.heureDebutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nbPlacesMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.congressistesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindSrcActivites = new System.Windows.Forms.BindingSource(this.components);
             this.detailsActivite = new System.Windows.Forms.TabPage();
             this.btValiderActivite = new System.Windows.Forms.Button();
             this.btAnnulerModifActivite = new System.Windows.Forms.Button();
@@ -61,13 +54,19 @@
             this.lblDesignationActivite = new System.Windows.Forms.Label();
             this.btSupprimerActivite = new System.Windows.Forms.Button();
             this.dataGridViewInscritsActivite = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bindSrcActivites = new System.Windows.Forms.BindingSource(this.components);
+            this.idActiviteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.designationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prixDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.heureDebutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nbPlacesMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlActivite.SuspendLayout();
             this.listeActivite.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActiviter)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindSrcActivites)).BeginInit();
             this.detailsActivite.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInscritsActivite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindSrcActivites)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlActivite
@@ -95,6 +94,15 @@
             this.listeActivite.Text = "Liste";
             this.listeActivite.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(441, 295);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 33);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "test";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // btAjouterActivite
             // 
             this.btAjouterActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -118,8 +126,7 @@
             this.prixDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
             this.heureDebutDataGridViewTextBoxColumn,
-            this.nbPlacesMaxDataGridViewTextBoxColumn,
-            this.congressistesDataGridViewTextBoxColumn});
+            this.nbPlacesMaxDataGridViewTextBoxColumn});
             this.dataGridViewActiviter.DataSource = this.bindSrcActivites;
             this.dataGridViewActiviter.Location = new System.Drawing.Point(2, 5);
             this.dataGridViewActiviter.Margin = new System.Windows.Forms.Padding(2);
@@ -129,59 +136,6 @@
             this.dataGridViewActiviter.RowTemplate.Height = 24;
             this.dataGridViewActiviter.Size = new System.Drawing.Size(569, 272);
             this.dataGridViewActiviter.TabIndex = 0;
-            // 
-            // idActiviteDataGridViewTextBoxColumn
-            // 
-            this.idActiviteDataGridViewTextBoxColumn.DataPropertyName = "idActivite";
-            this.idActiviteDataGridViewTextBoxColumn.HeaderText = "idActivite";
-            this.idActiviteDataGridViewTextBoxColumn.Name = "idActiviteDataGridViewTextBoxColumn";
-            this.idActiviteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // designationDataGridViewTextBoxColumn
-            // 
-            this.designationDataGridViewTextBoxColumn.DataPropertyName = "designation";
-            this.designationDataGridViewTextBoxColumn.HeaderText = "designation";
-            this.designationDataGridViewTextBoxColumn.Name = "designationDataGridViewTextBoxColumn";
-            this.designationDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prixDataGridViewTextBoxColumn
-            // 
-            this.prixDataGridViewTextBoxColumn.DataPropertyName = "prix";
-            this.prixDataGridViewTextBoxColumn.HeaderText = "prix";
-            this.prixDataGridViewTextBoxColumn.Name = "prixDataGridViewTextBoxColumn";
-            this.prixDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // heureDebutDataGridViewTextBoxColumn
-            // 
-            this.heureDebutDataGridViewTextBoxColumn.DataPropertyName = "heureDebut";
-            this.heureDebutDataGridViewTextBoxColumn.HeaderText = "heureDebut";
-            this.heureDebutDataGridViewTextBoxColumn.Name = "heureDebutDataGridViewTextBoxColumn";
-            this.heureDebutDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nbPlacesMaxDataGridViewTextBoxColumn
-            // 
-            this.nbPlacesMaxDataGridViewTextBoxColumn.DataPropertyName = "nbPlacesMax";
-            this.nbPlacesMaxDataGridViewTextBoxColumn.HeaderText = "nbPlacesMax";
-            this.nbPlacesMaxDataGridViewTextBoxColumn.Name = "nbPlacesMaxDataGridViewTextBoxColumn";
-            this.nbPlacesMaxDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // congressistesDataGridViewTextBoxColumn
-            // 
-            this.congressistesDataGridViewTextBoxColumn.DataPropertyName = "Congressistes";
-            this.congressistesDataGridViewTextBoxColumn.HeaderText = "Congressistes";
-            this.congressistesDataGridViewTextBoxColumn.Name = "congressistesDataGridViewTextBoxColumn";
-            this.congressistesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bindSrcActivites
-            // 
-            this.bindSrcActivites.DataSource = typeof(GestionOrganisationCongres.Activite);
             // 
             // detailsActivite
             // 
@@ -411,14 +365,51 @@
             this.dataGridViewInscritsActivite.Size = new System.Drawing.Size(273, 221);
             this.dataGridViewInscritsActivite.TabIndex = 1;
             // 
-            // button1
+            // bindSrcActivites
             // 
-            this.button1.Location = new System.Drawing.Point(441, 295);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 33);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "test";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bindSrcActivites.DataSource = typeof(GestionOrganisationCongres.Activite);
+            // 
+            // idActiviteDataGridViewTextBoxColumn
+            // 
+            this.idActiviteDataGridViewTextBoxColumn.DataPropertyName = "idActivite";
+            this.idActiviteDataGridViewTextBoxColumn.HeaderText = "idActivite";
+            this.idActiviteDataGridViewTextBoxColumn.Name = "idActiviteDataGridViewTextBoxColumn";
+            this.idActiviteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // designationDataGridViewTextBoxColumn
+            // 
+            this.designationDataGridViewTextBoxColumn.DataPropertyName = "designation";
+            this.designationDataGridViewTextBoxColumn.HeaderText = "designation";
+            this.designationDataGridViewTextBoxColumn.Name = "designationDataGridViewTextBoxColumn";
+            this.designationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prixDataGridViewTextBoxColumn
+            // 
+            this.prixDataGridViewTextBoxColumn.DataPropertyName = "prix";
+            this.prixDataGridViewTextBoxColumn.HeaderText = "prix";
+            this.prixDataGridViewTextBoxColumn.Name = "prixDataGridViewTextBoxColumn";
+            this.prixDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // heureDebutDataGridViewTextBoxColumn
+            // 
+            this.heureDebutDataGridViewTextBoxColumn.DataPropertyName = "heureDebut";
+            this.heureDebutDataGridViewTextBoxColumn.HeaderText = "heureDebut";
+            this.heureDebutDataGridViewTextBoxColumn.Name = "heureDebutDataGridViewTextBoxColumn";
+            this.heureDebutDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nbPlacesMaxDataGridViewTextBoxColumn
+            // 
+            this.nbPlacesMaxDataGridViewTextBoxColumn.DataPropertyName = "nbPlacesMax";
+            this.nbPlacesMaxDataGridViewTextBoxColumn.HeaderText = "nbPlacesMax";
+            this.nbPlacesMaxDataGridViewTextBoxColumn.Name = "nbPlacesMaxDataGridViewTextBoxColumn";
+            this.nbPlacesMaxDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FrmGestionActivite
             // 
@@ -433,10 +424,10 @@
             this.tabControlActivite.ResumeLayout(false);
             this.listeActivite.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActiviter)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindSrcActivites)).EndInit();
             this.detailsActivite.ResumeLayout(false);
             this.detailsActivite.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInscritsActivite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindSrcActivites)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -468,13 +459,12 @@
         private System.Windows.Forms.Button btSupprimerActivite;
         private System.Windows.Forms.DataGridView dataGridViewInscritsActivite;
         private System.Windows.Forms.BindingSource bindSrcActivites;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idActiviteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn designationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prixDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn heureDebutDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nbPlacesMaxDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn congressistesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button1;
     }
 }
