@@ -22,7 +22,7 @@ namespace GestionOrganisationCongres
     
         public int numSession { get; set; }
         public string theme { get; set; }
-        public System.TimeSpan heureDebut { get; set; }
+        public string heureDebut { get; set; }
         public System.DateTime date { get; set; }
         public int nbPlacesMax { get; set; }
         public decimal prix { get; set; }

@@ -13,7 +13,7 @@
           <Property Name="designation" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="prix" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="date" Type="date" Nullable="false" />
-          <Property Name="heureDebut" Type="time" Precision="7" Nullable="false" />
+          <Property Name="heureDebut" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="nbPlacesMax" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Congressiste">
@@ -66,7 +66,7 @@
           </Key>
           <Property Name="numSession" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="theme" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="heureDebut" Type="time" Precision="7" Nullable="false" />
+          <Property Name="heureDebut" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="date" Type="date" Nullable="false" />
           <Property Name="nbPlacesMax" Type="int" Nullable="false" />
           <Property Name="prix" Type="decimal" Precision="10" Scale="2" Nullable="false" />
@@ -133,16 +133,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="montantTotal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="idCongressiste" Type="int" Mode="In" />
-          <Parameter Name="total" Type="decimal" Mode="InOut" />
-        </Function>
-        <Function Name="nbPlacesActivite" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="uneActivite" Type="int" Mode="In" />
-        </Function>
-        <Function Name="NbPlacesBySession" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="numSession" Type="int" Mode="In" />
-        </Function>
         <EntityContainer Name="gestionCongresModeleStoreContainer">
           <EntitySet Name="Activite" EntityType="Self.Activite" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Congressiste" EntityType="Self.Congressiste" Schema="dbo" store:Type="Tables" />
@@ -183,7 +173,7 @@
           <Property Name="designation" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="prix" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="heureDebut" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="heureDebut" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
           <Property Name="nbPlacesMax" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Congressistes" Relationship="Self.Inscrire" FromRole="Activite" ToRole="Congressiste" />
         </EntityType>
@@ -225,7 +215,7 @@
           </Key>
           <Property Name="numSession" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="theme" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="heureDebut" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="heureDebut" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
           <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="nbPlacesMax" Type="Int32" Nullable="false" />
           <Property Name="prix" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
@@ -359,10 +349,7 @@
               <ScalarProperty Name="numSession" ColumnName="numSession" />
             </EndProperty>
           </AssociationSetMapping>
-          <FunctionImportMapping FunctionImportName="montantTotal" FunctionName="gestionCongresModele.Store.montantTotal" />
-          <FunctionImportMapping FunctionImportName="nbPlacesActivite" FunctionName="gestionCongresModele.Store.nbPlacesActivite" />
-          <FunctionImportMapping FunctionImportName="NbPlacesBySession" FunctionName="gestionCongresModele.Store.NbPlacesBySession" />
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
