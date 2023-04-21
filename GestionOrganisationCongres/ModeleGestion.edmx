@@ -226,7 +226,7 @@
           </Key>
           <Property Name="numSession" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="theme" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="heureDebut" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="heureDebut" Type="Time" Nullable="false" />
           <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="nbPlacesMax" Type="Int32" Nullable="false" />
           <Property Name="prix" Type="Decimal" Precision="10" Scale="2" Nullable="false" />

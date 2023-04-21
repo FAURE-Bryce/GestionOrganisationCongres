@@ -24,7 +24,7 @@ CREATE TABLE Salle(
 CREATE TABLE Session(
 	numSession INT NOT NULL IDENTITY,
 	theme VARCHAR(150) NOT NULL,
-	heureDebut TIME NOT NULL,
+	heureDebut VARCHAR(5) NOT NULL,
 	date DATE NOT NULL,
 	nbPlacesMax INT NOT NULL,
 	prix DECIMAL(10,2) NOT NULL,
@@ -374,3 +374,5 @@ BEGIN
 	SET @nbPlacesDispo = 0;
 	
 END;
+
+select heureDebut from Session;
