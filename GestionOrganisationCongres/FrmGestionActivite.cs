@@ -36,5 +36,10 @@ namespace GestionOrganisationCongres
             }
             
         }
+
+        private void btAjouterInscritActivite_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
