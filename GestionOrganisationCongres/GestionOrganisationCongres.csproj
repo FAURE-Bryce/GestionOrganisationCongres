@@ -58,6 +58,7 @@
     <Compile Include="Activite.cs">
       <DependentUpon>ModeleGestion.tt</DependentUpon>
     </Compile>
+    <Compile Include="Hotel_suite.cs" />
     <Compile Include="Congressiste.cs">
       <DependentUpon>ModeleGestion.tt</DependentUpon>
     </Compile>
