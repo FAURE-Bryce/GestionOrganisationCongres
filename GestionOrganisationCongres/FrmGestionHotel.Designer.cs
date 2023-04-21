@@ -33,6 +33,14 @@
             this.listeHotel = new System.Windows.Forms.TabPage();
             this.btAjouterHotel = new System.Windows.Forms.Button();
             this.dataGridViewHotel = new System.Windows.Forms.DataGridView();
+            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.villeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prixChambreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCategDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindSrcHotels = new System.Windows.Forms.BindingSource(this.components);
             this.detailsHotels = new System.Windows.Forms.TabPage();
             this.txtBoxAdresseHotel = new System.Windows.Forms.TextBox();
             this.txtBoxVilleHotel = new System.Windows.Forms.TextBox();
@@ -49,21 +57,12 @@
             this.lblVilleHotel = new System.Windows.Forms.Label();
             this.lblNomHotel = new System.Windows.Forms.Label();
             this.btSupprimerHotel = new System.Windows.Forms.Button();
-            this.idHotelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.villeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prixChambreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCategDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.congressistesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindSrcHotels = new System.Windows.Forms.BindingSource(this.components);
+            this.lblEuro = new System.Windows.Forms.Label();
             this.tabControlHotel.SuspendLayout();
             this.listeHotel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotel)).BeginInit();
-            this.detailsHotels.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindSrcHotels)).BeginInit();
+            this.detailsHotels.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlHotel
@@ -74,7 +73,7 @@
             this.tabControlHotel.Margin = new System.Windows.Forms.Padding(2);
             this.tabControlHotel.Name = "tabControlHotel";
             this.tabControlHotel.SelectedIndex = 0;
-            this.tabControlHotel.Size = new System.Drawing.Size(582, 346);
+            this.tabControlHotel.Size = new System.Drawing.Size(823, 493);
             this.tabControlHotel.TabIndex = 1;
             // 
             // listeHotel
@@ -85,50 +84,112 @@
             this.listeHotel.Margin = new System.Windows.Forms.Padding(2);
             this.listeHotel.Name = "listeHotel";
             this.listeHotel.Padding = new System.Windows.Forms.Padding(2);
-            this.listeHotel.Size = new System.Drawing.Size(574, 320);
+            this.listeHotel.Size = new System.Drawing.Size(815, 467);
             this.listeHotel.TabIndex = 0;
             this.listeHotel.Text = "Liste";
             this.listeHotel.UseVisualStyleBackColor = true;
             // 
             // btAjouterHotel
             // 
-            this.btAjouterHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btAjouterHotel.Location = new System.Drawing.Point(210, 288);
+            this.btAjouterHotel.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btAjouterHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btAjouterHotel.Location = new System.Drawing.Point(284, 402);
             this.btAjouterHotel.Margin = new System.Windows.Forms.Padding(2);
             this.btAjouterHotel.Name = "btAjouterHotel";
-            this.btAjouterHotel.Size = new System.Drawing.Size(155, 24);
+            this.btAjouterHotel.Size = new System.Drawing.Size(190, 45);
             this.btAjouterHotel.TabIndex = 1;
             this.btAjouterHotel.Text = "Ajouter un hôtel";
-            this.btAjouterHotel.UseVisualStyleBackColor = true;
+            this.btAjouterHotel.UseVisualStyleBackColor = false;
             // 
             // dataGridViewHotel
             // 
             this.dataGridViewHotel.AllowUserToAddRows = false;
             this.dataGridViewHotel.AllowUserToDeleteRows = false;
             this.dataGridViewHotel.AutoGenerateColumns = false;
+            this.dataGridViewHotel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewHotel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewHotel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idHotelDataGridViewTextBoxColumn,
             this.nomDataGridViewTextBoxColumn,
             this.adresseDataGridViewTextBoxColumn,
             this.cpDataGridViewTextBoxColumn,
             this.villeDataGridViewTextBoxColumn,
             this.telDataGridViewTextBoxColumn,
             this.prixChambreDataGridViewTextBoxColumn,
-            this.idCategDataGridViewTextBoxColumn,
-            this.congressistesDataGridViewTextBoxColumn});
+            this.idCategDataGridViewTextBoxColumn});
             this.dataGridViewHotel.DataSource = this.bindSrcHotels;
-            this.dataGridViewHotel.Location = new System.Drawing.Point(2, 5);
+            this.dataGridViewHotel.Location = new System.Drawing.Point(2, 4);
             this.dataGridViewHotel.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewHotel.MultiSelect = false;
             this.dataGridViewHotel.Name = "dataGridViewHotel";
             this.dataGridViewHotel.ReadOnly = true;
             this.dataGridViewHotel.RowHeadersWidth = 51;
             this.dataGridViewHotel.RowTemplate.Height = 24;
-            this.dataGridViewHotel.Size = new System.Drawing.Size(569, 272);
+            this.dataGridViewHotel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewHotel.Size = new System.Drawing.Size(809, 376);
             this.dataGridViewHotel.TabIndex = 0;
+            // 
+            // nomDataGridViewTextBoxColumn
+            // 
+            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
+            this.nomDataGridViewTextBoxColumn.HeaderText = "Nom";
+            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
+            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomDataGridViewTextBoxColumn.Width = 54;
+            // 
+            // adresseDataGridViewTextBoxColumn
+            // 
+            this.adresseDataGridViewTextBoxColumn.DataPropertyName = "adresse";
+            this.adresseDataGridViewTextBoxColumn.HeaderText = "Adresse";
+            this.adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
+            this.adresseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.adresseDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // cpDataGridViewTextBoxColumn
+            // 
+            this.cpDataGridViewTextBoxColumn.DataPropertyName = "cp";
+            this.cpDataGridViewTextBoxColumn.HeaderText = "Code postal";
+            this.cpDataGridViewTextBoxColumn.Name = "cpDataGridViewTextBoxColumn";
+            this.cpDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cpDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // villeDataGridViewTextBoxColumn
+            // 
+            this.villeDataGridViewTextBoxColumn.DataPropertyName = "ville";
+            this.villeDataGridViewTextBoxColumn.HeaderText = "Ville";
+            this.villeDataGridViewTextBoxColumn.Name = "villeDataGridViewTextBoxColumn";
+            this.villeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.villeDataGridViewTextBoxColumn.Width = 51;
+            // 
+            // telDataGridViewTextBoxColumn
+            // 
+            this.telDataGridViewTextBoxColumn.DataPropertyName = "tel";
+            this.telDataGridViewTextBoxColumn.HeaderText = "N° de téléphone";
+            this.telDataGridViewTextBoxColumn.Name = "telDataGridViewTextBoxColumn";
+            this.telDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prixChambreDataGridViewTextBoxColumn
+            // 
+            this.prixChambreDataGridViewTextBoxColumn.DataPropertyName = "prixChambre";
+            this.prixChambreDataGridViewTextBoxColumn.HeaderText = "Prix / Chambre";
+            this.prixChambreDataGridViewTextBoxColumn.Name = "prixChambreDataGridViewTextBoxColumn";
+            this.prixChambreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.prixChambreDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // idCategDataGridViewTextBoxColumn
+            // 
+            this.idCategDataGridViewTextBoxColumn.DataPropertyName = "idCateg";
+            this.idCategDataGridViewTextBoxColumn.HeaderText = "Nombre d\'étoiles";
+            this.idCategDataGridViewTextBoxColumn.Name = "idCategDataGridViewTextBoxColumn";
+            this.idCategDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idCategDataGridViewTextBoxColumn.Width = 101;
+            // 
+            // bindSrcHotels
+            // 
+            this.bindSrcHotels.DataSource = typeof(GestionOrganisationCongres.Hotel);
             // 
             // detailsHotels
             // 
+            this.detailsHotels.Controls.Add(this.lblEuro);
             this.detailsHotels.Controls.Add(this.txtBoxAdresseHotel);
             this.detailsHotels.Controls.Add(this.txtBoxVilleHotel);
             this.detailsHotels.Controls.Add(this.btValiderModifHotel);
@@ -148,7 +209,7 @@
             this.detailsHotels.Margin = new System.Windows.Forms.Padding(2);
             this.detailsHotels.Name = "detailsHotels";
             this.detailsHotels.Padding = new System.Windows.Forms.Padding(2);
-            this.detailsHotels.Size = new System.Drawing.Size(574, 320);
+            this.detailsHotels.Size = new System.Drawing.Size(815, 467);
             this.detailsHotels.TabIndex = 1;
             this.detailsHotels.Text = "Détails";
             this.detailsHotels.UseVisualStyleBackColor = true;
@@ -156,7 +217,7 @@
             // txtBoxAdresseHotel
             // 
             this.txtBoxAdresseHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxAdresseHotel.Location = new System.Drawing.Point(222, 49);
+            this.txtBoxAdresseHotel.Location = new System.Drawing.Point(222, 76);
             this.txtBoxAdresseHotel.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxAdresseHotel.Name = "txtBoxAdresseHotel";
             this.txtBoxAdresseHotel.Size = new System.Drawing.Size(198, 23);
@@ -165,7 +226,7 @@
             // txtBoxVilleHotel
             // 
             this.txtBoxVilleHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxVilleHotel.Location = new System.Drawing.Point(200, 86);
+            this.txtBoxVilleHotel.Location = new System.Drawing.Point(188, 128);
             this.txtBoxVilleHotel.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxVilleHotel.Name = "txtBoxVilleHotel";
             this.txtBoxVilleHotel.Size = new System.Drawing.Size(198, 23);
@@ -173,51 +234,52 @@
             // 
             // btValiderModifHotel
             // 
-            this.btValiderModifHotel.BackColor = System.Drawing.Color.LawnGreen;
-            this.btValiderModifHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btValiderModifHotel.Location = new System.Drawing.Point(197, 292);
+            this.btValiderModifHotel.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btValiderModifHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btValiderModifHotel.Location = new System.Drawing.Point(567, 388);
             this.btValiderModifHotel.Margin = new System.Windows.Forms.Padding(2);
             this.btValiderModifHotel.Name = "btValiderModifHotel";
-            this.btValiderModifHotel.Size = new System.Drawing.Size(65, 24);
+            this.btValiderModifHotel.Size = new System.Drawing.Size(93, 48);
             this.btValiderModifHotel.TabIndex = 48;
             this.btValiderModifHotel.Text = "Valider";
             this.btValiderModifHotel.UseVisualStyleBackColor = false;
             // 
             // btAnnulerModifHotel
             // 
-            this.btAnnulerModifHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btAnnulerModifHotel.Location = new System.Drawing.Point(324, 293);
+            this.btAnnulerModifHotel.BackColor = System.Drawing.Color.LightPink;
+            this.btAnnulerModifHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btAnnulerModifHotel.Location = new System.Drawing.Point(80, 388);
             this.btAnnulerModifHotel.Margin = new System.Windows.Forms.Padding(2);
             this.btAnnulerModifHotel.Name = "btAnnulerModifHotel";
-            this.btAnnulerModifHotel.Size = new System.Drawing.Size(74, 24);
+            this.btAnnulerModifHotel.Size = new System.Drawing.Size(108, 49);
             this.btAnnulerModifHotel.TabIndex = 47;
             this.btAnnulerModifHotel.Text = "Annuler";
-            this.btAnnulerModifHotel.UseVisualStyleBackColor = true;
+            this.btAnnulerModifHotel.UseVisualStyleBackColor = false;
             // 
             // txtBoxNomHotel
             // 
             this.txtBoxNomHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxNomHotel.Location = new System.Drawing.Point(214, 15);
+            this.txtBoxNomHotel.Location = new System.Drawing.Point(192, 27);
             this.txtBoxNomHotel.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxNomHotel.Name = "txtBoxNomHotel";
-            this.txtBoxNomHotel.Size = new System.Drawing.Size(198, 23);
+            this.txtBoxNomHotel.Size = new System.Drawing.Size(274, 23);
             this.txtBoxNomHotel.TabIndex = 2;
             // 
             // maskedTxtBoxCpHotel
             // 
             this.maskedTxtBoxCpHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.maskedTxtBoxCpHotel.Location = new System.Drawing.Point(236, 130);
+            this.maskedTxtBoxCpHotel.Location = new System.Drawing.Point(244, 177);
             this.maskedTxtBoxCpHotel.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTxtBoxCpHotel.Mask = "99999";
             this.maskedTxtBoxCpHotel.Name = "maskedTxtBoxCpHotel";
-            this.maskedTxtBoxCpHotel.Size = new System.Drawing.Size(45, 23);
+            this.maskedTxtBoxCpHotel.Size = new System.Drawing.Size(65, 23);
             this.maskedTxtBoxCpHotel.TabIndex = 5;
             // 
             // comboBoxNbEtoileHotel
             // 
             this.comboBoxNbEtoileHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBoxNbEtoileHotel.FormattingEnabled = true;
-            this.comboBoxNbEtoileHotel.Location = new System.Drawing.Point(277, 212);
+            this.comboBoxNbEtoileHotel.Location = new System.Drawing.Point(294, 291);
             this.comboBoxNbEtoileHotel.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxNbEtoileHotel.Name = "comboBoxNbEtoileHotel";
             this.comboBoxNbEtoileHotel.Size = new System.Drawing.Size(92, 24);
@@ -226,7 +288,7 @@
             // maskedTxtBoxPrixHotel
             // 
             this.maskedTxtBoxPrixHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.maskedTxtBoxPrixHotel.Location = new System.Drawing.Point(197, 170);
+            this.maskedTxtBoxPrixHotel.Location = new System.Drawing.Point(184, 236);
             this.maskedTxtBoxPrixHotel.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTxtBoxPrixHotel.Mask = "999999";
             this.maskedTxtBoxPrixHotel.Name = "maskedTxtBoxPrixHotel";
@@ -236,153 +298,96 @@
             // lblPrixHotel
             // 
             this.lblPrixHotel.AutoSize = true;
-            this.lblPrixHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblPrixHotel.Location = new System.Drawing.Point(153, 172);
+            this.lblPrixHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblPrixHotel.Location = new System.Drawing.Point(134, 236);
             this.lblPrixHotel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrixHotel.Name = "lblPrixHotel";
-            this.lblPrixHotel.Size = new System.Drawing.Size(43, 17);
+            this.lblPrixHotel.Size = new System.Drawing.Size(46, 20);
             this.lblPrixHotel.TabIndex = 8;
             this.lblPrixHotel.Text = "Prix : ";
             // 
             // lblNbEtoileHotel
             // 
             this.lblNbEtoileHotel.AutoSize = true;
-            this.lblNbEtoileHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblNbEtoileHotel.Location = new System.Drawing.Point(153, 214);
+            this.lblNbEtoileHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblNbEtoileHotel.Location = new System.Drawing.Point(134, 291);
             this.lblNbEtoileHotel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNbEtoileHotel.Name = "lblNbEtoileHotel";
-            this.lblNbEtoileHotel.Size = new System.Drawing.Size(133, 17);
+            this.lblNbEtoileHotel.Size = new System.Drawing.Size(147, 20);
             this.lblNbEtoileHotel.TabIndex = 7;
             this.lblNbEtoileHotel.Text = "Nombres d\'étoiles : ";
             // 
             // lblCpHotel
             // 
             this.lblCpHotel.AutoSize = true;
-            this.lblCpHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblCpHotel.Location = new System.Drawing.Point(153, 130);
+            this.lblCpHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblCpHotel.Location = new System.Drawing.Point(134, 180);
             this.lblCpHotel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCpHotel.Name = "lblCpHotel";
-            this.lblCpHotel.Size = new System.Drawing.Size(95, 17);
+            this.lblCpHotel.Size = new System.Drawing.Size(106, 20);
             this.lblCpHotel.TabIndex = 6;
             this.lblCpHotel.Text = "Code postal : ";
             // 
             // lblAdresseHotel
             // 
             this.lblAdresseHotel.AutoSize = true;
-            this.lblAdresseHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblAdresseHotel.Location = new System.Drawing.Point(153, 51);
+            this.lblAdresseHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblAdresseHotel.Location = new System.Drawing.Point(134, 76);
             this.lblAdresseHotel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAdresseHotel.Name = "lblAdresseHotel";
-            this.lblAdresseHotel.Size = new System.Drawing.Size(72, 17);
+            this.lblAdresseHotel.Size = new System.Drawing.Size(80, 20);
             this.lblAdresseHotel.TabIndex = 5;
             this.lblAdresseHotel.Text = "Adresse : ";
             // 
             // lblVilleHotel
             // 
             this.lblVilleHotel.AutoSize = true;
-            this.lblVilleHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblVilleHotel.Location = new System.Drawing.Point(153, 89);
+            this.lblVilleHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblVilleHotel.Location = new System.Drawing.Point(134, 128);
             this.lblVilleHotel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVilleHotel.Name = "lblVilleHotel";
-            this.lblVilleHotel.Size = new System.Drawing.Size(46, 17);
+            this.lblVilleHotel.Size = new System.Drawing.Size(50, 20);
             this.lblVilleHotel.TabIndex = 4;
             this.lblVilleHotel.Text = "Ville : ";
             // 
             // lblNomHotel
             // 
             this.lblNomHotel.AutoSize = true;
-            this.lblNomHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblNomHotel.Location = new System.Drawing.Point(153, 18);
+            this.lblNomHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblNomHotel.Location = new System.Drawing.Point(134, 27);
             this.lblNomHotel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNomHotel.Name = "lblNomHotel";
-            this.lblNomHotel.Size = new System.Drawing.Size(49, 17);
+            this.lblNomHotel.Size = new System.Drawing.Size(54, 20);
             this.lblNomHotel.TabIndex = 3;
             this.lblNomHotel.Text = "Nom : ";
             // 
             // btSupprimerHotel
             // 
-            this.btSupprimerHotel.BackColor = System.Drawing.Color.Red;
-            this.btSupprimerHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btSupprimerHotel.Location = new System.Drawing.Point(156, 293);
+            this.btSupprimerHotel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btSupprimerHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btSupprimerHotel.Location = new System.Drawing.Point(277, 388);
             this.btSupprimerHotel.Margin = new System.Windows.Forms.Padding(2);
             this.btSupprimerHotel.Name = "btSupprimerHotel";
-            this.btSupprimerHotel.Size = new System.Drawing.Size(138, 24);
+            this.btSupprimerHotel.Size = new System.Drawing.Size(189, 49);
             this.btSupprimerHotel.TabIndex = 12;
             this.btSupprimerHotel.Text = "Supprimer l\'hôtel";
             this.btSupprimerHotel.UseVisualStyleBackColor = false;
             // 
-            // idHotelDataGridViewTextBoxColumn
+            // lblEuro
             // 
-            this.idHotelDataGridViewTextBoxColumn.DataPropertyName = "idHotel";
-            this.idHotelDataGridViewTextBoxColumn.HeaderText = "idHotel";
-            this.idHotelDataGridViewTextBoxColumn.Name = "idHotelDataGridViewTextBoxColumn";
-            this.idHotelDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomDataGridViewTextBoxColumn
-            // 
-            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
-            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // adresseDataGridViewTextBoxColumn
-            // 
-            this.adresseDataGridViewTextBoxColumn.DataPropertyName = "adresse";
-            this.adresseDataGridViewTextBoxColumn.HeaderText = "adresse";
-            this.adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
-            this.adresseDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cpDataGridViewTextBoxColumn
-            // 
-            this.cpDataGridViewTextBoxColumn.DataPropertyName = "cp";
-            this.cpDataGridViewTextBoxColumn.HeaderText = "cp";
-            this.cpDataGridViewTextBoxColumn.Name = "cpDataGridViewTextBoxColumn";
-            this.cpDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // villeDataGridViewTextBoxColumn
-            // 
-            this.villeDataGridViewTextBoxColumn.DataPropertyName = "ville";
-            this.villeDataGridViewTextBoxColumn.HeaderText = "ville";
-            this.villeDataGridViewTextBoxColumn.Name = "villeDataGridViewTextBoxColumn";
-            this.villeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telDataGridViewTextBoxColumn
-            // 
-            this.telDataGridViewTextBoxColumn.DataPropertyName = "tel";
-            this.telDataGridViewTextBoxColumn.HeaderText = "tel";
-            this.telDataGridViewTextBoxColumn.Name = "telDataGridViewTextBoxColumn";
-            this.telDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prixChambreDataGridViewTextBoxColumn
-            // 
-            this.prixChambreDataGridViewTextBoxColumn.DataPropertyName = "prixChambre";
-            this.prixChambreDataGridViewTextBoxColumn.HeaderText = "prixChambre";
-            this.prixChambreDataGridViewTextBoxColumn.Name = "prixChambreDataGridViewTextBoxColumn";
-            this.prixChambreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idCategDataGridViewTextBoxColumn
-            // 
-            this.idCategDataGridViewTextBoxColumn.DataPropertyName = "idCateg";
-            this.idCategDataGridViewTextBoxColumn.HeaderText = "idCateg";
-            this.idCategDataGridViewTextBoxColumn.Name = "idCategDataGridViewTextBoxColumn";
-            this.idCategDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // congressistesDataGridViewTextBoxColumn
-            // 
-            this.congressistesDataGridViewTextBoxColumn.DataPropertyName = "Congressistes";
-            this.congressistesDataGridViewTextBoxColumn.HeaderText = "Congressistes";
-            this.congressistesDataGridViewTextBoxColumn.Name = "congressistesDataGridViewTextBoxColumn";
-            this.congressistesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bindSrcHotels
-            // 
-            this.bindSrcHotels.DataSource = typeof(GestionOrganisationCongres.Hotel);
+            this.lblEuro.AutoSize = true;
+            this.lblEuro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEuro.Location = new System.Drawing.Point(265, 239);
+            this.lblEuro.Name = "lblEuro";
+            this.lblEuro.Size = new System.Drawing.Size(18, 20);
+            this.lblEuro.TabIndex = 51;
+            this.lblEuro.Text = "€";
             // 
             // FrmGestionHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(843, 514);
             this.Controls.Add(this.tabControlHotel);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmGestionHotel";
@@ -391,9 +396,9 @@
             this.tabControlHotel.ResumeLayout(false);
             this.listeHotel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindSrcHotels)).EndInit();
             this.detailsHotels.ResumeLayout(false);
             this.detailsHotels.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindSrcHotels)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -421,7 +426,6 @@
         private System.Windows.Forms.TextBox txtBoxAdresseHotel;
         private System.Windows.Forms.TextBox txtBoxVilleHotel;
         private System.Windows.Forms.BindingSource bindSrcHotels;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idHotelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn adresseDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cpDataGridViewTextBoxColumn;
@@ -429,6 +433,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn telDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prixChambreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCategDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn congressistesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblEuro;
     }
 }
