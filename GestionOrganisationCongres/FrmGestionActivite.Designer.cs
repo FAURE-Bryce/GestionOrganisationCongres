@@ -42,6 +42,9 @@
             this.nbPlacesMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindSrcActivites = new System.Windows.Forms.BindingSource(this.components);
             this.detailsActivite = new System.Windows.Forms.TabPage();
+            this.lblEuro = new System.Windows.Forms.Label();
+            this.txtBoxNbPlacesMax = new System.Windows.Forms.TextBox();
+            this.txtBoxPrix = new System.Windows.Forms.TextBox();
             this.btValiderActivite = new System.Windows.Forms.Button();
             this.btAnnulerModifActivite = new System.Windows.Forms.Button();
             this.comboBoxHeureActiviter = new System.Windows.Forms.ComboBox();
@@ -52,8 +55,6 @@
             this.comboBoxNonInscrits = new System.Windows.Forms.ComboBox();
             this.txtBoxDesignationActiviter = new System.Windows.Forms.TextBox();
             this.dateTimePickerActiviter = new System.Windows.Forms.DateTimePicker();
-            this.maskedTxtBoxNbPlacesMaxActiviter = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTxtBoxPrixActiviter = new System.Windows.Forms.MaskedTextBox();
             this.lblPrixActivite = new System.Windows.Forms.Label();
             this.lblNbPlacesMaxActivite = new System.Windows.Forms.Label();
             this.lblHeureDebutActivite = new System.Windows.Forms.Label();
@@ -73,11 +74,11 @@
             // 
             this.tabControlActivite.Controls.Add(this.listeActivite);
             this.tabControlActivite.Controls.Add(this.detailsActivite);
-            this.tabControlActivite.Location = new System.Drawing.Point(12, 12);
-            this.tabControlActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControlActivite.Location = new System.Drawing.Point(9, 10);
+            this.tabControlActivite.Margin = new System.Windows.Forms.Padding(2);
             this.tabControlActivite.Name = "tabControlActivite";
             this.tabControlActivite.SelectedIndex = 0;
-            this.tabControlActivite.Size = new System.Drawing.Size(776, 457);
+            this.tabControlActivite.Size = new System.Drawing.Size(940, 456);
             this.tabControlActivite.TabIndex = 1;
             // 
             // listeActivite
@@ -85,21 +86,20 @@
             this.listeActivite.Controls.Add(this.button1);
             this.listeActivite.Controls.Add(this.btAjouterActivite);
             this.listeActivite.Controls.Add(this.dataGridViewActiviter);
-            this.listeActivite.Location = new System.Drawing.Point(4, 25);
-            this.listeActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listeActivite.Location = new System.Drawing.Point(4, 22);
+            this.listeActivite.Margin = new System.Windows.Forms.Padding(2);
             this.listeActivite.Name = "listeActivite";
-            this.listeActivite.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listeActivite.Size = new System.Drawing.Size(768, 428);
+            this.listeActivite.Padding = new System.Windows.Forms.Padding(2);
+            this.listeActivite.Size = new System.Drawing.Size(574, 345);
             this.listeActivite.TabIndex = 0;
             this.listeActivite.Text = "Liste";
             this.listeActivite.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(588, 363);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(441, 295);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 41);
+            this.button1.Size = new System.Drawing.Size(92, 33);
             this.button1.TabIndex = 2;
             this.button1.Text = "test 2";
             this.button1.UseVisualStyleBackColor = true;
@@ -107,10 +107,10 @@
             // btAjouterActivite
             // 
             this.btAjouterActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btAjouterActivite.Location = new System.Drawing.Point(261, 361);
-            this.btAjouterActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btAjouterActivite.Location = new System.Drawing.Point(196, 293);
+            this.btAjouterActivite.Margin = new System.Windows.Forms.Padding(2);
             this.btAjouterActivite.Name = "btAjouterActivite";
-            this.btAjouterActivite.Size = new System.Drawing.Size(207, 44);
+            this.btAjouterActivite.Size = new System.Drawing.Size(155, 36);
             this.btAjouterActivite.TabIndex = 1;
             this.btAjouterActivite.Text = "Ajouter une activité";
             this.btAjouterActivite.UseVisualStyleBackColor = true;
@@ -129,13 +129,13 @@
             this.heureDebutDataGridViewTextBoxColumn,
             this.nbPlacesMaxDataGridViewTextBoxColumn});
             this.dataGridViewActiviter.DataSource = this.bindSrcActivites;
-            this.dataGridViewActiviter.Location = new System.Drawing.Point(3, 6);
-            this.dataGridViewActiviter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewActiviter.Location = new System.Drawing.Point(2, 5);
+            this.dataGridViewActiviter.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewActiviter.Name = "dataGridViewActiviter";
             this.dataGridViewActiviter.ReadOnly = true;
             this.dataGridViewActiviter.RowHeadersWidth = 51;
             this.dataGridViewActiviter.RowTemplate.Height = 24;
-            this.dataGridViewActiviter.Size = new System.Drawing.Size(759, 335);
+            this.dataGridViewActiviter.Size = new System.Drawing.Size(569, 272);
             this.dataGridViewActiviter.TabIndex = 0;
             // 
             // idActiviteDataGridViewTextBoxColumn
@@ -198,6 +198,9 @@
             // 
             // detailsActivite
             // 
+            this.detailsActivite.Controls.Add(this.lblEuro);
+            this.detailsActivite.Controls.Add(this.txtBoxNbPlacesMax);
+            this.detailsActivite.Controls.Add(this.txtBoxPrix);
             this.detailsActivite.Controls.Add(this.btValiderActivite);
             this.detailsActivite.Controls.Add(this.btAnnulerModifActivite);
             this.detailsActivite.Controls.Add(this.comboBoxHeureActiviter);
@@ -208,8 +211,6 @@
             this.detailsActivite.Controls.Add(this.comboBoxNonInscrits);
             this.detailsActivite.Controls.Add(this.txtBoxDesignationActiviter);
             this.detailsActivite.Controls.Add(this.dateTimePickerActiviter);
-            this.detailsActivite.Controls.Add(this.maskedTxtBoxNbPlacesMaxActiviter);
-            this.detailsActivite.Controls.Add(this.maskedTxtBoxPrixActiviter);
             this.detailsActivite.Controls.Add(this.lblPrixActivite);
             this.detailsActivite.Controls.Add(this.lblNbPlacesMaxActivite);
             this.detailsActivite.Controls.Add(this.lblHeureDebutActivite);
@@ -217,23 +218,51 @@
             this.detailsActivite.Controls.Add(this.lblDesignationActivite);
             this.detailsActivite.Controls.Add(this.btSupprimerActivite);
             this.detailsActivite.Controls.Add(this.dataGridViewInscritsActivite);
-            this.detailsActivite.Location = new System.Drawing.Point(4, 25);
-            this.detailsActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.detailsActivite.Location = new System.Drawing.Point(4, 22);
+            this.detailsActivite.Margin = new System.Windows.Forms.Padding(2);
             this.detailsActivite.Name = "detailsActivite";
-            this.detailsActivite.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.detailsActivite.Size = new System.Drawing.Size(768, 428);
+            this.detailsActivite.Padding = new System.Windows.Forms.Padding(2);
+            this.detailsActivite.Size = new System.Drawing.Size(932, 430);
             this.detailsActivite.TabIndex = 1;
             this.detailsActivite.Text = "Détails";
             this.detailsActivite.UseVisualStyleBackColor = true;
+            // 
+            // lblEuro
+            // 
+            this.lblEuro.AutoSize = true;
+            this.lblEuro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblEuro.Location = new System.Drawing.Point(134, 159);
+            this.lblEuro.Name = "lblEuro";
+            this.lblEuro.Size = new System.Drawing.Size(16, 17);
+            this.lblEuro.TabIndex = 52;
+            this.lblEuro.Text = "€";
+            // 
+            // txtBoxNbPlacesMax
+            // 
+            this.txtBoxNbPlacesMax.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcActivites, "nbPlacesMax", true));
+            this.txtBoxNbPlacesMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBoxNbPlacesMax.Location = new System.Drawing.Point(168, 126);
+            this.txtBoxNbPlacesMax.Name = "txtBoxNbPlacesMax";
+            this.txtBoxNbPlacesMax.Size = new System.Drawing.Size(100, 23);
+            this.txtBoxNbPlacesMax.TabIndex = 50;
+            // 
+            // txtBoxPrix
+            // 
+            this.txtBoxPrix.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcActivites, "prix", true));
+            this.txtBoxPrix.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBoxPrix.Location = new System.Drawing.Point(58, 156);
+            this.txtBoxPrix.Name = "txtBoxPrix";
+            this.txtBoxPrix.Size = new System.Drawing.Size(70, 23);
+            this.txtBoxPrix.TabIndex = 49;
             // 
             // btValiderActivite
             // 
             this.btValiderActivite.BackColor = System.Drawing.Color.LawnGreen;
             this.btValiderActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btValiderActivite.Location = new System.Drawing.Point(77, 351);
-            this.btValiderActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btValiderActivite.Location = new System.Drawing.Point(80, 358);
+            this.btValiderActivite.Margin = new System.Windows.Forms.Padding(2);
             this.btValiderActivite.Name = "btValiderActivite";
-            this.btValiderActivite.Size = new System.Drawing.Size(93, 30);
+            this.btValiderActivite.Size = new System.Drawing.Size(70, 24);
             this.btValiderActivite.TabIndex = 48;
             this.btValiderActivite.Text = "Valider";
             this.btValiderActivite.UseVisualStyleBackColor = false;
@@ -241,116 +270,103 @@
             // btAnnulerModifActivite
             // 
             this.btAnnulerModifActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btAnnulerModifActivite.Location = new System.Drawing.Point(240, 351);
-            this.btAnnulerModifActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btAnnulerModifActivite.Location = new System.Drawing.Point(294, 366);
+            this.btAnnulerModifActivite.Margin = new System.Windows.Forms.Padding(2);
             this.btAnnulerModifActivite.Name = "btAnnulerModifActivite";
-            this.btAnnulerModifActivite.Size = new System.Drawing.Size(92, 30);
+            this.btAnnulerModifActivite.Size = new System.Drawing.Size(69, 24);
             this.btAnnulerModifActivite.TabIndex = 47;
             this.btAnnulerModifActivite.Text = "Annuler";
             this.btAnnulerModifActivite.UseVisualStyleBackColor = true;
             // 
             // comboBoxHeureActiviter
             // 
+            this.comboBoxHeureActiviter.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcActivites, "heureDebut", true));
             this.comboBoxHeureActiviter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBoxHeureActiviter.FormattingEnabled = true;
-            this.comboBoxHeureActiviter.Location = new System.Drawing.Point(171, 54);
-            this.comboBoxHeureActiviter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxHeureActiviter.Location = new System.Drawing.Point(128, 44);
+            this.comboBoxHeureActiviter.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxHeureActiviter.Name = "comboBoxHeureActiviter";
-            this.comboBoxHeureActiviter.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxHeureActiviter.Size = new System.Drawing.Size(92, 24);
             this.comboBoxHeureActiviter.TabIndex = 3;
             // 
             // lblInscrits
             // 
             this.lblInscrits.AutoSize = true;
-            this.lblInscrits.Location = new System.Drawing.Point(395, 14);
+            this.lblInscrits.Location = new System.Drawing.Point(435, 11);
+            this.lblInscrits.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInscrits.Name = "lblInscrits";
-            this.lblInscrits.Size = new System.Drawing.Size(57, 16);
+            this.lblInscrits.Size = new System.Drawing.Size(49, 13);
             this.lblInscrits.TabIndex = 18;
             this.lblInscrits.Text = "Inscrits : ";
             // 
             // btSupprimerInscritActivite
             // 
-            this.btSupprimerInscritActivite.Location = new System.Drawing.Point(524, 361);
-            this.btSupprimerInscritActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btSupprimerInscritActivite.Location = new System.Drawing.Point(634, 398);
+            this.btSupprimerInscritActivite.Margin = new System.Windows.Forms.Padding(2);
             this.btSupprimerInscritActivite.Name = "btSupprimerInscritActivite";
-            this.btSupprimerInscritActivite.Size = new System.Drawing.Size(148, 34);
+            this.btSupprimerInscritActivite.Size = new System.Drawing.Size(111, 28);
             this.btSupprimerInscritActivite.TabIndex = 11;
             this.btSupprimerInscritActivite.Text = "Supprimer un inscrit";
             this.btSupprimerInscritActivite.UseVisualStyleBackColor = true;
             // 
             // btAjouterInscritActivite
             // 
-            this.btAjouterInscritActivite.Location = new System.Drawing.Point(676, 327);
-            this.btAjouterInscritActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btAjouterInscritActivite.Location = new System.Drawing.Point(831, 359);
+            this.btAjouterInscritActivite.Margin = new System.Windows.Forms.Padding(2);
             this.btAjouterInscritActivite.Name = "btAjouterInscritActivite";
-            this.btAjouterInscritActivite.Size = new System.Drawing.Size(85, 39);
+            this.btAjouterInscritActivite.Size = new System.Drawing.Size(88, 32);
             this.btAjouterInscritActivite.TabIndex = 10;
             this.btAjouterInscritActivite.Text = "Ajouter";
             this.btAjouterInscritActivite.UseVisualStyleBackColor = true;
+            this.btAjouterInscritActivite.Click += new System.EventHandler(this.btAjouterInscritActivite_Click);
             // 
             // lblNonInscrits
             // 
             this.lblNonInscrits.AutoSize = true;
-            this.lblNonInscrits.Location = new System.Drawing.Point(359, 331);
+            this.lblNonInscrits.Location = new System.Drawing.Point(452, 369);
+            this.lblNonInscrits.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNonInscrits.Name = "lblNonInscrits";
-            this.lblNonInscrits.Size = new System.Drawing.Size(85, 16);
+            this.lblNonInscrits.Size = new System.Drawing.Size(71, 13);
             this.lblNonInscrits.TabIndex = 15;
             this.lblNonInscrits.Text = "Non inscrits : ";
             // 
             // comboBoxNonInscrits
             // 
             this.comboBoxNonInscrits.FormattingEnabled = true;
-            this.comboBoxNonInscrits.Location = new System.Drawing.Point(459, 327);
-            this.comboBoxNonInscrits.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxNonInscrits.Location = new System.Drawing.Point(527, 366);
+            this.comboBoxNonInscrits.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxNonInscrits.Name = "comboBoxNonInscrits";
-            this.comboBoxNonInscrits.Size = new System.Drawing.Size(212, 24);
+            this.comboBoxNonInscrits.Size = new System.Drawing.Size(300, 21);
             this.comboBoxNonInscrits.TabIndex = 9;
             // 
             // txtBoxDesignationActiviter
             // 
+            this.txtBoxDesignationActiviter.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcActivites, "designation", true));
             this.txtBoxDesignationActiviter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxDesignationActiviter.Location = new System.Drawing.Point(145, 14);
-            this.txtBoxDesignationActiviter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxDesignationActiviter.Location = new System.Drawing.Point(109, 11);
+            this.txtBoxDesignationActiviter.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxDesignationActiviter.Name = "txtBoxDesignationActiviter";
-            this.txtBoxDesignationActiviter.Size = new System.Drawing.Size(225, 26);
+            this.txtBoxDesignationActiviter.Size = new System.Drawing.Size(170, 23);
             this.txtBoxDesignationActiviter.TabIndex = 2;
             // 
             // dateTimePickerActiviter
             // 
+            this.dateTimePickerActiviter.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindSrcActivites, "date", true));
             this.dateTimePickerActiviter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePickerActiviter.Location = new System.Drawing.Point(92, 98);
-            this.dateTimePickerActiviter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePickerActiviter.Location = new System.Drawing.Point(69, 80);
+            this.dateTimePickerActiviter.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerActiviter.Name = "dateTimePickerActiviter";
-            this.dateTimePickerActiviter.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePickerActiviter.Size = new System.Drawing.Size(151, 23);
             this.dateTimePickerActiviter.TabIndex = 4;
-            // 
-            // maskedTxtBoxNbPlacesMaxActiviter
-            // 
-            this.maskedTxtBoxNbPlacesMaxActiviter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.maskedTxtBoxNbPlacesMaxActiviter.Location = new System.Drawing.Point(228, 151);
-            this.maskedTxtBoxNbPlacesMaxActiviter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.maskedTxtBoxNbPlacesMaxActiviter.Mask = "999999";
-            this.maskedTxtBoxNbPlacesMaxActiviter.Name = "maskedTxtBoxNbPlacesMaxActiviter";
-            this.maskedTxtBoxNbPlacesMaxActiviter.Size = new System.Drawing.Size(143, 26);
-            this.maskedTxtBoxNbPlacesMaxActiviter.TabIndex = 5;
-            // 
-            // maskedTxtBoxPrixActiviter
-            // 
-            this.maskedTxtBoxPrixActiviter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.maskedTxtBoxPrixActiviter.Location = new System.Drawing.Point(85, 190);
-            this.maskedTxtBoxPrixActiviter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.maskedTxtBoxPrixActiviter.Mask = "999999";
-            this.maskedTxtBoxPrixActiviter.Name = "maskedTxtBoxPrixActiviter";
-            this.maskedTxtBoxPrixActiviter.Size = new System.Drawing.Size(100, 26);
-            this.maskedTxtBoxPrixActiviter.TabIndex = 8;
             // 
             // lblPrixActivite
             // 
             this.lblPrixActivite.AutoSize = true;
             this.lblPrixActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblPrixActivite.Location = new System.Drawing.Point(27, 192);
+            this.lblPrixActivite.Location = new System.Drawing.Point(20, 156);
+            this.lblPrixActivite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrixActivite.Name = "lblPrixActivite";
-            this.lblPrixActivite.Size = new System.Drawing.Size(53, 20);
+            this.lblPrixActivite.Size = new System.Drawing.Size(43, 17);
             this.lblPrixActivite.TabIndex = 7;
             this.lblPrixActivite.Text = "Prix : ";
             // 
@@ -358,9 +374,10 @@
             // 
             this.lblNbPlacesMaxActivite.AutoSize = true;
             this.lblNbPlacesMaxActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblNbPlacesMaxActivite.Location = new System.Drawing.Point(12, 155);
+            this.lblNbPlacesMaxActivite.Location = new System.Drawing.Point(9, 126);
+            this.lblNbPlacesMaxActivite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNbPlacesMaxActivite.Name = "lblNbPlacesMaxActivite";
-            this.lblNbPlacesMaxActivite.Size = new System.Drawing.Size(196, 20);
+            this.lblNbPlacesMaxActivite.Size = new System.Drawing.Size(164, 17);
             this.lblNbPlacesMaxActivite.TabIndex = 6;
             this.lblNbPlacesMaxActivite.Text = "Nombre de places max : ";
             // 
@@ -368,9 +385,10 @@
             // 
             this.lblHeureDebutActivite.AutoSize = true;
             this.lblHeureDebutActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblHeureDebutActivite.Location = new System.Drawing.Point(12, 58);
+            this.lblHeureDebutActivite.Location = new System.Drawing.Point(9, 47);
+            this.lblHeureDebutActivite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeureDebutActivite.Name = "lblHeureDebutActivite";
-            this.lblHeureDebutActivite.Size = new System.Drawing.Size(139, 20);
+            this.lblHeureDebutActivite.Size = new System.Drawing.Size(119, 17);
             this.lblHeureDebutActivite.TabIndex = 5;
             this.lblHeureDebutActivite.Text = "Heure de début : ";
             // 
@@ -378,9 +396,10 @@
             // 
             this.lblDateActivite.AutoSize = true;
             this.lblDateActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblDateActivite.Location = new System.Drawing.Point(27, 103);
+            this.lblDateActivite.Location = new System.Drawing.Point(20, 84);
+            this.lblDateActivite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDateActivite.Name = "lblDateActivite";
-            this.lblDateActivite.Size = new System.Drawing.Size(60, 20);
+            this.lblDateActivite.Size = new System.Drawing.Size(50, 17);
             this.lblDateActivite.TabIndex = 4;
             this.lblDateActivite.Text = "Date : ";
             // 
@@ -388,9 +407,10 @@
             // 
             this.lblDesignationActivite.AutoSize = true;
             this.lblDesignationActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblDesignationActivite.Location = new System.Drawing.Point(27, 16);
+            this.lblDesignationActivite.Location = new System.Drawing.Point(20, 13);
+            this.lblDesignationActivite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDesignationActivite.Name = "lblDesignationActivite";
-            this.lblDesignationActivite.Size = new System.Drawing.Size(113, 20);
+            this.lblDesignationActivite.Size = new System.Drawing.Size(95, 17);
             this.lblDesignationActivite.TabIndex = 3;
             this.lblDesignationActivite.Text = "Désignation : ";
             // 
@@ -398,10 +418,10 @@
             // 
             this.btSupprimerActivite.BackColor = System.Drawing.Color.Red;
             this.btSupprimerActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btSupprimerActivite.Location = new System.Drawing.Point(16, 351);
-            this.btSupprimerActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btSupprimerActivite.Location = new System.Drawing.Point(45, 366);
+            this.btSupprimerActivite.Margin = new System.Windows.Forms.Padding(2);
             this.btSupprimerActivite.Name = "btSupprimerActivite";
-            this.btSupprimerActivite.Size = new System.Drawing.Size(215, 30);
+            this.btSupprimerActivite.Size = new System.Drawing.Size(161, 24);
             this.btSupprimerActivite.TabIndex = 12;
             this.btSupprimerActivite.Text = "Supprimer l\'activité";
             this.btSupprimerActivite.UseVisualStyleBackColor = false;
@@ -409,21 +429,21 @@
             // dataGridViewInscritsActivite
             // 
             this.dataGridViewInscritsActivite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewInscritsActivite.Location = new System.Drawing.Point(397, 33);
-            this.dataGridViewInscritsActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewInscritsActivite.Location = new System.Drawing.Point(438, 26);
+            this.dataGridViewInscritsActivite.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewInscritsActivite.Name = "dataGridViewInscritsActivite";
             this.dataGridViewInscritsActivite.RowHeadersWidth = 51;
             this.dataGridViewInscritsActivite.RowTemplate.Height = 24;
-            this.dataGridViewInscritsActivite.Size = new System.Drawing.Size(364, 272);
+            this.dataGridViewInscritsActivite.Size = new System.Drawing.Size(481, 320);
             this.dataGridViewInscritsActivite.TabIndex = 1;
             // 
             // FrmGestionActivite
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 482);
+            this.ClientSize = new System.Drawing.Size(953, 472);
             this.Controls.Add(this.tabControlActivite);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmGestionActivite";
             this.Text = "Gestion Activité";
             this.Load += new System.EventHandler(this.FrmGestionActivite_Load);
@@ -455,8 +475,6 @@
         private System.Windows.Forms.ComboBox comboBoxNonInscrits;
         private System.Windows.Forms.TextBox txtBoxDesignationActiviter;
         private System.Windows.Forms.DateTimePicker dateTimePickerActiviter;
-        private System.Windows.Forms.MaskedTextBox maskedTxtBoxNbPlacesMaxActiviter;
-        private System.Windows.Forms.MaskedTextBox maskedTxtBoxPrixActiviter;
         private System.Windows.Forms.Label lblPrixActivite;
         private System.Windows.Forms.Label lblNbPlacesMaxActivite;
         private System.Windows.Forms.Label lblHeureDebutActivite;
@@ -472,5 +490,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn heureDebutDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nbPlacesMaxDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox txtBoxNbPlacesMax;
+        private System.Windows.Forms.TextBox txtBoxPrix;
+        private System.Windows.Forms.Label lblEuro;
     }
 }
