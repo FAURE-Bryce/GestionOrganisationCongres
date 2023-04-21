@@ -73,8 +73,5 @@
         <ScalarProperty Name="numSession" ColumnName="numSession" />
       </EndProperty>
     </AssociationSetMapping>
-    <FunctionImportMapping FunctionImportName="montantTotal" FunctionName="gestionCongresModele.Store.montantTotal" />
-    <FunctionImportMapping FunctionImportName="nbPlacesActivite" FunctionName="gestionCongresModele.Store.nbPlacesActivite" />
-    <FunctionImportMapping FunctionImportName="NbPlacesBySession" FunctionName="gestionCongresModele.Store.NbPlacesBySession" />
   </EntityContainerMapping>
 </Mapping>

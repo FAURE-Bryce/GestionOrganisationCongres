@@ -24,7 +24,7 @@ namespace GestionOrganisationCongres
         public string designation { get; set; }
         public decimal prix { get; set; }
         public System.DateTime date { get; set; }
-        public System.TimeSpan heureDebut { get; set; }
+        public string heureDebut { get; set; }
         public int nbPlacesMax { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
