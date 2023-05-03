@@ -39,7 +39,7 @@ CREATE TABLE Activite(
 	designation VARCHAR(150) NOT NULL,
 	prix DECIMAL(10,2) NOT NULL,
 	date DATE NOT NULL,
-	heureDebut VARCHAR(5) NOT NULL,
+	heureDebut TIME NOT NULL,
 	nbPlacesMax INT NOT NULL,
 	CONSTRAINT pk_activite PRIMARY KEY (idActivite)
 );
@@ -375,18 +375,4 @@ BEGIN
 	
 END;
 
-/* Retourne les congressistes ne participant pas à l'activité dont l'identifiant est passé en paramètre */
-go
-CREATE OR ALTER PROCEDURE GetCongressistesDisponiblesByActivite (@idA int)
-AS 
-	SELECT numInscription,nom, prenom
-	FROM CONGRESSISTE C
-	WHERE NOT EXISTS(SELECT * FROM INSCRIRE I WHERE idActivite=@idA AND I.numInscription=C.numInscription)
-
-/* Retourne les congressistes ne participant pas à la session dont l'identifiant est passé en paramètre */
-go
-CREATE OR ALTER PROCEDURE GetCongressistesDisponiblesBySession(@idS int)
-AS 
-	SELECT numInscription,nom, prenom
-	FROM CONGRESSISTE C
-	WHERE NOT EXISTS(SELECT * FROM PARTICIPER P WHERE numSession=@idS AND P.numInscription=C.numInscription)
+select heureDebut from Session;

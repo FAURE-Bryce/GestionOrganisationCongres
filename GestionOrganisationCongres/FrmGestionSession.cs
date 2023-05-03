@@ -28,6 +28,12 @@ namespace GestionOrganisationCongres
                 context.Sessions.Load();
 
                 bindSrcSessions.DataSource = context.Sessions.Local.ToBindingList();
+
+                //List<string> listHeureDebut = new List<string>();
+                //listHeureDebut.Add("09:00");
+                //listHeureDebut.Add("14:30");
+
+                //comboBoxHeureDebut.Items.AddRange(listHeureDebut.ToArray());
             }
             catch (Exception ex)
             {
