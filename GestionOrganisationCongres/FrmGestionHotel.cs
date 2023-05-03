@@ -35,5 +35,7 @@ namespace GestionOrganisationCongres
                 MessageBox.Show(ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+       
     }
 }
