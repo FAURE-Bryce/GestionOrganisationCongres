@@ -33,19 +33,6 @@
             this.ListeCongressistes = new System.Windows.Forms.TabPage();
             this.btAjouterCongressiste = new System.Windows.Forms.Button();
             this.dataGridViewListCongressiste = new System.Windows.Forms.DataGridView();
-            this.numInscriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.villeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.acompteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idHotelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idLigueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hotelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activitesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sessionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindSrcInscriptions = new System.Windows.Forms.BindingSource(this.components);
             this.DetailsCongressiste = new System.Windows.Forms.TabPage();
             this.lbRestePayerValeur = new System.Windows.Forms.Label();
@@ -63,7 +50,6 @@
             this.lblLigueCongressiste = new System.Windows.Forms.Label();
             this.lblAcompteCongressiste = new System.Windows.Forms.Label();
             this.comboBoxHotelCongressiste = new System.Windows.Forms.ComboBox();
-            this.bindSrcHotels = new System.Windows.Forms.BindingSource(this.components);
             this.txtBoxNomCongressiste = new System.Windows.Forms.TextBox();
             this.maskedTxtBoxCpCongressiste = new System.Windows.Forms.MaskedTextBox();
             this.maskedTxtBoxTelCongressiste = new System.Windows.Forms.MaskedTextBox();
@@ -87,12 +73,23 @@
             this.comboBoxAjouterActiviteCongressiste = new System.Windows.Forms.ComboBox();
             this.lblActivite = new System.Windows.Forms.Label();
             this.dataGridViewActiviteCongressiste = new System.Windows.Forms.DataGridView();
+            this.numInscriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prenomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.villeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acompteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idLigueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblEuro = new System.Windows.Forms.Label();
+            this.lblEuro2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.ListeCongressistes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListCongressiste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindSrcInscriptions)).BeginInit();
             this.DetailsCongressiste.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindSrcHotels)).BeginInit();
             this.ListeParticipations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActiviteCongressiste)).BeginInit();
@@ -107,7 +104,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(582, 346);
+            this.tabControl1.Size = new System.Drawing.Size(891, 490);
             this.tabControl1.TabIndex = 0;
             // 
             // ListeCongressistes
@@ -117,27 +114,29 @@
             this.ListeCongressistes.Location = new System.Drawing.Point(4, 22);
             this.ListeCongressistes.Margin = new System.Windows.Forms.Padding(2);
             this.ListeCongressistes.Name = "ListeCongressistes";
-            this.ListeCongressistes.Size = new System.Drawing.Size(574, 320);
+            this.ListeCongressistes.Size = new System.Drawing.Size(883, 464);
             this.ListeCongressistes.TabIndex = 4;
             this.ListeCongressistes.Text = "Liste";
             this.ListeCongressistes.UseVisualStyleBackColor = true;
             // 
             // btAjouterCongressiste
             // 
-            this.btAjouterCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btAjouterCongressiste.Location = new System.Drawing.Point(178, 294);
+            this.btAjouterCongressiste.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btAjouterCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btAjouterCongressiste.Location = new System.Drawing.Point(315, 388);
             this.btAjouterCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.btAjouterCongressiste.Name = "btAjouterCongressiste";
-            this.btAjouterCongressiste.Size = new System.Drawing.Size(155, 24);
+            this.btAjouterCongressiste.Size = new System.Drawing.Size(205, 56);
             this.btAjouterCongressiste.TabIndex = 3;
             this.btAjouterCongressiste.Text = "Ajouter un congressiste";
-            this.btAjouterCongressiste.UseVisualStyleBackColor = true;
+            this.btAjouterCongressiste.UseVisualStyleBackColor = false;
             // 
             // dataGridViewListCongressiste
             // 
             this.dataGridViewListCongressiste.AllowUserToAddRows = false;
             this.dataGridViewListCongressiste.AllowUserToDeleteRows = false;
             this.dataGridViewListCongressiste.AutoGenerateColumns = false;
+            this.dataGridViewListCongressiste.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewListCongressiste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewListCongressiste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numInscriptionDataGridViewTextBoxColumn,
@@ -148,111 +147,19 @@
             this.villeDataGridViewTextBoxColumn,
             this.telDataGridViewTextBoxColumn,
             this.acompteDataGridViewTextBoxColumn,
-            this.idHotelDataGridViewTextBoxColumn,
             this.idLigueDataGridViewTextBoxColumn,
-            this.hotelDataGridViewTextBoxColumn,
-            this.activitesDataGridViewTextBoxColumn,
-            this.sessionsDataGridViewTextBoxColumn});
+            this.hotelDataGridViewTextBoxColumn});
             this.dataGridViewListCongressiste.DataSource = this.bindSrcInscriptions;
             this.dataGridViewListCongressiste.Location = new System.Drawing.Point(4, 7);
             this.dataGridViewListCongressiste.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewListCongressiste.MultiSelect = false;
             this.dataGridViewListCongressiste.Name = "dataGridViewListCongressiste";
             this.dataGridViewListCongressiste.ReadOnly = true;
             this.dataGridViewListCongressiste.RowHeadersWidth = 51;
             this.dataGridViewListCongressiste.RowTemplate.Height = 24;
-            this.dataGridViewListCongressiste.Size = new System.Drawing.Size(569, 272);
+            this.dataGridViewListCongressiste.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewListCongressiste.Size = new System.Drawing.Size(877, 357);
             this.dataGridViewListCongressiste.TabIndex = 2;
-            // 
-            // numInscriptionDataGridViewTextBoxColumn
-            // 
-            this.numInscriptionDataGridViewTextBoxColumn.DataPropertyName = "numInscription";
-            this.numInscriptionDataGridViewTextBoxColumn.HeaderText = "numInscription";
-            this.numInscriptionDataGridViewTextBoxColumn.Name = "numInscriptionDataGridViewTextBoxColumn";
-            this.numInscriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomDataGridViewTextBoxColumn
-            // 
-            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn.HeaderText = "nom";
-            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prenomDataGridViewTextBoxColumn
-            // 
-            this.prenomDataGridViewTextBoxColumn.DataPropertyName = "prenom";
-            this.prenomDataGridViewTextBoxColumn.HeaderText = "prenom";
-            this.prenomDataGridViewTextBoxColumn.Name = "prenomDataGridViewTextBoxColumn";
-            this.prenomDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // adresseDataGridViewTextBoxColumn
-            // 
-            this.adresseDataGridViewTextBoxColumn.DataPropertyName = "adresse";
-            this.adresseDataGridViewTextBoxColumn.HeaderText = "adresse";
-            this.adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
-            this.adresseDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cpDataGridViewTextBoxColumn
-            // 
-            this.cpDataGridViewTextBoxColumn.DataPropertyName = "cp";
-            this.cpDataGridViewTextBoxColumn.HeaderText = "cp";
-            this.cpDataGridViewTextBoxColumn.Name = "cpDataGridViewTextBoxColumn";
-            this.cpDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // villeDataGridViewTextBoxColumn
-            // 
-            this.villeDataGridViewTextBoxColumn.DataPropertyName = "ville";
-            this.villeDataGridViewTextBoxColumn.HeaderText = "ville";
-            this.villeDataGridViewTextBoxColumn.Name = "villeDataGridViewTextBoxColumn";
-            this.villeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telDataGridViewTextBoxColumn
-            // 
-            this.telDataGridViewTextBoxColumn.DataPropertyName = "tel";
-            this.telDataGridViewTextBoxColumn.HeaderText = "tel";
-            this.telDataGridViewTextBoxColumn.Name = "telDataGridViewTextBoxColumn";
-            this.telDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // acompteDataGridViewTextBoxColumn
-            // 
-            this.acompteDataGridViewTextBoxColumn.DataPropertyName = "acompte";
-            this.acompteDataGridViewTextBoxColumn.HeaderText = "acompte";
-            this.acompteDataGridViewTextBoxColumn.Name = "acompteDataGridViewTextBoxColumn";
-            this.acompteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idHotelDataGridViewTextBoxColumn
-            // 
-            this.idHotelDataGridViewTextBoxColumn.DataPropertyName = "idHotel";
-            this.idHotelDataGridViewTextBoxColumn.HeaderText = "idHotel";
-            this.idHotelDataGridViewTextBoxColumn.Name = "idHotelDataGridViewTextBoxColumn";
-            this.idHotelDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idLigueDataGridViewTextBoxColumn
-            // 
-            this.idLigueDataGridViewTextBoxColumn.DataPropertyName = "idLigue";
-            this.idLigueDataGridViewTextBoxColumn.HeaderText = "idLigue";
-            this.idLigueDataGridViewTextBoxColumn.Name = "idLigueDataGridViewTextBoxColumn";
-            this.idLigueDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hotelDataGridViewTextBoxColumn
-            // 
-            this.hotelDataGridViewTextBoxColumn.DataPropertyName = "Hotel";
-            this.hotelDataGridViewTextBoxColumn.HeaderText = "Hotel";
-            this.hotelDataGridViewTextBoxColumn.Name = "hotelDataGridViewTextBoxColumn";
-            this.hotelDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // activitesDataGridViewTextBoxColumn
-            // 
-            this.activitesDataGridViewTextBoxColumn.DataPropertyName = "Activites";
-            this.activitesDataGridViewTextBoxColumn.HeaderText = "Activites";
-            this.activitesDataGridViewTextBoxColumn.Name = "activitesDataGridViewTextBoxColumn";
-            this.activitesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sessionsDataGridViewTextBoxColumn
-            // 
-            this.sessionsDataGridViewTextBoxColumn.DataPropertyName = "Sessions";
-            this.sessionsDataGridViewTextBoxColumn.HeaderText = "Sessions";
-            this.sessionsDataGridViewTextBoxColumn.Name = "sessionsDataGridViewTextBoxColumn";
-            this.sessionsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bindSrcInscriptions
             // 
@@ -260,6 +167,8 @@
             // 
             // DetailsCongressiste
             // 
+            this.DetailsCongressiste.Controls.Add(this.lblEuro2);
+            this.DetailsCongressiste.Controls.Add(this.lblEuro);
             this.DetailsCongressiste.Controls.Add(this.lbRestePayerValeur);
             this.DetailsCongressiste.Controls.Add(this.lbMontantTotalValue);
             this.DetailsCongressiste.Controls.Add(this.lblRestePayer);
@@ -289,7 +198,7 @@
             this.DetailsCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.DetailsCongressiste.Name = "DetailsCongressiste";
             this.DetailsCongressiste.Padding = new System.Windows.Forms.Padding(2);
-            this.DetailsCongressiste.Size = new System.Drawing.Size(574, 320);
+            this.DetailsCongressiste.Size = new System.Drawing.Size(883, 464);
             this.DetailsCongressiste.TabIndex = 1;
             this.DetailsCongressiste.Text = "Détails";
             this.DetailsCongressiste.UseVisualStyleBackColor = true;
@@ -297,97 +206,95 @@
             // lbRestePayerValeur
             // 
             this.lbRestePayerValeur.AutoSize = true;
-            this.lbRestePayerValeur.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbRestePayerValeur.Location = new System.Drawing.Point(105, 231);
+            this.lbRestePayerValeur.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbRestePayerValeur.Location = new System.Drawing.Point(756, 199);
             this.lbRestePayerValeur.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbRestePayerValeur.Name = "lbRestePayerValeur";
-            this.lbRestePayerValeur.Size = new System.Drawing.Size(13, 17);
+            this.lbRestePayerValeur.Size = new System.Drawing.Size(14, 20);
             this.lbRestePayerValeur.TabIndex = 49;
             this.lbRestePayerValeur.Text = "-";
             // 
             // lbMontantTotalValue
             // 
             this.lbMontantTotalValue.AutoSize = true;
-            this.lbMontantTotalValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbMontantTotalValue.Location = new System.Drawing.Point(104, 206);
+            this.lbMontantTotalValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbMontantTotalValue.Location = new System.Drawing.Point(763, 113);
             this.lbMontantTotalValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMontantTotalValue.Name = "lbMontantTotalValue";
-            this.lbMontantTotalValue.Size = new System.Drawing.Size(13, 17);
+            this.lbMontantTotalValue.Size = new System.Drawing.Size(14, 20);
             this.lbMontantTotalValue.TabIndex = 48;
             this.lbMontantTotalValue.Text = "-";
             // 
             // lblRestePayer
             // 
             this.lblRestePayer.AutoSize = true;
-            this.lblRestePayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblRestePayer.Location = new System.Drawing.Point(4, 231);
+            this.lblRestePayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblRestePayer.Location = new System.Drawing.Point(641, 200);
             this.lblRestePayer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRestePayer.Name = "lblRestePayer";
-            this.lblRestePayer.Size = new System.Drawing.Size(109, 17);
+            this.lblRestePayer.Size = new System.Drawing.Size(111, 18);
             this.lblRestePayer.TabIndex = 47;
             this.lblRestePayer.Text = "Reste à payer : ";
             // 
             // lblMontantTotal
             // 
             this.lblMontantTotal.AutoSize = true;
-            this.lblMontantTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblMontantTotal.Location = new System.Drawing.Point(4, 206);
+            this.lblMontantTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblMontantTotal.Location = new System.Drawing.Point(640, 113);
             this.lblMontantTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMontantTotal.Name = "lblMontantTotal";
-            this.lblMontantTotal.Size = new System.Drawing.Size(107, 17);
+            this.lblMontantTotal.Size = new System.Drawing.Size(119, 20);
             this.lblMontantTotal.TabIndex = 46;
             this.lblMontantTotal.Text = "Montant Total : ";
             // 
             // btValiderModifCongressiste
             // 
-            this.btValiderModifCongressiste.BackColor = System.Drawing.Color.LawnGreen;
-            this.btValiderModifCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btValiderModifCongressiste.Location = new System.Drawing.Point(73, 267);
+            this.btValiderModifCongressiste.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btValiderModifCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btValiderModifCongressiste.Location = new System.Drawing.Point(593, 372);
             this.btValiderModifCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.btValiderModifCongressiste.Name = "btValiderModifCongressiste";
-            this.btValiderModifCongressiste.Size = new System.Drawing.Size(72, 24);
+            this.btValiderModifCongressiste.Size = new System.Drawing.Size(106, 44);
             this.btValiderModifCongressiste.TabIndex = 45;
             this.btValiderModifCongressiste.Text = "Valider";
             this.btValiderModifCongressiste.UseVisualStyleBackColor = false;
             // 
             // btAnnulerModifCongressiste
             // 
-            this.btAnnulerModifCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btAnnulerModifCongressiste.Location = new System.Drawing.Point(417, 267);
+            this.btAnnulerModifCongressiste.BackColor = System.Drawing.Color.LightPink;
+            this.btAnnulerModifCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btAnnulerModifCongressiste.Location = new System.Drawing.Point(135, 372);
             this.btAnnulerModifCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.btAnnulerModifCongressiste.Name = "btAnnulerModifCongressiste";
-            this.btAnnulerModifCongressiste.Size = new System.Drawing.Size(76, 24);
+            this.btAnnulerModifCongressiste.Size = new System.Drawing.Size(102, 44);
             this.btAnnulerModifCongressiste.TabIndex = 44;
             this.btAnnulerModifCongressiste.Text = "Annuler";
-            this.btAnnulerModifCongressiste.UseVisualStyleBackColor = true;
+            this.btAnnulerModifCongressiste.UseVisualStyleBackColor = false;
             // 
             // maskedTxtBoxAcompteCongressiste
             // 
-            this.maskedTxtBoxAcompteCongressiste.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcInscriptions, "acompte", true));
             this.maskedTxtBoxAcompteCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.maskedTxtBoxAcompteCongressiste.Location = new System.Drawing.Point(234, 174);
+            this.maskedTxtBoxAcompteCongressiste.Location = new System.Drawing.Point(256, 226);
             this.maskedTxtBoxAcompteCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTxtBoxAcompteCongressiste.Mask = "99999";
             this.maskedTxtBoxAcompteCongressiste.Name = "maskedTxtBoxAcompteCongressiste";
-            this.maskedTxtBoxAcompteCongressiste.Size = new System.Drawing.Size(46, 23);
+            this.maskedTxtBoxAcompteCongressiste.Size = new System.Drawing.Size(76, 23);
             this.maskedTxtBoxAcompteCongressiste.TabIndex = 43;
             // 
             // comboBoxLigueCongressiste
             // 
-            this.comboBoxLigueCongressiste.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcInscriptions, "idLigue", true));
             this.comboBoxLigueCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBoxLigueCongressiste.FormattingEnabled = true;
-            this.comboBoxLigueCongressiste.Location = new System.Drawing.Point(234, 224);
+            this.comboBoxLigueCongressiste.Location = new System.Drawing.Point(234, 303);
             this.comboBoxLigueCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxLigueCongressiste.Name = "comboBoxLigueCongressiste";
-            this.comboBoxLigueCongressiste.Size = new System.Drawing.Size(108, 24);
+            this.comboBoxLigueCongressiste.Size = new System.Drawing.Size(240, 24);
             this.comboBoxLigueCongressiste.TabIndex = 42;
             // 
             // txtBoxVilleCongressiste
             // 
-            this.txtBoxVilleCongressiste.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcInscriptions, "ville", true));
             this.txtBoxVilleCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxVilleCongressiste.Location = new System.Drawing.Point(234, 95);
+            this.txtBoxVilleCongressiste.Location = new System.Drawing.Point(223, 113);
             this.txtBoxVilleCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxVilleCongressiste.Name = "txtBoxVilleCongressiste";
             this.txtBoxVilleCongressiste.Size = new System.Drawing.Size(198, 23);
@@ -395,19 +302,17 @@
             // 
             // txtBoxAdresseCongressiste
             // 
-            this.txtBoxAdresseCongressiste.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcInscriptions, "adresse", true));
             this.txtBoxAdresseCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxAdresseCongressiste.Location = new System.Drawing.Point(234, 69);
+            this.txtBoxAdresseCongressiste.Location = new System.Drawing.Point(251, 73);
             this.txtBoxAdresseCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxAdresseCongressiste.Name = "txtBoxAdresseCongressiste";
-            this.txtBoxAdresseCongressiste.Size = new System.Drawing.Size(198, 23);
+            this.txtBoxAdresseCongressiste.Size = new System.Drawing.Size(223, 23);
             this.txtBoxAdresseCongressiste.TabIndex = 40;
             // 
             // txtBoxPrenomCongressiste
             // 
-            this.txtBoxPrenomCongressiste.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcInscriptions, "prenom", true));
             this.txtBoxPrenomCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxPrenomCongressiste.Location = new System.Drawing.Point(234, 43);
+            this.txtBoxPrenomCongressiste.Location = new System.Drawing.Point(478, 13);
             this.txtBoxPrenomCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxPrenomCongressiste.Name = "txtBoxPrenomCongressiste";
             this.txtBoxPrenomCongressiste.Size = new System.Drawing.Size(198, 23);
@@ -416,58 +321,50 @@
             // lblHotelCongressiste
             // 
             this.lblHotelCongressiste.AutoSize = true;
-            this.lblHotelCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblHotelCongressiste.Location = new System.Drawing.Point(182, 202);
+            this.lblHotelCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblHotelCongressiste.Location = new System.Drawing.Point(173, 265);
             this.lblHotelCongressiste.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHotelCongressiste.Name = "lblHotelCongressiste";
-            this.lblHotelCongressiste.Size = new System.Drawing.Size(53, 17);
+            this.lblHotelCongressiste.Size = new System.Drawing.Size(55, 18);
             this.lblHotelCongressiste.TabIndex = 38;
             this.lblHotelCongressiste.Text = "Hôtel : ";
             // 
             // lblLigueCongressiste
             // 
             this.lblLigueCongressiste.AutoSize = true;
-            this.lblLigueCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblLigueCongressiste.Location = new System.Drawing.Point(181, 227);
+            this.lblLigueCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblLigueCongressiste.Location = new System.Drawing.Point(173, 304);
             this.lblLigueCongressiste.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLigueCongressiste.Name = "lblLigueCongressiste";
-            this.lblLigueCongressiste.Size = new System.Drawing.Size(55, 17);
+            this.lblLigueCongressiste.Size = new System.Drawing.Size(55, 18);
             this.lblLigueCongressiste.TabIndex = 37;
             this.lblLigueCongressiste.Text = "Ligue : ";
             // 
             // lblAcompteCongressiste
             // 
             this.lblAcompteCongressiste.AutoSize = true;
-            this.lblAcompteCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblAcompteCongressiste.Location = new System.Drawing.Point(162, 176);
+            this.lblAcompteCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblAcompteCongressiste.Location = new System.Drawing.Point(173, 227);
             this.lblAcompteCongressiste.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAcompteCongressiste.Name = "lblAcompteCongressiste";
-            this.lblAcompteCongressiste.Size = new System.Drawing.Size(75, 17);
+            this.lblAcompteCongressiste.Size = new System.Drawing.Size(79, 18);
             this.lblAcompteCongressiste.TabIndex = 36;
             this.lblAcompteCongressiste.Text = "Acompte : ";
             // 
             // comboBoxHotelCongressiste
             // 
-            this.comboBoxHotelCongressiste.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.bindSrcInscriptions, "Hotel", true));
-            this.comboBoxHotelCongressiste.DataSource = this.bindSrcHotels;
-            this.comboBoxHotelCongressiste.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxHotelCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBoxHotelCongressiste.FormattingEnabled = true;
-            this.comboBoxHotelCongressiste.Location = new System.Drawing.Point(234, 200);
+            this.comboBoxHotelCongressiste.Location = new System.Drawing.Point(234, 264);
             this.comboBoxHotelCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxHotelCongressiste.Name = "comboBoxHotelCongressiste";
-            this.comboBoxHotelCongressiste.Size = new System.Drawing.Size(108, 24);
+            this.comboBoxHotelCongressiste.Size = new System.Drawing.Size(240, 24);
             this.comboBoxHotelCongressiste.TabIndex = 22;
-            // 
-            // bindSrcHotels
-            // 
-            this.bindSrcHotels.DataSource = typeof(GestionOrganisationCongres.Hotel);
             // 
             // txtBoxNomCongressiste
             // 
-            this.txtBoxNomCongressiste.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcInscriptions, "nom", true));
             this.txtBoxNomCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxNomCongressiste.Location = new System.Drawing.Point(234, 17);
+            this.txtBoxNomCongressiste.Location = new System.Drawing.Point(135, 16);
             this.txtBoxNomCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxNomCongressiste.Name = "txtBoxNomCongressiste";
             this.txtBoxNomCongressiste.Size = new System.Drawing.Size(198, 23);
@@ -475,100 +372,98 @@
             // 
             // maskedTxtBoxCpCongressiste
             // 
-            this.maskedTxtBoxCpCongressiste.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcInscriptions, "cp", true));
             this.maskedTxtBoxCpCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.maskedTxtBoxCpCongressiste.Location = new System.Drawing.Point(234, 123);
+            this.maskedTxtBoxCpCongressiste.Location = new System.Drawing.Point(277, 149);
             this.maskedTxtBoxCpCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTxtBoxCpCongressiste.Mask = "99999";
             this.maskedTxtBoxCpCongressiste.Name = "maskedTxtBoxCpCongressiste";
-            this.maskedTxtBoxCpCongressiste.Size = new System.Drawing.Size(46, 23);
+            this.maskedTxtBoxCpCongressiste.Size = new System.Drawing.Size(74, 23);
             this.maskedTxtBoxCpCongressiste.TabIndex = 25;
             // 
             // maskedTxtBoxTelCongressiste
             // 
-            this.maskedTxtBoxTelCongressiste.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcInscriptions, "tel", true));
             this.maskedTxtBoxTelCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.maskedTxtBoxTelCongressiste.Location = new System.Drawing.Point(234, 149);
+            this.maskedTxtBoxTelCongressiste.Location = new System.Drawing.Point(266, 187);
             this.maskedTxtBoxTelCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTxtBoxTelCongressiste.Mask = "9999999999";
             this.maskedTxtBoxTelCongressiste.Name = "maskedTxtBoxTelCongressiste";
-            this.maskedTxtBoxTelCongressiste.Size = new System.Drawing.Size(76, 23);
+            this.maskedTxtBoxTelCongressiste.Size = new System.Drawing.Size(146, 23);
             this.maskedTxtBoxTelCongressiste.TabIndex = 30;
             // 
             // lblCpCongressiste
             // 
             this.lblCpCongressiste.AutoSize = true;
-            this.lblCpCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblCpCongressiste.Location = new System.Drawing.Point(146, 125);
+            this.lblCpCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblCpCongressiste.Location = new System.Drawing.Point(173, 150);
             this.lblCpCongressiste.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCpCongressiste.Name = "lblCpCongressiste";
-            this.lblCpCongressiste.Size = new System.Drawing.Size(95, 17);
+            this.lblCpCongressiste.Size = new System.Drawing.Size(100, 18);
             this.lblCpCongressiste.TabIndex = 31;
             this.lblCpCongressiste.Text = "Code postal : ";
             // 
             // lblTelCongressiste
             // 
             this.lblTelCongressiste.AutoSize = true;
-            this.lblTelCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTelCongressiste.Location = new System.Drawing.Point(154, 151);
+            this.lblTelCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblTelCongressiste.Location = new System.Drawing.Point(173, 188);
             this.lblTelCongressiste.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTelCongressiste.Name = "lblTelCongressiste";
-            this.lblTelCongressiste.Size = new System.Drawing.Size(88, 17);
+            this.lblTelCongressiste.Size = new System.Drawing.Size(89, 18);
             this.lblTelCongressiste.TabIndex = 29;
             this.lblTelCongressiste.Text = "Téléphone : ";
             // 
             // lblVilleCongressiste
             // 
             this.lblVilleCongressiste.AutoSize = true;
-            this.lblVilleCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblVilleCongressiste.Location = new System.Drawing.Point(188, 98);
+            this.lblVilleCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblVilleCongressiste.Location = new System.Drawing.Point(173, 115);
             this.lblVilleCongressiste.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVilleCongressiste.Name = "lblVilleCongressiste";
-            this.lblVilleCongressiste.Size = new System.Drawing.Size(46, 17);
+            this.lblVilleCongressiste.Size = new System.Drawing.Size(46, 18);
             this.lblVilleCongressiste.TabIndex = 27;
             this.lblVilleCongressiste.Text = "Ville : ";
             // 
             // lblPrenomCongressiste
             // 
             this.lblPrenomCongressiste.AutoSize = true;
-            this.lblPrenomCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblPrenomCongressiste.Location = new System.Drawing.Point(173, 46);
+            this.lblPrenomCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblPrenomCongressiste.Location = new System.Drawing.Point(401, 18);
             this.lblPrenomCongressiste.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrenomCongressiste.Name = "lblPrenomCongressiste";
-            this.lblPrenomCongressiste.Size = new System.Drawing.Size(69, 17);
+            this.lblPrenomCongressiste.Size = new System.Drawing.Size(73, 18);
             this.lblPrenomCongressiste.TabIndex = 26;
             this.lblPrenomCongressiste.Text = "Prénom : ";
             // 
             // lblAdresseCongressiste
             // 
             this.lblAdresseCongressiste.AutoSize = true;
-            this.lblAdresseCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblAdresseCongressiste.Location = new System.Drawing.Point(167, 72);
+            this.lblAdresseCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblAdresseCongressiste.Location = new System.Drawing.Point(173, 74);
             this.lblAdresseCongressiste.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAdresseCongressiste.Name = "lblAdresseCongressiste";
-            this.lblAdresseCongressiste.Size = new System.Drawing.Size(72, 17);
+            this.lblAdresseCongressiste.Size = new System.Drawing.Size(74, 18);
             this.lblAdresseCongressiste.TabIndex = 24;
             this.lblAdresseCongressiste.Text = "Adresse : ";
             // 
             // lblNomCongressiste
             // 
             this.lblNomCongressiste.AutoSize = true;
-            this.lblNomCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblNomCongressiste.Location = new System.Drawing.Point(188, 20);
+            this.lblNomCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblNomCongressiste.Location = new System.Drawing.Point(71, 18);
             this.lblNomCongressiste.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNomCongressiste.Name = "lblNomCongressiste";
-            this.lblNomCongressiste.Size = new System.Drawing.Size(49, 17);
+            this.lblNomCongressiste.Size = new System.Drawing.Size(53, 18);
             this.lblNomCongressiste.TabIndex = 21;
             this.lblNomCongressiste.Text = "Nom : ";
             // 
             // btSupprimerCongressiste
             // 
-            this.btSupprimerCongressiste.BackColor = System.Drawing.Color.Red;
-            this.btSupprimerCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btSupprimerCongressiste.Location = new System.Drawing.Point(184, 267);
+            this.btSupprimerCongressiste.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btSupprimerCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btSupprimerCongressiste.Location = new System.Drawing.Point(316, 362);
             this.btSupprimerCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.btSupprimerCongressiste.Name = "btSupprimerCongressiste";
-            this.btSupprimerCongressiste.Size = new System.Drawing.Size(189, 24);
+            this.btSupprimerCongressiste.Size = new System.Drawing.Size(195, 65);
             this.btSupprimerCongressiste.TabIndex = 35;
             this.btSupprimerCongressiste.Text = "Supprimer le congressiste";
             this.btSupprimerCongressiste.UseVisualStyleBackColor = false;
@@ -590,117 +485,129 @@
             this.ListeParticipations.Location = new System.Drawing.Point(4, 22);
             this.ListeParticipations.Margin = new System.Windows.Forms.Padding(2);
             this.ListeParticipations.Name = "ListeParticipations";
-            this.ListeParticipations.Size = new System.Drawing.Size(574, 320);
+            this.ListeParticipations.Size = new System.Drawing.Size(883, 464);
             this.ListeParticipations.TabIndex = 2;
             this.ListeParticipations.Text = "Participation";
             this.ListeParticipations.UseVisualStyleBackColor = true;
             // 
             // btSupprimerSessionCongressiste
             // 
-            this.btSupprimerSessionCongressiste.Location = new System.Drawing.Point(309, 289);
+            this.btSupprimerSessionCongressiste.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btSupprimerSessionCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSupprimerSessionCongressiste.Location = new System.Drawing.Point(471, 390);
             this.btSupprimerSessionCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.btSupprimerSessionCongressiste.Name = "btSupprimerSessionCongressiste";
-            this.btSupprimerSessionCongressiste.Size = new System.Drawing.Size(113, 19);
+            this.btSupprimerSessionCongressiste.Size = new System.Drawing.Size(130, 56);
             this.btSupprimerSessionCongressiste.TabIndex = 24;
             this.btSupprimerSessionCongressiste.Text = "Supprimer la session";
-            this.btSupprimerSessionCongressiste.UseVisualStyleBackColor = true;
+            this.btSupprimerSessionCongressiste.UseVisualStyleBackColor = false;
             // 
             // btAjouterSessionCongressiste
             // 
-            this.btAjouterSessionCongressiste.Location = new System.Drawing.Point(443, 289);
+            this.btAjouterSessionCongressiste.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btAjouterSessionCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAjouterSessionCongressiste.Location = new System.Drawing.Point(713, 303);
             this.btAjouterSessionCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.btAjouterSessionCongressiste.Name = "btAjouterSessionCongressiste";
-            this.btAjouterSessionCongressiste.Size = new System.Drawing.Size(100, 19);
+            this.btAjouterSessionCongressiste.Size = new System.Drawing.Size(114, 56);
             this.btAjouterSessionCongressiste.TabIndex = 23;
             this.btAjouterSessionCongressiste.Text = "Ajouter la session";
-            this.btAjouterSessionCongressiste.UseVisualStyleBackColor = true;
+            this.btAjouterSessionCongressiste.UseVisualStyleBackColor = false;
             // 
             // lbAjouterSessionCongressiste
             // 
             this.lbAjouterSessionCongressiste.AutoSize = true;
-            this.lbAjouterSessionCongressiste.Location = new System.Drawing.Point(307, 265);
+            this.lbAjouterSessionCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAjouterSessionCongressiste.Location = new System.Drawing.Point(468, 270);
             this.lbAjouterSessionCongressiste.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAjouterSessionCongressiste.Name = "lbAjouterSessionCongressiste";
-            this.lbAjouterSessionCongressiste.Size = new System.Drawing.Size(108, 13);
+            this.lbAjouterSessionCongressiste.Size = new System.Drawing.Size(145, 17);
             this.lbAjouterSessionCongressiste.TabIndex = 25;
             this.lbAjouterSessionCongressiste.Text = "Ajouter une session : ";
             // 
             // comboBoxAjouterSessionCongressiste
             // 
             this.comboBoxAjouterSessionCongressiste.FormattingEnabled = true;
-            this.comboBoxAjouterSessionCongressiste.Location = new System.Drawing.Point(417, 262);
+            this.comboBoxAjouterSessionCongressiste.Location = new System.Drawing.Point(617, 268);
             this.comboBoxAjouterSessionCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxAjouterSessionCongressiste.Name = "comboBoxAjouterSessionCongressiste";
-            this.comboBoxAjouterSessionCongressiste.Size = new System.Drawing.Size(126, 21);
+            this.comboBoxAjouterSessionCongressiste.Size = new System.Drawing.Size(255, 21);
             this.comboBoxAjouterSessionCongressiste.TabIndex = 22;
             // 
             // lblSession
             // 
             this.lblSession.AutoSize = true;
-            this.lblSession.Location = new System.Drawing.Point(307, 11);
+            this.lblSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSession.Location = new System.Drawing.Point(636, 8);
             this.lblSession.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSession.Name = "lblSession";
-            this.lblSession.Size = new System.Drawing.Size(58, 13);
+            this.lblSession.Size = new System.Drawing.Size(77, 17);
             this.lblSession.TabIndex = 21;
             this.lblSession.Text = "Sessions : ";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(309, 27);
+            this.dataGridView1.Location = new System.Drawing.Point(461, 27);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(257, 223);
+            this.dataGridView1.Size = new System.Drawing.Size(411, 223);
             this.dataGridView1.TabIndex = 20;
             // 
             // btSupprimerActiviteCongressiste
             // 
-            this.btSupprimerActiviteCongressiste.Location = new System.Drawing.Point(13, 289);
+            this.btSupprimerActiviteCongressiste.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btSupprimerActiviteCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSupprimerActiviteCongressiste.Location = new System.Drawing.Point(13, 389);
             this.btSupprimerActiviteCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.btSupprimerActiviteCongressiste.Name = "btSupprimerActiviteCongressiste";
-            this.btSupprimerActiviteCongressiste.Size = new System.Drawing.Size(128, 19);
+            this.btSupprimerActiviteCongressiste.Size = new System.Drawing.Size(138, 57);
             this.btSupprimerActiviteCongressiste.TabIndex = 18;
             this.btSupprimerActiviteCongressiste.Text = "Supprimer l\'activité";
-            this.btSupprimerActiviteCongressiste.UseVisualStyleBackColor = true;
+            this.btSupprimerActiviteCongressiste.UseVisualStyleBackColor = false;
             // 
             // btAjouterActiviteCongressiste
             // 
-            this.btAjouterActiviteCongressiste.Location = new System.Drawing.Point(147, 289);
+            this.btAjouterActiviteCongressiste.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btAjouterActiviteCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAjouterActiviteCongressiste.Location = new System.Drawing.Point(227, 303);
             this.btAjouterActiviteCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.btAjouterActiviteCongressiste.Name = "btAjouterActiviteCongressiste";
-            this.btAjouterActiviteCongressiste.Size = new System.Drawing.Size(100, 19);
+            this.btAjouterActiviteCongressiste.Size = new System.Drawing.Size(123, 56);
             this.btAjouterActiviteCongressiste.TabIndex = 17;
             this.btAjouterActiviteCongressiste.Text = "Ajouter l\'activité";
-            this.btAjouterActiviteCongressiste.UseVisualStyleBackColor = true;
+            this.btAjouterActiviteCongressiste.UseVisualStyleBackColor = false;
             // 
             // lbAjouterActiviteCongressiste
             // 
             this.lbAjouterActiviteCongressiste.AutoSize = true;
-            this.lbAjouterActiviteCongressiste.Location = new System.Drawing.Point(10, 264);
+            this.lbAjouterActiviteCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAjouterActiviteCongressiste.Location = new System.Drawing.Point(10, 269);
             this.lbAjouterActiviteCongressiste.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAjouterActiviteCongressiste.Name = "lbAjouterActiviteCongressiste";
-            this.lbAjouterActiviteCongressiste.Size = new System.Drawing.Size(107, 13);
+            this.lbAjouterActiviteCongressiste.Size = new System.Drawing.Size(141, 17);
             this.lbAjouterActiviteCongressiste.TabIndex = 19;
             this.lbAjouterActiviteCongressiste.Text = "Ajouter une activité : ";
             // 
             // comboBoxAjouterActiviteCongressiste
             // 
             this.comboBoxAjouterActiviteCongressiste.FormattingEnabled = true;
-            this.comboBoxAjouterActiviteCongressiste.Location = new System.Drawing.Point(121, 262);
+            this.comboBoxAjouterActiviteCongressiste.Location = new System.Drawing.Point(174, 269);
             this.comboBoxAjouterActiviteCongressiste.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxAjouterActiviteCongressiste.Name = "comboBoxAjouterActiviteCongressiste";
-            this.comboBoxAjouterActiviteCongressiste.Size = new System.Drawing.Size(126, 21);
+            this.comboBoxAjouterActiviteCongressiste.Size = new System.Drawing.Size(233, 21);
             this.comboBoxAjouterActiviteCongressiste.TabIndex = 16;
             // 
             // lblActivite
             // 
             this.lblActivite.AutoSize = true;
-            this.lblActivite.Location = new System.Drawing.Point(10, 11);
+            this.lblActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActivite.Location = new System.Drawing.Point(171, 8);
             this.lblActivite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblActivite.Name = "lblActivite";
-            this.lblActivite.Size = new System.Drawing.Size(56, 13);
+            this.lblActivite.Size = new System.Drawing.Size(72, 17);
             this.lblActivite.TabIndex = 1;
             this.lblActivite.Text = "Activités : ";
             // 
@@ -712,14 +619,113 @@
             this.dataGridViewActiviteCongressiste.Name = "dataGridViewActiviteCongressiste";
             this.dataGridViewActiviteCongressiste.RowHeadersWidth = 51;
             this.dataGridViewActiviteCongressiste.RowTemplate.Height = 24;
-            this.dataGridViewActiviteCongressiste.Size = new System.Drawing.Size(257, 223);
+            this.dataGridViewActiviteCongressiste.Size = new System.Drawing.Size(394, 223);
             this.dataGridViewActiviteCongressiste.TabIndex = 0;
+            // 
+            // numInscriptionDataGridViewTextBoxColumn
+            // 
+            this.numInscriptionDataGridViewTextBoxColumn.DataPropertyName = "numInscription";
+            this.numInscriptionDataGridViewTextBoxColumn.HeaderText = "N° d\'inscription";
+            this.numInscriptionDataGridViewTextBoxColumn.Name = "numInscriptionDataGridViewTextBoxColumn";
+            this.numInscriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numInscriptionDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // nomDataGridViewTextBoxColumn
+            // 
+            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
+            this.nomDataGridViewTextBoxColumn.HeaderText = "Nom";
+            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
+            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomDataGridViewTextBoxColumn.Width = 54;
+            // 
+            // prenomDataGridViewTextBoxColumn
+            // 
+            this.prenomDataGridViewTextBoxColumn.DataPropertyName = "prenom";
+            this.prenomDataGridViewTextBoxColumn.HeaderText = "Prénom";
+            this.prenomDataGridViewTextBoxColumn.Name = "prenomDataGridViewTextBoxColumn";
+            this.prenomDataGridViewTextBoxColumn.ReadOnly = true;
+            this.prenomDataGridViewTextBoxColumn.Width = 68;
+            // 
+            // adresseDataGridViewTextBoxColumn
+            // 
+            this.adresseDataGridViewTextBoxColumn.DataPropertyName = "adresse";
+            this.adresseDataGridViewTextBoxColumn.HeaderText = "Adresse";
+            this.adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
+            this.adresseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.adresseDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // cpDataGridViewTextBoxColumn
+            // 
+            this.cpDataGridViewTextBoxColumn.DataPropertyName = "cp";
+            this.cpDataGridViewTextBoxColumn.HeaderText = "Code postal";
+            this.cpDataGridViewTextBoxColumn.Name = "cpDataGridViewTextBoxColumn";
+            this.cpDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cpDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // villeDataGridViewTextBoxColumn
+            // 
+            this.villeDataGridViewTextBoxColumn.DataPropertyName = "ville";
+            this.villeDataGridViewTextBoxColumn.HeaderText = "Ville";
+            this.villeDataGridViewTextBoxColumn.Name = "villeDataGridViewTextBoxColumn";
+            this.villeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.villeDataGridViewTextBoxColumn.Width = 51;
+            // 
+            // telDataGridViewTextBoxColumn
+            // 
+            this.telDataGridViewTextBoxColumn.DataPropertyName = "tel";
+            this.telDataGridViewTextBoxColumn.HeaderText = "N° de téléphone";
+            this.telDataGridViewTextBoxColumn.Name = "telDataGridViewTextBoxColumn";
+            this.telDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // acompteDataGridViewTextBoxColumn
+            // 
+            this.acompteDataGridViewTextBoxColumn.DataPropertyName = "acompte";
+            this.acompteDataGridViewTextBoxColumn.HeaderText = "Acompte versé";
+            this.acompteDataGridViewTextBoxColumn.Name = "acompteDataGridViewTextBoxColumn";
+            this.acompteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.acompteDataGridViewTextBoxColumn.Width = 95;
+            // 
+            // idLigueDataGridViewTextBoxColumn
+            // 
+            this.idLigueDataGridViewTextBoxColumn.DataPropertyName = "idLigue";
+            this.idLigueDataGridViewTextBoxColumn.HeaderText = "idLigue";
+            this.idLigueDataGridViewTextBoxColumn.Name = "idLigueDataGridViewTextBoxColumn";
+            this.idLigueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idLigueDataGridViewTextBoxColumn.Width = 66;
+            // 
+            // hotelDataGridViewTextBoxColumn
+            // 
+            this.hotelDataGridViewTextBoxColumn.DataPropertyName = "Hotel";
+            this.hotelDataGridViewTextBoxColumn.HeaderText = "Hotel";
+            this.hotelDataGridViewTextBoxColumn.Name = "hotelDataGridViewTextBoxColumn";
+            this.hotelDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hotelDataGridViewTextBoxColumn.Width = 57;
+            // 
+            // lblEuro
+            // 
+            this.lblEuro.AutoSize = true;
+            this.lblEuro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEuro.Location = new System.Drawing.Point(782, 115);
+            this.lblEuro.Name = "lblEuro";
+            this.lblEuro.Size = new System.Drawing.Size(16, 18);
+            this.lblEuro.TabIndex = 50;
+            this.lblEuro.Text = "€";
+            // 
+            // lblEuro2
+            // 
+            this.lblEuro2.AutoSize = true;
+            this.lblEuro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEuro2.Location = new System.Drawing.Point(775, 202);
+            this.lblEuro2.Name = "lblEuro2";
+            this.lblEuro2.Size = new System.Drawing.Size(16, 18);
+            this.lblEuro2.TabIndex = 51;
+            this.lblEuro2.Text = "€";
             // 
             // FrmGestionInscriptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(911, 520);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmGestionInscriptions";
@@ -731,7 +737,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindSrcInscriptions)).EndInit();
             this.DetailsCongressiste.ResumeLayout(false);
             this.DetailsCongressiste.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindSrcHotels)).EndInit();
             this.ListeParticipations.ResumeLayout(false);
             this.ListeParticipations.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -794,11 +799,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn villeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn acompteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idHotelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idLigueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hotelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn activitesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sessionsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource bindSrcHotels;
+        private System.Windows.Forms.Label lblEuro2;
+        private System.Windows.Forms.Label lblEuro;
     }
 }
