@@ -39,7 +39,7 @@ CREATE TABLE Activite(
 	designation VARCHAR(150) NOT NULL,
 	prix DECIMAL(10,2) NOT NULL,
 	date DATE NOT NULL,
-	heureDebut TIME NOT NULL,
+	heureDebut VARCHAR(5) NOT NULL,
 	nbPlacesMax INT NOT NULL,
 	CONSTRAINT pk_activite PRIMARY KEY (idActivite)
 );
