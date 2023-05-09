@@ -35,6 +35,8 @@
             this.dataGridViewListCongressiste = new System.Windows.Forms.DataGridView();
             this.bindSrcInscriptions = new System.Windows.Forms.BindingSource(this.components);
             this.DetailsCongressiste = new System.Windows.Forms.TabPage();
+            this.lblEuro2 = new System.Windows.Forms.Label();
+            this.lblEuro = new System.Windows.Forms.Label();
             this.lbRestePayerValeur = new System.Windows.Forms.Label();
             this.lbMontantTotalValue = new System.Windows.Forms.Label();
             this.lblRestePayer = new System.Windows.Forms.Label();
@@ -83,8 +85,7 @@
             this.acompteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idLigueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hotelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblEuro = new System.Windows.Forms.Label();
-            this.lblEuro2 = new System.Windows.Forms.Label();
+            this.bindSrcHotels = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.ListeCongressistes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListCongressiste)).BeginInit();
@@ -93,6 +94,7 @@
             this.ListeParticipations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActiviteCongressiste)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindSrcHotels)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -202,6 +204,26 @@
             this.DetailsCongressiste.TabIndex = 1;
             this.DetailsCongressiste.Text = "Détails";
             this.DetailsCongressiste.UseVisualStyleBackColor = true;
+            // 
+            // lblEuro2
+            // 
+            this.lblEuro2.AutoSize = true;
+            this.lblEuro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEuro2.Location = new System.Drawing.Point(775, 202);
+            this.lblEuro2.Name = "lblEuro2";
+            this.lblEuro2.Size = new System.Drawing.Size(16, 18);
+            this.lblEuro2.TabIndex = 51;
+            this.lblEuro2.Text = "€";
+            // 
+            // lblEuro
+            // 
+            this.lblEuro.AutoSize = true;
+            this.lblEuro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEuro.Location = new System.Drawing.Point(782, 115);
+            this.lblEuro.Name = "lblEuro";
+            this.lblEuro.Size = new System.Drawing.Size(16, 18);
+            this.lblEuro.TabIndex = 50;
+            this.lblEuro.Text = "€";
             // 
             // lbRestePayerValeur
             // 
@@ -353,6 +375,9 @@
             // 
             // comboBoxHotelCongressiste
             // 
+            this.comboBoxHotelCongressiste.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.bindSrcInscriptions, "Hotel", true));
+            this.comboBoxHotelCongressiste.DataSource = this.bindSrcHotels;
+            this.comboBoxHotelCongressiste.DisplayMember = "idHotel";
             this.comboBoxHotelCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBoxHotelCongressiste.FormattingEnabled = true;
             this.comboBoxHotelCongressiste.Location = new System.Drawing.Point(234, 264);
@@ -628,7 +653,7 @@
             this.numInscriptionDataGridViewTextBoxColumn.HeaderText = "N° d\'inscription";
             this.numInscriptionDataGridViewTextBoxColumn.Name = "numInscriptionDataGridViewTextBoxColumn";
             this.numInscriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numInscriptionDataGridViewTextBoxColumn.Width = 94;
+            this.numInscriptionDataGridViewTextBoxColumn.Width = 102;
             // 
             // nomDataGridViewTextBoxColumn
             // 
@@ -660,7 +685,7 @@
             this.cpDataGridViewTextBoxColumn.HeaderText = "Code postal";
             this.cpDataGridViewTextBoxColumn.Name = "cpDataGridViewTextBoxColumn";
             this.cpDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cpDataGridViewTextBoxColumn.Width = 81;
+            this.cpDataGridViewTextBoxColumn.Width = 88;
             // 
             // villeDataGridViewTextBoxColumn
             // 
@@ -687,11 +712,11 @@
             // 
             // idLigueDataGridViewTextBoxColumn
             // 
-            this.idLigueDataGridViewTextBoxColumn.DataPropertyName = "idLigue";
-            this.idLigueDataGridViewTextBoxColumn.HeaderText = "idLigue";
+            this.idLigueDataGridViewTextBoxColumn.DataPropertyName = "Ligue";
+            this.idLigueDataGridViewTextBoxColumn.HeaderText = "Ligue";
             this.idLigueDataGridViewTextBoxColumn.Name = "idLigueDataGridViewTextBoxColumn";
             this.idLigueDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idLigueDataGridViewTextBoxColumn.Width = 66;
+            this.idLigueDataGridViewTextBoxColumn.Width = 58;
             // 
             // hotelDataGridViewTextBoxColumn
             // 
@@ -701,25 +726,9 @@
             this.hotelDataGridViewTextBoxColumn.ReadOnly = true;
             this.hotelDataGridViewTextBoxColumn.Width = 57;
             // 
-            // lblEuro
+            // bindSrcHotels
             // 
-            this.lblEuro.AutoSize = true;
-            this.lblEuro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEuro.Location = new System.Drawing.Point(782, 115);
-            this.lblEuro.Name = "lblEuro";
-            this.lblEuro.Size = new System.Drawing.Size(16, 18);
-            this.lblEuro.TabIndex = 50;
-            this.lblEuro.Text = "€";
-            // 
-            // lblEuro2
-            // 
-            this.lblEuro2.AutoSize = true;
-            this.lblEuro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEuro2.Location = new System.Drawing.Point(775, 202);
-            this.lblEuro2.Name = "lblEuro2";
-            this.lblEuro2.Size = new System.Drawing.Size(16, 18);
-            this.lblEuro2.TabIndex = 51;
-            this.lblEuro2.Text = "€";
+            this.bindSrcHotels.DataSource = typeof(GestionOrganisationCongres.Hotel);
             // 
             // FrmGestionInscriptions
             // 
@@ -741,6 +750,7 @@
             this.ListeParticipations.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActiviteCongressiste)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindSrcHotels)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -791,6 +801,8 @@
         private System.Windows.Forms.Label lblSession;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource bindSrcInscriptions;
+        private System.Windows.Forms.Label lblEuro2;
+        private System.Windows.Forms.Label lblEuro;
         private System.Windows.Forms.DataGridViewTextBoxColumn numInscriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prenomDataGridViewTextBoxColumn;
@@ -801,7 +813,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn acompteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idLigueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hotelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label lblEuro2;
-        private System.Windows.Forms.Label lblEuro;
+        private System.Windows.Forms.BindingSource bindSrcHotels;
     }
 }
