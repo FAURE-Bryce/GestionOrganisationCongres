@@ -73,5 +73,32 @@
         <ScalarProperty Name="numSession" ColumnName="numSession" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="gestionCongresModele.Categorie">
+        <MappingFragment StoreEntitySet="Categorie">
+          <ScalarProperty Name="nbEtoiles" ColumnName="nbEtoiles" />
+          <ScalarProperty Name="idCateg" ColumnName="idCateg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ligues">
+      <EntityTypeMapping TypeName="gestionCongresModele.Ligue">
+        <MappingFragment StoreEntitySet="Ligue">
+          <ScalarProperty Name="ville" ColumnName="ville" />
+          <ScalarProperty Name="cp" ColumnName="cp" />
+          <ScalarProperty Name="adresse" ColumnName="adresse" />
+          <ScalarProperty Name="nomLigue" ColumnName="nomLigue" />
+          <ScalarProperty Name="idLigue" ColumnName="idLigue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salles">
+      <EntityTypeMapping TypeName="gestionCongresModele.Salle">
+        <MappingFragment StoreEntitySet="Salle">
+          <ScalarProperty Name="nomSalle" ColumnName="nomSalle" />
+          <ScalarProperty Name="idSalle" ColumnName="idSalle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

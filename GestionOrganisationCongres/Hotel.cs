@@ -31,5 +31,6 @@ namespace GestionOrganisationCongres
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Congressiste> Congressistes { get; set; }
+        public virtual Categorie Categorie { get; set; }
     }
 }

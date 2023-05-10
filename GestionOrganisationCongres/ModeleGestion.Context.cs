@@ -31,6 +31,9 @@ namespace GestionOrganisationCongres
         public virtual DbSet<Congressiste> Congressistes { get; set; }
         public virtual DbSet<Hotel> Hotels { get; set; }
         public virtual DbSet<Session> Sessions { get; set; }
+        public virtual DbSet<Categorie> Categories { get; set; }
+        public virtual DbSet<Ligue> Ligues { get; set; }
+        public virtual DbSet<Salle> Salles { get; set; }
     
         public virtual int montantTotal(Nullable<int> idCongressiste, ObjectParameter total)
         {

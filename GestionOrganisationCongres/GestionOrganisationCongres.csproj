@@ -58,6 +58,9 @@
     <Compile Include="Activite.cs">
       <DependentUpon>ModeleGestion.tt</DependentUpon>
     </Compile>
+    <Compile Include="Categorie.cs">
+      <DependentUpon>ModeleGestion.tt</DependentUpon>
+    </Compile>
     <Compile Include="Hotel_suite.cs" />
     <Compile Include="Congressiste.cs">
       <DependentUpon>ModeleGestion.tt</DependentUpon>
@@ -89,6 +92,9 @@
     <Compile Include="Hotel.cs">
       <DependentUpon>ModeleGestion.tt</DependentUpon>
     </Compile>
+    <Compile Include="Ligue.cs">
+      <DependentUpon>ModeleGestion.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModeleGestion.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -106,6 +112,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Salle.cs">
+      <DependentUpon>ModeleGestion.tt</DependentUpon>
+    </Compile>
     <Compile Include="Session.cs">
       <DependentUpon>ModeleGestion.tt</DependentUpon>
     </Compile>

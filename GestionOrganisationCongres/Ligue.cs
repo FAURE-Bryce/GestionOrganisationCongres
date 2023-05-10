@@ -12,25 +12,21 @@ namespace GestionOrganisationCongres
     using System;
     using System.Collections.Generic;
     
-    public partial class Session
+    public partial class Ligue
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Session()
+        public Ligue()
         {
             this.Congressistes = new HashSet<Congressiste>();
         }
     
-        public int numSession { get; set; }
-        public string theme { get; set; }
-        public string heureDebut { get; set; }
-        public System.DateTime date { get; set; }
-        public int nbPlacesMax { get; set; }
-        public decimal prix { get; set; }
-        public string nomPresident { get; set; }
-        public int idSalle { get; set; }
+        public int idLigue { get; set; }
+        public string nomLigue { get; set; }
+        public string adresse { get; set; }
+        public string cp { get; set; }
+        public string ville { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Congressiste> Congressistes { get; set; }
-        public virtual Salle Salle { get; set; }
     }
 }

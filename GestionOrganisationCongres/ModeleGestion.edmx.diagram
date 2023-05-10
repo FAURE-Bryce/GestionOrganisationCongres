@@ -12,6 +12,12 @@
         <AssociationConnector Association="gestionCongresModele.fk_congressiste_hotel" ManuallyRouted="false" />
         <AssociationConnector Association="gestionCongresModele.Inscrire" ManuallyRouted="false" />
         <AssociationConnector Association="gestionCongresModele.Participer" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="gestionCongresModele.Categorie" Width="1.5" PointX="0.75" PointY="10" />
+        <EntityTypeShape EntityType="gestionCongresModele.Ligue" Width="1.5" PointX="0.75" PointY="13" />
+        <EntityTypeShape EntityType="gestionCongresModele.Salle" Width="1.5" PointX="3.375" PointY="5.875" />
+        <AssociationConnector Association="gestionCongresModele.fk_hotel_categorie" />
+        <AssociationConnector Association="gestionCongresModele.fk_congressiste_ligue" />
+        <AssociationConnector Association="gestionCongresModele.fk_session_salle" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
