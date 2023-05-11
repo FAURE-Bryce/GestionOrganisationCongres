@@ -42,14 +42,16 @@
             this.idCategDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindSrcHotels = new System.Windows.Forms.BindingSource(this.components);
             this.detailsHotels = new System.Windows.Forms.TabPage();
+            this.txtBoxPrixHotel = new System.Windows.Forms.TextBox();
+            this.lblEuro = new System.Windows.Forms.Label();
             this.txtBoxAdresseHotel = new System.Windows.Forms.TextBox();
             this.txtBoxVilleHotel = new System.Windows.Forms.TextBox();
-            this.btValiderModifHotel = new System.Windows.Forms.Button();
-            this.btAnnulerModifHotel = new System.Windows.Forms.Button();
+            this.btValiderHotel = new System.Windows.Forms.Button();
+            this.btAnnulerAjoutHotel = new System.Windows.Forms.Button();
             this.txtBoxNomHotel = new System.Windows.Forms.TextBox();
             this.maskedTxtBoxCpHotel = new System.Windows.Forms.MaskedTextBox();
             this.comboBoxNbEtoileHotel = new System.Windows.Forms.ComboBox();
-            this.maskedTxtBoxPrixHotel = new System.Windows.Forms.MaskedTextBox();
+            this.bindSrcCategorie = new System.Windows.Forms.BindingSource(this.components);
             this.lblPrixHotel = new System.Windows.Forms.Label();
             this.lblNbEtoileHotel = new System.Windows.Forms.Label();
             this.lblCpHotel = new System.Windows.Forms.Label();
@@ -57,12 +59,12 @@
             this.lblVilleHotel = new System.Windows.Forms.Label();
             this.lblNomHotel = new System.Windows.Forms.Label();
             this.btSupprimerHotel = new System.Windows.Forms.Button();
-            this.lblEuro = new System.Windows.Forms.Label();
             this.tabControlHotel.SuspendLayout();
             this.listeHotel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHotel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindSrcHotels)).BeginInit();
             this.detailsHotels.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindSrcCategorie)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlHotel
@@ -100,6 +102,7 @@
             this.btAjouterHotel.TabIndex = 1;
             this.btAjouterHotel.Text = "Ajouter un hôtel";
             this.btAjouterHotel.UseVisualStyleBackColor = false;
+            this.btAjouterHotel.Click += new System.EventHandler(this.btAjouterHotel_Click);
             // 
             // dataGridViewHotel
             // 
@@ -189,15 +192,15 @@
             // 
             // detailsHotels
             // 
+            this.detailsHotels.Controls.Add(this.txtBoxPrixHotel);
             this.detailsHotels.Controls.Add(this.lblEuro);
             this.detailsHotels.Controls.Add(this.txtBoxAdresseHotel);
             this.detailsHotels.Controls.Add(this.txtBoxVilleHotel);
-            this.detailsHotels.Controls.Add(this.btValiderModifHotel);
-            this.detailsHotels.Controls.Add(this.btAnnulerModifHotel);
+            this.detailsHotels.Controls.Add(this.btValiderHotel);
+            this.detailsHotels.Controls.Add(this.btAnnulerAjoutHotel);
             this.detailsHotels.Controls.Add(this.txtBoxNomHotel);
             this.detailsHotels.Controls.Add(this.maskedTxtBoxCpHotel);
             this.detailsHotels.Controls.Add(this.comboBoxNbEtoileHotel);
-            this.detailsHotels.Controls.Add(this.maskedTxtBoxPrixHotel);
             this.detailsHotels.Controls.Add(this.lblPrixHotel);
             this.detailsHotels.Controls.Add(this.lblNbEtoileHotel);
             this.detailsHotels.Controls.Add(this.lblCpHotel);
@@ -214,8 +217,27 @@
             this.detailsHotels.Text = "Détails";
             this.detailsHotels.UseVisualStyleBackColor = true;
             // 
+            // txtBoxPrixHotel
+            // 
+            this.txtBoxPrixHotel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcHotels, "prixChambre", true));
+            this.txtBoxPrixHotel.Location = new System.Drawing.Point(174, 236);
+            this.txtBoxPrixHotel.Name = "txtBoxPrixHotel";
+            this.txtBoxPrixHotel.Size = new System.Drawing.Size(85, 20);
+            this.txtBoxPrixHotel.TabIndex = 52;
+            // 
+            // lblEuro
+            // 
+            this.lblEuro.AutoSize = true;
+            this.lblEuro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEuro.Location = new System.Drawing.Point(265, 239);
+            this.lblEuro.Name = "lblEuro";
+            this.lblEuro.Size = new System.Drawing.Size(18, 20);
+            this.lblEuro.TabIndex = 51;
+            this.lblEuro.Text = "€";
+            // 
             // txtBoxAdresseHotel
             // 
+            this.txtBoxAdresseHotel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcHotels, "adresse", true));
             this.txtBoxAdresseHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtBoxAdresseHotel.Location = new System.Drawing.Point(222, 76);
             this.txtBoxAdresseHotel.Margin = new System.Windows.Forms.Padding(2);
@@ -225,6 +247,7 @@
             // 
             // txtBoxVilleHotel
             // 
+            this.txtBoxVilleHotel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcHotels, "ville", true));
             this.txtBoxVilleHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtBoxVilleHotel.Location = new System.Drawing.Point(188, 128);
             this.txtBoxVilleHotel.Margin = new System.Windows.Forms.Padding(2);
@@ -232,32 +255,35 @@
             this.txtBoxVilleHotel.Size = new System.Drawing.Size(198, 23);
             this.txtBoxVilleHotel.TabIndex = 49;
             // 
-            // btValiderModifHotel
+            // btValiderHotel
             // 
-            this.btValiderModifHotel.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btValiderModifHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btValiderModifHotel.Location = new System.Drawing.Point(567, 388);
-            this.btValiderModifHotel.Margin = new System.Windows.Forms.Padding(2);
-            this.btValiderModifHotel.Name = "btValiderModifHotel";
-            this.btValiderModifHotel.Size = new System.Drawing.Size(93, 48);
-            this.btValiderModifHotel.TabIndex = 48;
-            this.btValiderModifHotel.Text = "Valider";
-            this.btValiderModifHotel.UseVisualStyleBackColor = false;
+            this.btValiderHotel.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btValiderHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btValiderHotel.Location = new System.Drawing.Point(567, 388);
+            this.btValiderHotel.Margin = new System.Windows.Forms.Padding(2);
+            this.btValiderHotel.Name = "btValiderHotel";
+            this.btValiderHotel.Size = new System.Drawing.Size(93, 48);
+            this.btValiderHotel.TabIndex = 48;
+            this.btValiderHotel.Text = "Valider";
+            this.btValiderHotel.UseVisualStyleBackColor = false;
+            this.btValiderHotel.Click += new System.EventHandler(this.btValiderHotel_Click);
             // 
-            // btAnnulerModifHotel
+            // btAnnulerAjoutHotel
             // 
-            this.btAnnulerModifHotel.BackColor = System.Drawing.Color.LightPink;
-            this.btAnnulerModifHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btAnnulerModifHotel.Location = new System.Drawing.Point(80, 388);
-            this.btAnnulerModifHotel.Margin = new System.Windows.Forms.Padding(2);
-            this.btAnnulerModifHotel.Name = "btAnnulerModifHotel";
-            this.btAnnulerModifHotel.Size = new System.Drawing.Size(108, 49);
-            this.btAnnulerModifHotel.TabIndex = 47;
-            this.btAnnulerModifHotel.Text = "Annuler";
-            this.btAnnulerModifHotel.UseVisualStyleBackColor = false;
+            this.btAnnulerAjoutHotel.BackColor = System.Drawing.Color.LightPink;
+            this.btAnnulerAjoutHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btAnnulerAjoutHotel.Location = new System.Drawing.Point(80, 388);
+            this.btAnnulerAjoutHotel.Margin = new System.Windows.Forms.Padding(2);
+            this.btAnnulerAjoutHotel.Name = "btAnnulerAjoutHotel";
+            this.btAnnulerAjoutHotel.Size = new System.Drawing.Size(108, 49);
+            this.btAnnulerAjoutHotel.TabIndex = 47;
+            this.btAnnulerAjoutHotel.Text = "Annuler";
+            this.btAnnulerAjoutHotel.UseVisualStyleBackColor = false;
+            this.btAnnulerAjoutHotel.Click += new System.EventHandler(this.btAnnulerAjoutHotel_Click);
             // 
             // txtBoxNomHotel
             // 
+            this.txtBoxNomHotel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcHotels, "nom", true));
             this.txtBoxNomHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtBoxNomHotel.Location = new System.Drawing.Point(192, 27);
             this.txtBoxNomHotel.Margin = new System.Windows.Forms.Padding(2);
@@ -267,6 +293,7 @@
             // 
             // maskedTxtBoxCpHotel
             // 
+            this.maskedTxtBoxCpHotel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcHotels, "cp", true));
             this.maskedTxtBoxCpHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.maskedTxtBoxCpHotel.Location = new System.Drawing.Point(244, 177);
             this.maskedTxtBoxCpHotel.Margin = new System.Windows.Forms.Padding(2);
@@ -277,6 +304,9 @@
             // 
             // comboBoxNbEtoileHotel
             // 
+            this.comboBoxNbEtoileHotel.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.bindSrcHotels, "Categorie", true));
+            this.comboBoxNbEtoileHotel.DataSource = this.bindSrcCategorie;
+            this.comboBoxNbEtoileHotel.DisplayMember = "nbEtoiles";
             this.comboBoxNbEtoileHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBoxNbEtoileHotel.FormattingEnabled = true;
             this.comboBoxNbEtoileHotel.Location = new System.Drawing.Point(294, 291);
@@ -285,15 +315,9 @@
             this.comboBoxNbEtoileHotel.Size = new System.Drawing.Size(92, 24);
             this.comboBoxNbEtoileHotel.TabIndex = 6;
             // 
-            // maskedTxtBoxPrixHotel
+            // bindSrcCategorie
             // 
-            this.maskedTxtBoxPrixHotel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.maskedTxtBoxPrixHotel.Location = new System.Drawing.Point(184, 236);
-            this.maskedTxtBoxPrixHotel.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTxtBoxPrixHotel.Mask = "999999";
-            this.maskedTxtBoxPrixHotel.Name = "maskedTxtBoxPrixHotel";
-            this.maskedTxtBoxPrixHotel.Size = new System.Drawing.Size(76, 23);
-            this.maskedTxtBoxPrixHotel.TabIndex = 8;
+            this.bindSrcCategorie.DataSource = typeof(GestionOrganisationCongres.Categorie);
             // 
             // lblPrixHotel
             // 
@@ -372,16 +396,7 @@
             this.btSupprimerHotel.TabIndex = 12;
             this.btSupprimerHotel.Text = "Supprimer l\'hôtel";
             this.btSupprimerHotel.UseVisualStyleBackColor = false;
-            // 
-            // lblEuro
-            // 
-            this.lblEuro.AutoSize = true;
-            this.lblEuro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEuro.Location = new System.Drawing.Point(265, 239);
-            this.lblEuro.Name = "lblEuro";
-            this.lblEuro.Size = new System.Drawing.Size(18, 20);
-            this.lblEuro.TabIndex = 51;
-            this.lblEuro.Text = "€";
+            this.btSupprimerHotel.Click += new System.EventHandler(this.btSupprimerHotel_Click);
             // 
             // FrmGestionHotel
             // 
@@ -399,6 +414,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindSrcHotels)).EndInit();
             this.detailsHotels.ResumeLayout(false);
             this.detailsHotels.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindSrcCategorie)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -410,12 +426,11 @@
         private System.Windows.Forms.Button btAjouterHotel;
         private System.Windows.Forms.DataGridView dataGridViewHotel;
         private System.Windows.Forms.TabPage detailsHotels;
-        private System.Windows.Forms.Button btValiderModifHotel;
-        private System.Windows.Forms.Button btAnnulerModifHotel;
+        private System.Windows.Forms.Button btValiderHotel;
+        private System.Windows.Forms.Button btAnnulerAjoutHotel;
         private System.Windows.Forms.TextBox txtBoxNomHotel;
         private System.Windows.Forms.MaskedTextBox maskedTxtBoxCpHotel;
         private System.Windows.Forms.ComboBox comboBoxNbEtoileHotel;
-        private System.Windows.Forms.MaskedTextBox maskedTxtBoxPrixHotel;
         private System.Windows.Forms.Label lblPrixHotel;
         private System.Windows.Forms.Label lblNbEtoileHotel;
         private System.Windows.Forms.Label lblCpHotel;
@@ -434,5 +449,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn prixChambreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCategDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblEuro;
+        private System.Windows.Forms.TextBox txtBoxPrixHotel;
+        private System.Windows.Forms.BindingSource bindSrcCategorie;
     }
 }

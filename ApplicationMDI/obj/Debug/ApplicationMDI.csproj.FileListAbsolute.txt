@@ -55,3 +55,22 @@ C:\Users\faure\Desktop\Projet Group\GestionOrganisationCongres\ApplicationMDI\ob
 C:\Users\faure\Desktop\Projet Group\GestionOrganisationCongres\ApplicationMDI\obj\Debug\ApplicationMDI.pdb
 C:\Users\n.pauly\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\n.pauly\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\bin\Debug\ApplicationMDI.exe.config
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\bin\Debug\ApplicationMDI.exe
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\bin\Debug\ApplicationMDI.pdb
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\bin\Debug\EntityFramework.dll
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\bin\Debug\GestionOrganisationCongres.exe
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\bin\Debug\GestionOrganisationCongres.pdb
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\bin\Debug\GestionOrganisationCongres.exe.config
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\bin\Debug\EntityFramework.xml
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\obj\Debug\ApplicationMDI.csproj.AssemblyReference.cache
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\obj\Debug\ApplicationMDI.csproj.SuggestedBindingRedirects.cache
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\obj\Debug\ApplicationMDI.FrmPrincipal.resources
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\obj\Debug\ApplicationMDI.Properties.Resources.resources
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\obj\Debug\ApplicationMDI.csproj.GenerateResource.cache
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\obj\Debug\ApplicationMDI.csproj.CoreCompileInputs.cache
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\obj\Debug\ApplicationMDI.csproj.CopyComplete
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\obj\Debug\ApplicationMDI.exe
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\ApplicationMDI\obj\Debug\ApplicationMDI.pdb

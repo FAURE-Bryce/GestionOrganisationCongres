@@ -8,7 +8,7 @@
     <Property Name="designation" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="prix" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="heureDebut" Type="String" Nullable="false" />
+    <Property Name="heureDebut" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
     <Property Name="nbPlacesMax" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Congressistes" Relationship="Self.Inscrire" FromRole="Activite" ToRole="Congressiste" />
   </EntityType>
@@ -52,7 +52,7 @@
     </Key>
     <Property Name="numSession" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="theme" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="heureDebut" Type="String" Nullable="false" />
+    <Property Name="heureDebut" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
     <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="nbPlacesMax" Type="Int32" Nullable="false" />
     <Property Name="prix" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
@@ -123,6 +123,22 @@
       <End Role="Salle" EntitySet="Salles" />
       <End Role="Session" EntitySet="Sessions" />
     </AssociationSet>
+    <FunctionImport Name="GetCongressistesDisponiblesByActivite" ReturnType="Collection(gestionCongresModele.GetCongressistesDisponiblesByActivite_Result)">
+      <Parameter Name="idA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetCongressistesDisponiblesBySession" ReturnType="Collection(gestionCongresModele.GetCongressistesDisponiblesBySession_Result)">
+      <Parameter Name="idS" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="montantTotal1">
+      <Parameter Name="idCongressiste" Mode="In" Type="Int32" />
+      <Parameter Name="total" Mode="InOut" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="nbPlacesActivite1">
+      <Parameter Name="uneActivite" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="NbPlacesBySession1">
+      <Parameter Name="numSession" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Categorie">
     <Key>
@@ -187,4 +203,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="GetCongressistesDisponiblesByActivite_Result">
+    <Property Type="Int32" Name="numInscription" Nullable="false" />
+    <Property Type="String" Name="nom" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="prenom" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetCongressistesDisponiblesBySession_Result">
+    <Property Type="Int32" Name="numInscription" Nullable="false" />
+    <Property Type="String" Name="nom" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="prenom" Nullable="false" MaxLength="50" />
+  </ComplexType>
 </Schema>

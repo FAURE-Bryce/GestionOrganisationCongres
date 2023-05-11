@@ -100,5 +100,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetCongressistesDisponiblesByActivite" FunctionName="gestionCongresModele.Store.GetCongressistesDisponiblesByActivite">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="gestionCongresModele.GetCongressistesDisponiblesByActivite_Result">
+          <ScalarProperty Name="numInscription" ColumnName="numInscription" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetCongressistesDisponiblesBySession" FunctionName="gestionCongresModele.Store.GetCongressistesDisponiblesBySession">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="gestionCongresModele.GetCongressistesDisponiblesBySession_Result">
+          <ScalarProperty Name="numInscription" ColumnName="numInscription" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="montantTotal1" FunctionName="gestionCongresModele.Store.montantTotal" />
+    <FunctionImportMapping FunctionImportName="nbPlacesActivite1" FunctionName="gestionCongresModele.Store.nbPlacesActivite" />
+    <FunctionImportMapping FunctionImportName="NbPlacesBySession1" FunctionName="gestionCongresModele.Store.NbPlacesBySession" />
   </EntityContainerMapping>
 </Mapping>

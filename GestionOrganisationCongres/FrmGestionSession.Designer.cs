@@ -33,6 +33,14 @@
             this.listeSession = new System.Windows.Forms.TabPage();
             this.btAjouterSession = new System.Windows.Forms.Button();
             this.dataGridViewSession = new System.Windows.Forms.DataGridView();
+            this.numSessionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.themeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.heureDebutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nbPlacesMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prixDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomPresidentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSalleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindSrcSessions = new System.Windows.Forms.BindingSource(this.components);
             this.detailsSession = new System.Windows.Forms.TabPage();
             this.txtBoxPrixSession = new System.Windows.Forms.TextBox();
@@ -56,14 +64,6 @@
             this.lblThemeSession = new System.Windows.Forms.Label();
             this.btSupprimerSession = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.numSessionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.themeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.heureDebutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nbPlacesMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prixDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomPresidentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idSalleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlSession.SuspendLayout();
             this.listeSession.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSession)).BeginInit();
@@ -98,14 +98,15 @@
             // 
             // btAjouterSession
             // 
-            this.btAjouterSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btAjouterSession.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btAjouterSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.btAjouterSession.Location = new System.Drawing.Point(244, 365);
             this.btAjouterSession.Margin = new System.Windows.Forms.Padding(2);
             this.btAjouterSession.Name = "btAjouterSession";
-            this.btAjouterSession.Size = new System.Drawing.Size(155, 24);
+            this.btAjouterSession.Size = new System.Drawing.Size(181, 57);
             this.btAjouterSession.TabIndex = 1;
             this.btAjouterSession.Text = "Ajouter une session";
-            this.btAjouterSession.UseVisualStyleBackColor = true;
+            this.btAjouterSession.UseVisualStyleBackColor = false;
             // 
             // dataGridViewSession
             // 
@@ -131,6 +132,78 @@
             this.dataGridViewSession.RowTemplate.Height = 24;
             this.dataGridViewSession.Size = new System.Drawing.Size(641, 357);
             this.dataGridViewSession.TabIndex = 0;
+            // 
+            // numSessionDataGridViewTextBoxColumn
+            // 
+            this.numSessionDataGridViewTextBoxColumn.DataPropertyName = "numSession";
+            this.numSessionDataGridViewTextBoxColumn.HeaderText = "N° session";
+            this.numSessionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.numSessionDataGridViewTextBoxColumn.Name = "numSessionDataGridViewTextBoxColumn";
+            this.numSessionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numSessionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // themeDataGridViewTextBoxColumn
+            // 
+            this.themeDataGridViewTextBoxColumn.DataPropertyName = "theme";
+            this.themeDataGridViewTextBoxColumn.HeaderText = "Thème";
+            this.themeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.themeDataGridViewTextBoxColumn.Name = "themeDataGridViewTextBoxColumn";
+            this.themeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.themeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // heureDebutDataGridViewTextBoxColumn
+            // 
+            this.heureDebutDataGridViewTextBoxColumn.DataPropertyName = "heureDebut";
+            this.heureDebutDataGridViewTextBoxColumn.HeaderText = "Heure de début";
+            this.heureDebutDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.heureDebutDataGridViewTextBoxColumn.Name = "heureDebutDataGridViewTextBoxColumn";
+            this.heureDebutDataGridViewTextBoxColumn.ReadOnly = true;
+            this.heureDebutDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nbPlacesMaxDataGridViewTextBoxColumn
+            // 
+            this.nbPlacesMaxDataGridViewTextBoxColumn.DataPropertyName = "nbPlacesMax";
+            this.nbPlacesMaxDataGridViewTextBoxColumn.HeaderText = "Nombre de places max";
+            this.nbPlacesMaxDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nbPlacesMaxDataGridViewTextBoxColumn.Name = "nbPlacesMaxDataGridViewTextBoxColumn";
+            this.nbPlacesMaxDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nbPlacesMaxDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // prixDataGridViewTextBoxColumn
+            // 
+            this.prixDataGridViewTextBoxColumn.DataPropertyName = "prix";
+            this.prixDataGridViewTextBoxColumn.HeaderText = "Prix";
+            this.prixDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.prixDataGridViewTextBoxColumn.Name = "prixDataGridViewTextBoxColumn";
+            this.prixDataGridViewTextBoxColumn.ReadOnly = true;
+            this.prixDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nomPresidentDataGridViewTextBoxColumn
+            // 
+            this.nomPresidentDataGridViewTextBoxColumn.DataPropertyName = "nomPresident";
+            this.nomPresidentDataGridViewTextBoxColumn.HeaderText = "Nom du président";
+            this.nomPresidentDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomPresidentDataGridViewTextBoxColumn.Name = "nomPresidentDataGridViewTextBoxColumn";
+            this.nomPresidentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomPresidentDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idSalleDataGridViewTextBoxColumn
+            // 
+            this.idSalleDataGridViewTextBoxColumn.DataPropertyName = "idSalle";
+            this.idSalleDataGridViewTextBoxColumn.HeaderText = "Salle";
+            this.idSalleDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idSalleDataGridViewTextBoxColumn.Name = "idSalleDataGridViewTextBoxColumn";
+            this.idSalleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idSalleDataGridViewTextBoxColumn.Width = 125;
             // 
             // bindSrcSessions
             // 
@@ -394,78 +467,6 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(381, 239);
             this.dataGridView2.TabIndex = 1;
-            // 
-            // numSessionDataGridViewTextBoxColumn
-            // 
-            this.numSessionDataGridViewTextBoxColumn.DataPropertyName = "numSession";
-            this.numSessionDataGridViewTextBoxColumn.HeaderText = "N° session";
-            this.numSessionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.numSessionDataGridViewTextBoxColumn.Name = "numSessionDataGridViewTextBoxColumn";
-            this.numSessionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numSessionDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // themeDataGridViewTextBoxColumn
-            // 
-            this.themeDataGridViewTextBoxColumn.DataPropertyName = "theme";
-            this.themeDataGridViewTextBoxColumn.HeaderText = "Thème";
-            this.themeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.themeDataGridViewTextBoxColumn.Name = "themeDataGridViewTextBoxColumn";
-            this.themeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.themeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // heureDebutDataGridViewTextBoxColumn
-            // 
-            this.heureDebutDataGridViewTextBoxColumn.DataPropertyName = "heureDebut";
-            this.heureDebutDataGridViewTextBoxColumn.HeaderText = "Heure de début";
-            this.heureDebutDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.heureDebutDataGridViewTextBoxColumn.Name = "heureDebutDataGridViewTextBoxColumn";
-            this.heureDebutDataGridViewTextBoxColumn.ReadOnly = true;
-            this.heureDebutDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nbPlacesMaxDataGridViewTextBoxColumn
-            // 
-            this.nbPlacesMaxDataGridViewTextBoxColumn.DataPropertyName = "nbPlacesMax";
-            this.nbPlacesMaxDataGridViewTextBoxColumn.HeaderText = "Nombre de places max";
-            this.nbPlacesMaxDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nbPlacesMaxDataGridViewTextBoxColumn.Name = "nbPlacesMaxDataGridViewTextBoxColumn";
-            this.nbPlacesMaxDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nbPlacesMaxDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // prixDataGridViewTextBoxColumn
-            // 
-            this.prixDataGridViewTextBoxColumn.DataPropertyName = "prix";
-            this.prixDataGridViewTextBoxColumn.HeaderText = "Prix";
-            this.prixDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.prixDataGridViewTextBoxColumn.Name = "prixDataGridViewTextBoxColumn";
-            this.prixDataGridViewTextBoxColumn.ReadOnly = true;
-            this.prixDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nomPresidentDataGridViewTextBoxColumn
-            // 
-            this.nomPresidentDataGridViewTextBoxColumn.DataPropertyName = "nomPresident";
-            this.nomPresidentDataGridViewTextBoxColumn.HeaderText = "Nom du président";
-            this.nomPresidentDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nomPresidentDataGridViewTextBoxColumn.Name = "nomPresidentDataGridViewTextBoxColumn";
-            this.nomPresidentDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomPresidentDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // idSalleDataGridViewTextBoxColumn
-            // 
-            this.idSalleDataGridViewTextBoxColumn.DataPropertyName = "idSalle";
-            this.idSalleDataGridViewTextBoxColumn.HeaderText = "Salle";
-            this.idSalleDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idSalleDataGridViewTextBoxColumn.Name = "idSalleDataGridViewTextBoxColumn";
-            this.idSalleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idSalleDataGridViewTextBoxColumn.Width = 125;
             // 
             // FrmGestionSession
             // 

@@ -188,6 +188,22 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="GetCongressistesDisponiblesByActivite" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetCongressistesDisponiblesBySession" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idS" Type="int" Mode="In" />
+  </Function>
+  <Function Name="montantTotal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idCongressiste" Type="int" Mode="In" />
+    <Parameter Name="total" Type="decimal" Mode="InOut" />
+  </Function>
+  <Function Name="nbPlacesActivite" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="uneActivite" Type="int" Mode="In" />
+  </Function>
+  <Function Name="NbPlacesBySession" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numSession" Type="int" Mode="In" />
+  </Function>
   <EntityContainer Name="gestionCongresModeleStoreContainer">
     <EntitySet Name="Activite" EntityType="Self.Activite" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Categorie" EntityType="Self.Categorie" Schema="dbo" store:Type="Tables" />

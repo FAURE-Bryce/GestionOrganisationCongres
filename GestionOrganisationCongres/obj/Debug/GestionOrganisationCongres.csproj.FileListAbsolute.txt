@@ -60,3 +60,24 @@ C:\Users\faure\Desktop\Projet Group\GestionOrganisationCongres\GestionOrganisati
 C:\Users\faure\Desktop\Projet Group\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.csproj.CopyComplete
 C:\Users\faure\Desktop\Projet Group\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.exe
 C:\Users\faure\Desktop\Projet Group\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.pdb
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\bin\Debug\GestionOrganisationCongres.exe.config
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\bin\Debug\GestionOrganisationCongres.exe
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\bin\Debug\GestionOrganisationCongres.pdb
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\bin\Debug\EntityFramework.dll
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\bin\Debug\EntityFramework.xml
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.csproj.AssemblyReference.cache
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.csproj.SuggestedBindingRedirects.cache
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.FrmGestionActivite.resources
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.FrmGestionHotel.resources
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.FrmGestionInscriptions.resources
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.FrmGestionSession.resources
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.Properties.Resources.resources
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.csproj.GenerateResource.cache
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.csproj.CoreCompileInputs.cache
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.csproj.CopyComplete
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.exe
+C:\Users\33768\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.pdb
