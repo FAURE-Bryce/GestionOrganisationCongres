@@ -16,6 +16,13 @@ GRANT SELECT,INSERT,DELETE ON LIGUE TO GestOrgaCongres;
 GRANT SELECT,INSERT,DELETE ON SALLE TO GestOrgaCongres;
 GRANT SELECT,INSERT,DELETE ON CATEGORIE TO GestOrgaCongres;
 
+GRANT EXECUTE ON GetCongressistesDisponiblesByActivite TO GestOrgaCongres;
+GRANT EXECUTE ON GetCongressistesDisponiblesBySession TO GestOrgaCongres;
+GRANT EXECUTE ON nbPlacesActivite TO GestOrgaCongres;
+GRANT EXECUTE ON montantTotal TO GestOrgaCongres;
+GRANT EXECUTE ON NbPlacesBySession TO GestOrgaCongres;
+
+
 /* Création des tables */
 
 CREATE TABLE Salle(
@@ -382,7 +389,7 @@ END;
 go
 CREATE OR ALTER PROCEDURE GetCongressistesDisponiblesByActivite (@idA int)
 AS 
-	SELECT numInscription,nom, prenom
+	SELECT numInscription,nom, prenom, adresse,cp,ville,tel,acompte,idHotel,idLigue
 	FROM CONGRESSISTE C
 	WHERE NOT EXISTS(SELECT * FROM INSCRIRE I WHERE idActivite=@idA AND I.numInscription=C.numInscription)
 
@@ -390,6 +397,6 @@ AS
 go
 CREATE OR ALTER PROCEDURE GetCongressistesDisponiblesBySession(@idS int)
 AS 
-	SELECT numInscription,nom, prenom
+	SELECT numInscription,nom, prenom, adresse,cp,ville,tel,acompte,idHotel,idLigue
 	FROM CONGRESSISTE C
 	WHERE NOT EXISTS(SELECT * FROM PARTICIPER P WHERE numSession=@idS AND P.numInscription=C.numInscription)

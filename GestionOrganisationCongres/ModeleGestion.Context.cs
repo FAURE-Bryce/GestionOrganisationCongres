@@ -62,49 +62,40 @@ namespace GestionOrganisationCongres
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NbPlacesBySession", numSessionParameter);
         }
     
-        public virtual ObjectResult<GetCongressistesDisponiblesByActivite_Result> GetCongressistesDisponiblesByActivite(Nullable<int> idA)
+        public virtual ObjectResult<Congressiste> GetCongressistesDisponiblesByActivite(Nullable<int> idA)
         {
             var idAParameter = idA.HasValue ?
                 new ObjectParameter("idA", idA) :
                 new ObjectParameter("idA", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetCongressistesDisponiblesByActivite_Result>("GetCongressistesDisponiblesByActivite", idAParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Congressiste>("GetCongressistesDisponiblesByActivite", idAParameter);
         }
     
-        public virtual ObjectResult<GetCongressistesDisponiblesBySession_Result> GetCongressistesDisponiblesBySession(Nullable<int> idS)
+        public virtual ObjectResult<Congressiste> GetCongressistesDisponiblesByActivite(Nullable<int> idA, MergeOption mergeOption)
+        {
+            var idAParameter = idA.HasValue ?
+                new ObjectParameter("idA", idA) :
+                new ObjectParameter("idA", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Congressiste>("GetCongressistesDisponiblesByActivite", mergeOption, idAParameter);
+        }
+    
+        public virtual ObjectResult<Congressiste> GetCongressistesDisponiblesBySession(Nullable<int> idS)
         {
             var idSParameter = idS.HasValue ?
                 new ObjectParameter("idS", idS) :
                 new ObjectParameter("idS", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetCongressistesDisponiblesBySession_Result>("GetCongressistesDisponiblesBySession", idSParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Congressiste>("GetCongressistesDisponiblesBySession", idSParameter);
         }
     
-        public virtual int montantTotal1(Nullable<int> idCongressiste, ObjectParameter total)
+        public virtual ObjectResult<Congressiste> GetCongressistesDisponiblesBySession(Nullable<int> idS, MergeOption mergeOption)
         {
-            var idCongressisteParameter = idCongressiste.HasValue ?
-                new ObjectParameter("idCongressiste", idCongressiste) :
-                new ObjectParameter("idCongressiste", typeof(int));
+            var idSParameter = idS.HasValue ?
+                new ObjectParameter("idS", idS) :
+                new ObjectParameter("idS", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("montantTotal1", idCongressisteParameter, total);
-        }
-    
-        public virtual int nbPlacesActivite1(Nullable<int> uneActivite)
-        {
-            var uneActiviteParameter = uneActivite.HasValue ?
-                new ObjectParameter("uneActivite", uneActivite) :
-                new ObjectParameter("uneActivite", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("nbPlacesActivite1", uneActiviteParameter);
-        }
-    
-        public virtual int NbPlacesBySession1(Nullable<int> numSession)
-        {
-            var numSessionParameter = numSession.HasValue ?
-                new ObjectParameter("numSession", numSession) :
-                new ObjectParameter("numSession", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NbPlacesBySession1", numSessionParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Congressiste>("GetCongressistesDisponiblesBySession", mergeOption, idSParameter);
         }
     }
 }

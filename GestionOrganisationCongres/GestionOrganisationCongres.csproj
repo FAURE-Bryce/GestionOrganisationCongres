@@ -61,6 +61,7 @@
     <Compile Include="Categorie.cs">
       <DependentUpon>ModeleGestion.tt</DependentUpon>
     </Compile>
+    <Compile Include="Congressiste_suite.cs" />
     <Compile Include="GetCongressistesDisponiblesByActivite_Result.cs">
       <DependentUpon>ModeleGestion.tt</DependentUpon>
     </Compile>

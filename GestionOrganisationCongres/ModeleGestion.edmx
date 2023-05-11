@@ -379,21 +379,11 @@
             <End Role="Salle" EntitySet="Salles" />
             <End Role="Session" EntitySet="Sessions" />
           </AssociationSet>
-          <FunctionImport Name="GetCongressistesDisponiblesByActivite" ReturnType="Collection(gestionCongresModele.GetCongressistesDisponiblesByActivite_Result)">
+          <FunctionImport Name="GetCongressistesDisponiblesByActivite" EntitySet="Congressistes" ReturnType="Collection(gestionCongresModele.Congressiste)">
             <Parameter Name="idA" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="GetCongressistesDisponiblesBySession" ReturnType="Collection(gestionCongresModele.GetCongressistesDisponiblesBySession_Result)">
+          <FunctionImport Name="GetCongressistesDisponiblesBySession" EntitySet="Congressistes" ReturnType="Collection(gestionCongresModele.Congressiste)">
             <Parameter Name="idS" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="montantTotal1">
-            <Parameter Name="idCongressiste" Mode="In" Type="Int32" />
-            <Parameter Name="total" Mode="InOut" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="nbPlacesActivite1">
-            <Parameter Name="uneActivite" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="NbPlacesBySession1">
-            <Parameter Name="numSession" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Categorie">
@@ -575,26 +565,9 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="GetCongressistesDisponiblesByActivite" FunctionName="gestionCongresModele.Store.GetCongressistesDisponiblesByActivite">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="gestionCongresModele.GetCongressistesDisponiblesByActivite_Result">
-                <ScalarProperty Name="numInscription" ColumnName="numInscription" />
-                <ScalarProperty Name="nom" ColumnName="nom" />
-                <ScalarProperty Name="prenom" ColumnName="prenom" />
-              </ComplexTypeMapping>
-            </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetCongressistesDisponiblesBySession" FunctionName="gestionCongresModele.Store.GetCongressistesDisponiblesBySession">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="gestionCongresModele.GetCongressistesDisponiblesBySession_Result">
-                <ScalarProperty Name="numInscription" ColumnName="numInscription" />
-                <ScalarProperty Name="nom" ColumnName="nom" />
-                <ScalarProperty Name="prenom" ColumnName="prenom" />
-              </ComplexTypeMapping>
-            </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="montantTotal1" FunctionName="gestionCongresModele.Store.montantTotal" />
-          <FunctionImportMapping FunctionImportName="nbPlacesActivite1" FunctionName="gestionCongresModele.Store.nbPlacesActivite" />
-          <FunctionImportMapping FunctionImportName="NbPlacesBySession1" FunctionName="gestionCongresModele.Store.NbPlacesBySession" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

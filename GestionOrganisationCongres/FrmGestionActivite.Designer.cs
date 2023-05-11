@@ -29,10 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ComboBox comboBoxNonInscrits;
+            this.bindSrcNonInscrits = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlActivite = new System.Windows.Forms.TabControl();
             this.listeActivite = new System.Windows.Forms.TabPage();
             this.btAjouterActivite = new System.Windows.Forms.Button();
             this.dataGridViewActiviter = new System.Windows.Forms.DataGridView();
+            this.idActiviteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.designationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prixDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.heureDebutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nbPlacesMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindSrcActivites = new System.Windows.Forms.BindingSource(this.components);
             this.detailsActivite = new System.Windows.Forms.TabPage();
             this.lblEuro = new System.Windows.Forms.Label();
@@ -45,7 +53,6 @@
             this.btSupprimerInscritActivite = new System.Windows.Forms.Button();
             this.btAjouterInscritActivite = new System.Windows.Forms.Button();
             this.lblNonInscrits = new System.Windows.Forms.Label();
-            this.comboBoxNonInscrits = new System.Windows.Forms.ComboBox();
             this.txtBoxDesignationActiviter = new System.Windows.Forms.TextBox();
             this.dateTimePickerActiviter = new System.Windows.Forms.DateTimePicker();
             this.lblPrixActivite = new System.Windows.Forms.Label();
@@ -55,14 +62,6 @@
             this.lblDesignationActivite = new System.Windows.Forms.Label();
             this.btSupprimerActivite = new System.Windows.Forms.Button();
             this.dataGridViewInscritsActivite = new System.Windows.Forms.DataGridView();
-            this.bindSrcInscriptions = new System.Windows.Forms.BindingSource(this.components);
-            this.bindSrcNonInscrits = new System.Windows.Forms.BindingSource(this.components);
-            this.idActiviteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.designationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prixDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.heureDebutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nbPlacesMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numInscriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prenomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +72,9 @@
             this.acompteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idLigueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hotelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindSrcInscriptions = new System.Windows.Forms.BindingSource(this.components);
+            comboBoxNonInscrits = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bindSrcNonInscrits)).BeginInit();
             this.tabControlActivite.SuspendLayout();
             this.listeActivite.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActiviter)).BeginInit();
@@ -80,29 +82,45 @@
             this.detailsActivite.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInscritsActivite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindSrcInscriptions)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindSrcNonInscrits)).BeginInit();
             this.SuspendLayout();
+            // 
+            // comboBoxNonInscrits
+            // 
+            comboBoxNonInscrits.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.bindSrcNonInscrits, "numInscription", true));
+            comboBoxNonInscrits.DataSource = this.bindSrcNonInscrits;
+            comboBoxNonInscrits.DisplayMember = "numInscription";
+            comboBoxNonInscrits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            comboBoxNonInscrits.FormattingEnabled = true;
+            comboBoxNonInscrits.Location = new System.Drawing.Point(693, 409);
+            comboBoxNonInscrits.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            comboBoxNonInscrits.Name = "comboBoxNonInscrits";
+            comboBoxNonInscrits.Size = new System.Drawing.Size(399, 24);
+            comboBoxNonInscrits.TabIndex = 9;
+            // 
+            // bindSrcNonInscrits
+            // 
+            this.bindSrcNonInscrits.DataSource = typeof(GestionOrganisationCongres.Congressiste);
             // 
             // tabControlActivite
             // 
             this.tabControlActivite.Controls.Add(this.listeActivite);
             this.tabControlActivite.Controls.Add(this.detailsActivite);
-            this.tabControlActivite.Location = new System.Drawing.Point(9, 10);
-            this.tabControlActivite.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControlActivite.Location = new System.Drawing.Point(12, 11);
+            this.tabControlActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControlActivite.Name = "tabControlActivite";
             this.tabControlActivite.SelectedIndex = 0;
-            this.tabControlActivite.Size = new System.Drawing.Size(940, 456);
+            this.tabControlActivite.Size = new System.Drawing.Size(1253, 561);
             this.tabControlActivite.TabIndex = 1;
             // 
             // listeActivite
             // 
             this.listeActivite.Controls.Add(this.btAjouterActivite);
             this.listeActivite.Controls.Add(this.dataGridViewActiviter);
-            this.listeActivite.Location = new System.Drawing.Point(4, 22);
-            this.listeActivite.Margin = new System.Windows.Forms.Padding(2);
+            this.listeActivite.Location = new System.Drawing.Point(4, 25);
+            this.listeActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listeActivite.Name = "listeActivite";
-            this.listeActivite.Padding = new System.Windows.Forms.Padding(2);
-            this.listeActivite.Size = new System.Drawing.Size(932, 430);
+            this.listeActivite.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listeActivite.Size = new System.Drawing.Size(1245, 532);
             this.listeActivite.TabIndex = 0;
             this.listeActivite.Text = "Liste";
             this.listeActivite.UseVisualStyleBackColor = true;
@@ -112,13 +130,14 @@
             this.btAjouterActivite.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.btAjouterActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.btAjouterActivite.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btAjouterActivite.Location = new System.Drawing.Point(370, 359);
-            this.btAjouterActivite.Margin = new System.Windows.Forms.Padding(2);
+            this.btAjouterActivite.Location = new System.Drawing.Point(493, 442);
+            this.btAjouterActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btAjouterActivite.Name = "btAjouterActivite";
-            this.btAjouterActivite.Size = new System.Drawing.Size(178, 52);
+            this.btAjouterActivite.Size = new System.Drawing.Size(237, 64);
             this.btAjouterActivite.TabIndex = 1;
             this.btAjouterActivite.Text = "Ajouter une activité";
             this.btAjouterActivite.UseVisualStyleBackColor = false;
+            this.btAjouterActivite.Click += new System.EventHandler(this.btAjouterActivite_Click);
             // 
             // dataGridViewActiviter
             // 
@@ -135,16 +154,70 @@
             this.heureDebutDataGridViewTextBoxColumn,
             this.nbPlacesMaxDataGridViewTextBoxColumn});
             this.dataGridViewActiviter.DataSource = this.bindSrcActivites;
-            this.dataGridViewActiviter.Location = new System.Drawing.Point(2, 5);
-            this.dataGridViewActiviter.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewActiviter.Location = new System.Drawing.Point(3, 6);
+            this.dataGridViewActiviter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewActiviter.MultiSelect = false;
             this.dataGridViewActiviter.Name = "dataGridViewActiviter";
             this.dataGridViewActiviter.ReadOnly = true;
             this.dataGridViewActiviter.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridViewActiviter.RowTemplate.Height = 24;
             this.dataGridViewActiviter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewActiviter.Size = new System.Drawing.Size(927, 338);
+            this.dataGridViewActiviter.Size = new System.Drawing.Size(1236, 416);
             this.dataGridViewActiviter.TabIndex = 0;
+            // 
+            // idActiviteDataGridViewTextBoxColumn
+            // 
+            this.idActiviteDataGridViewTextBoxColumn.DataPropertyName = "idActivite";
+            this.idActiviteDataGridViewTextBoxColumn.HeaderText = "N° activité";
+            this.idActiviteDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idActiviteDataGridViewTextBoxColumn.Name = "idActiviteDataGridViewTextBoxColumn";
+            this.idActiviteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idActiviteDataGridViewTextBoxColumn.Width = 88;
+            // 
+            // designationDataGridViewTextBoxColumn
+            // 
+            this.designationDataGridViewTextBoxColumn.DataPropertyName = "designation";
+            this.designationDataGridViewTextBoxColumn.HeaderText = "Désignation";
+            this.designationDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.designationDataGridViewTextBoxColumn.Name = "designationDataGridViewTextBoxColumn";
+            this.designationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.designationDataGridViewTextBoxColumn.Width = 108;
+            // 
+            // prixDataGridViewTextBoxColumn
+            // 
+            this.prixDataGridViewTextBoxColumn.DataPropertyName = "prix";
+            this.prixDataGridViewTextBoxColumn.HeaderText = "Prix";
+            this.prixDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.prixDataGridViewTextBoxColumn.Name = "prixDataGridViewTextBoxColumn";
+            this.prixDataGridViewTextBoxColumn.ReadOnly = true;
+            this.prixDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // heureDebutDataGridViewTextBoxColumn
+            // 
+            this.heureDebutDataGridViewTextBoxColumn.DataPropertyName = "heureDebut";
+            this.heureDebutDataGridViewTextBoxColumn.HeaderText = "Heure de début";
+            this.heureDebutDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.heureDebutDataGridViewTextBoxColumn.Name = "heureDebutDataGridViewTextBoxColumn";
+            this.heureDebutDataGridViewTextBoxColumn.ReadOnly = true;
+            this.heureDebutDataGridViewTextBoxColumn.Width = 119;
+            // 
+            // nbPlacesMaxDataGridViewTextBoxColumn
+            // 
+            this.nbPlacesMaxDataGridViewTextBoxColumn.DataPropertyName = "nbPlacesMax";
+            this.nbPlacesMaxDataGridViewTextBoxColumn.HeaderText = "Nombre de places max";
+            this.nbPlacesMaxDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nbPlacesMaxDataGridViewTextBoxColumn.Name = "nbPlacesMaxDataGridViewTextBoxColumn";
+            this.nbPlacesMaxDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nbPlacesMaxDataGridViewTextBoxColumn.Width = 138;
             // 
             // bindSrcActivites
             // 
@@ -163,7 +236,7 @@
             this.detailsActivite.Controls.Add(this.btSupprimerInscritActivite);
             this.detailsActivite.Controls.Add(this.btAjouterInscritActivite);
             this.detailsActivite.Controls.Add(this.lblNonInscrits);
-            this.detailsActivite.Controls.Add(this.comboBoxNonInscrits);
+            this.detailsActivite.Controls.Add(comboBoxNonInscrits);
             this.detailsActivite.Controls.Add(this.txtBoxDesignationActiviter);
             this.detailsActivite.Controls.Add(this.dateTimePickerActiviter);
             this.detailsActivite.Controls.Add(this.lblPrixActivite);
@@ -173,11 +246,11 @@
             this.detailsActivite.Controls.Add(this.lblDesignationActivite);
             this.detailsActivite.Controls.Add(this.btSupprimerActivite);
             this.detailsActivite.Controls.Add(this.dataGridViewInscritsActivite);
-            this.detailsActivite.Location = new System.Drawing.Point(4, 22);
-            this.detailsActivite.Margin = new System.Windows.Forms.Padding(2);
+            this.detailsActivite.Location = new System.Drawing.Point(4, 25);
+            this.detailsActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.detailsActivite.Name = "detailsActivite";
-            this.detailsActivite.Padding = new System.Windows.Forms.Padding(2);
-            this.detailsActivite.Size = new System.Drawing.Size(932, 430);
+            this.detailsActivite.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.detailsActivite.Size = new System.Drawing.Size(1245, 532);
             this.detailsActivite.TabIndex = 1;
             this.detailsActivite.Text = "Détails";
             this.detailsActivite.UseVisualStyleBackColor = true;
@@ -186,9 +259,10 @@
             // 
             this.lblEuro.AutoSize = true;
             this.lblEuro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblEuro.Location = new System.Drawing.Point(145, 276);
+            this.lblEuro.Location = new System.Drawing.Point(193, 340);
+            this.lblEuro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEuro.Name = "lblEuro";
-            this.lblEuro.Size = new System.Drawing.Size(16, 18);
+            this.lblEuro.Size = new System.Drawing.Size(20, 24);
             this.lblEuro.TabIndex = 52;
             this.lblEuro.Text = "€";
             // 
@@ -196,63 +270,66 @@
             // 
             this.txtBoxNbPlacesMax.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcActivites, "nbPlacesMax", true));
             this.txtBoxNbPlacesMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxNbPlacesMax.Location = new System.Drawing.Point(187, 210);
+            this.txtBoxNbPlacesMax.Location = new System.Drawing.Point(249, 258);
+            this.txtBoxNbPlacesMax.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxNbPlacesMax.Name = "txtBoxNbPlacesMax";
-            this.txtBoxNbPlacesMax.Size = new System.Drawing.Size(100, 23);
+            this.txtBoxNbPlacesMax.Size = new System.Drawing.Size(132, 26);
             this.txtBoxNbPlacesMax.TabIndex = 50;
             // 
             // txtBoxPrix
             // 
             this.txtBoxPrix.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcActivites, "prix", true));
             this.txtBoxPrix.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxPrix.Location = new System.Drawing.Point(58, 273);
+            this.txtBoxPrix.Location = new System.Drawing.Point(77, 336);
+            this.txtBoxPrix.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxPrix.Name = "txtBoxPrix";
-            this.txtBoxPrix.Size = new System.Drawing.Size(81, 23);
+            this.txtBoxPrix.Size = new System.Drawing.Size(107, 26);
             this.txtBoxPrix.TabIndex = 49;
             // 
             // btValiderActivite
             // 
             this.btValiderActivite.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.btValiderActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btValiderActivite.Location = new System.Drawing.Point(251, 358);
-            this.btValiderActivite.Margin = new System.Windows.Forms.Padding(2);
+            this.btValiderActivite.Location = new System.Drawing.Point(55, 405);
+            this.btValiderActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btValiderActivite.Name = "btValiderActivite";
-            this.btValiderActivite.Size = new System.Drawing.Size(105, 52);
+            this.btValiderActivite.Size = new System.Drawing.Size(138, 39);
             this.btValiderActivite.TabIndex = 48;
             this.btValiderActivite.Text = "Valider";
             this.btValiderActivite.UseVisualStyleBackColor = false;
+            this.btValiderActivite.Click += new System.EventHandler(this.btValiderActivite_Click);
             // 
             // btAnnulerModifActivite
             // 
             this.btAnnulerModifActivite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btAnnulerModifActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btAnnulerModifActivite.Location = new System.Drawing.Point(23, 367);
-            this.btAnnulerModifActivite.Margin = new System.Windows.Forms.Padding(2);
+            this.btAnnulerModifActivite.Location = new System.Drawing.Point(283, 405);
+            this.btAnnulerModifActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btAnnulerModifActivite.Name = "btAnnulerModifActivite";
-            this.btAnnulerModifActivite.Size = new System.Drawing.Size(106, 44);
+            this.btAnnulerModifActivite.Size = new System.Drawing.Size(141, 39);
             this.btAnnulerModifActivite.TabIndex = 47;
             this.btAnnulerModifActivite.Text = "Annuler";
             this.btAnnulerModifActivite.UseVisualStyleBackColor = false;
+            this.btAnnulerModifActivite.Click += new System.EventHandler(this.btAnnulerModifActivite_Click);
             // 
             // comboBoxHeureActiviter
             // 
             this.comboBoxHeureActiviter.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcActivites, "heureDebut", true));
             this.comboBoxHeureActiviter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBoxHeureActiviter.FormattingEnabled = true;
-            this.comboBoxHeureActiviter.Location = new System.Drawing.Point(132, 84);
-            this.comboBoxHeureActiviter.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxHeureActiviter.Location = new System.Drawing.Point(176, 103);
+            this.comboBoxHeureActiviter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxHeureActiviter.Name = "comboBoxHeureActiviter";
-            this.comboBoxHeureActiviter.Size = new System.Drawing.Size(92, 24);
+            this.comboBoxHeureActiviter.Size = new System.Drawing.Size(121, 28);
             this.comboBoxHeureActiviter.TabIndex = 3;
             // 
             // lblInscrits
             // 
             this.lblInscrits.AutoSize = true;
             this.lblInscrits.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInscrits.Location = new System.Drawing.Point(435, 7);
-            this.lblInscrits.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblInscrits.Location = new System.Drawing.Point(580, 9);
             this.lblInscrits.Name = "lblInscrits";
-            this.lblInscrits.Size = new System.Drawing.Size(64, 17);
+            this.lblInscrits.Size = new System.Drawing.Size(79, 20);
             this.lblInscrits.TabIndex = 18;
             this.lblInscrits.Text = "Inscrits : ";
             // 
@@ -260,74 +337,65 @@
             // 
             this.btSupprimerInscritActivite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btSupprimerInscritActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSupprimerInscritActivite.Location = new System.Drawing.Point(577, 367);
-            this.btSupprimerInscritActivite.Margin = new System.Windows.Forms.Padding(2);
+            this.btSupprimerInscritActivite.Location = new System.Drawing.Point(769, 452);
+            this.btSupprimerInscritActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btSupprimerInscritActivite.Name = "btSupprimerInscritActivite";
-            this.btSupprimerInscritActivite.Size = new System.Drawing.Size(222, 47);
+            this.btSupprimerInscritActivite.Size = new System.Drawing.Size(296, 58);
             this.btSupprimerInscritActivite.TabIndex = 11;
             this.btSupprimerInscritActivite.Text = "Supprimer un inscrit";
             this.btSupprimerInscritActivite.UseVisualStyleBackColor = false;
+            this.btSupprimerInscritActivite.Click += new System.EventHandler(this.btSupprimerInscritActivite_Click);
             // 
             // btAjouterInscritActivite
             // 
             this.btAjouterInscritActivite.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.btAjouterInscritActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAjouterInscritActivite.Location = new System.Drawing.Point(824, 323);
-            this.btAjouterInscritActivite.Margin = new System.Windows.Forms.Padding(2);
+            this.btAjouterInscritActivite.Location = new System.Drawing.Point(1099, 398);
+            this.btAjouterInscritActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btAjouterInscritActivite.Name = "btAjouterInscritActivite";
-            this.btAjouterInscritActivite.Size = new System.Drawing.Size(104, 43);
+            this.btAjouterInscritActivite.Size = new System.Drawing.Size(139, 53);
             this.btAjouterInscritActivite.TabIndex = 10;
             this.btAjouterInscritActivite.Text = "Ajouter";
             this.btAjouterInscritActivite.UseVisualStyleBackColor = false;
+            this.btAjouterInscritActivite.Click += new System.EventHandler(this.btAjouterInscritActivite_Click);
             // 
             // lblNonInscrits
             // 
             this.lblNonInscrits.AutoSize = true;
             this.lblNonInscrits.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNonInscrits.Location = new System.Drawing.Point(422, 333);
-            this.lblNonInscrits.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNonInscrits.Location = new System.Drawing.Point(563, 410);
             this.lblNonInscrits.Name = "lblNonInscrits";
-            this.lblNonInscrits.Size = new System.Drawing.Size(94, 17);
+            this.lblNonInscrits.Size = new System.Drawing.Size(114, 20);
             this.lblNonInscrits.TabIndex = 15;
             this.lblNonInscrits.Text = "Non inscrits : ";
-            // 
-            // comboBoxNonInscrits
-            // 
-            this.comboBoxNonInscrits.FormattingEnabled = true;
-            this.comboBoxNonInscrits.Location = new System.Drawing.Point(520, 332);
-            this.comboBoxNonInscrits.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxNonInscrits.Name = "comboBoxNonInscrits";
-            this.comboBoxNonInscrits.Size = new System.Drawing.Size(300, 21);
-            this.comboBoxNonInscrits.TabIndex = 9;
             // 
             // txtBoxDesignationActiviter
             // 
             this.txtBoxDesignationActiviter.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcActivites, "designation", true));
             this.txtBoxDesignationActiviter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxDesignationActiviter.Location = new System.Drawing.Point(109, 23);
-            this.txtBoxDesignationActiviter.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBoxDesignationActiviter.Location = new System.Drawing.Point(145, 28);
+            this.txtBoxDesignationActiviter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxDesignationActiviter.Name = "txtBoxDesignationActiviter";
-            this.txtBoxDesignationActiviter.Size = new System.Drawing.Size(302, 23);
+            this.txtBoxDesignationActiviter.Size = new System.Drawing.Size(401, 26);
             this.txtBoxDesignationActiviter.TabIndex = 2;
             // 
             // dateTimePickerActiviter
             // 
             this.dateTimePickerActiviter.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindSrcActivites, "date", true));
             this.dateTimePickerActiviter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePickerActiviter.Location = new System.Drawing.Point(63, 150);
-            this.dateTimePickerActiviter.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePickerActiviter.Location = new System.Drawing.Point(84, 185);
+            this.dateTimePickerActiviter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerActiviter.Name = "dateTimePickerActiviter";
-            this.dateTimePickerActiviter.Size = new System.Drawing.Size(151, 23);
+            this.dateTimePickerActiviter.Size = new System.Drawing.Size(200, 26);
             this.dateTimePickerActiviter.TabIndex = 4;
             // 
             // lblPrixActivite
             // 
             this.lblPrixActivite.AutoSize = true;
             this.lblPrixActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblPrixActivite.Location = new System.Drawing.Point(9, 276);
-            this.lblPrixActivite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrixActivite.Location = new System.Drawing.Point(12, 340);
             this.lblPrixActivite.Name = "lblPrixActivite";
-            this.lblPrixActivite.Size = new System.Drawing.Size(45, 18);
+            this.lblPrixActivite.Size = new System.Drawing.Size(57, 24);
             this.lblPrixActivite.TabIndex = 7;
             this.lblPrixActivite.Text = "Prix : ";
             // 
@@ -335,10 +403,9 @@
             // 
             this.lblNbPlacesMaxActivite.AutoSize = true;
             this.lblNbPlacesMaxActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblNbPlacesMaxActivite.Location = new System.Drawing.Point(9, 215);
-            this.lblNbPlacesMaxActivite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNbPlacesMaxActivite.Location = new System.Drawing.Point(12, 265);
             this.lblNbPlacesMaxActivite.Name = "lblNbPlacesMaxActivite";
-            this.lblNbPlacesMaxActivite.Size = new System.Drawing.Size(173, 18);
+            this.lblNbPlacesMaxActivite.Size = new System.Drawing.Size(222, 24);
             this.lblNbPlacesMaxActivite.TabIndex = 6;
             this.lblNbPlacesMaxActivite.Text = "Nombre de places max : ";
             // 
@@ -346,10 +413,9 @@
             // 
             this.lblHeureDebutActivite.AutoSize = true;
             this.lblHeureDebutActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblHeureDebutActivite.Location = new System.Drawing.Point(9, 91);
-            this.lblHeureDebutActivite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHeureDebutActivite.Location = new System.Drawing.Point(12, 112);
             this.lblHeureDebutActivite.Name = "lblHeureDebutActivite";
-            this.lblHeureDebutActivite.Size = new System.Drawing.Size(120, 18);
+            this.lblHeureDebutActivite.Size = new System.Drawing.Size(158, 24);
             this.lblHeureDebutActivite.TabIndex = 5;
             this.lblHeureDebutActivite.Text = "Heure de début : ";
             // 
@@ -357,10 +423,9 @@
             // 
             this.lblDateActivite.AutoSize = true;
             this.lblDateActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblDateActivite.Location = new System.Drawing.Point(9, 155);
-            this.lblDateActivite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDateActivite.Location = new System.Drawing.Point(12, 191);
             this.lblDateActivite.Name = "lblDateActivite";
-            this.lblDateActivite.Size = new System.Drawing.Size(51, 18);
+            this.lblDateActivite.Size = new System.Drawing.Size(63, 24);
             this.lblDateActivite.TabIndex = 4;
             this.lblDateActivite.Text = "Date : ";
             // 
@@ -368,10 +433,9 @@
             // 
             this.lblDesignationActivite.AutoSize = true;
             this.lblDesignationActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblDesignationActivite.Location = new System.Drawing.Point(10, 26);
-            this.lblDesignationActivite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDesignationActivite.Location = new System.Drawing.Point(13, 32);
             this.lblDesignationActivite.Name = "lblDesignationActivite";
-            this.lblDesignationActivite.Size = new System.Drawing.Size(98, 18);
+            this.lblDesignationActivite.Size = new System.Drawing.Size(124, 24);
             this.lblDesignationActivite.TabIndex = 3;
             this.lblDesignationActivite.Text = "Désignation : ";
             // 
@@ -379,13 +443,14 @@
             // 
             this.btSupprimerActivite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btSupprimerActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btSupprimerActivite.Location = new System.Drawing.Point(209, 354);
-            this.btSupprimerActivite.Margin = new System.Windows.Forms.Padding(2);
+            this.btSupprimerActivite.Location = new System.Drawing.Point(105, 455);
+            this.btSupprimerActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btSupprimerActivite.Name = "btSupprimerActivite";
-            this.btSupprimerActivite.Size = new System.Drawing.Size(192, 60);
+            this.btSupprimerActivite.Size = new System.Drawing.Size(264, 58);
             this.btSupprimerActivite.TabIndex = 12;
             this.btSupprimerActivite.Text = "Supprimer l\'activité";
             this.btSupprimerActivite.UseVisualStyleBackColor = false;
+            this.btSupprimerActivite.Click += new System.EventHandler(this.btSupprimerActivite_Click);
             // 
             // dataGridViewInscritsActivite
             // 
@@ -405,151 +470,120 @@
             this.idLigueDataGridViewTextBoxColumn,
             this.hotelDataGridViewTextBoxColumn});
             this.dataGridViewInscritsActivite.DataSource = this.bindSrcInscriptions;
-            this.dataGridViewInscritsActivite.Location = new System.Drawing.Point(438, 26);
-            this.dataGridViewInscritsActivite.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewInscritsActivite.Location = new System.Drawing.Point(584, 32);
+            this.dataGridViewInscritsActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewInscritsActivite.Name = "dataGridViewInscritsActivite";
             this.dataGridViewInscritsActivite.ReadOnly = true;
             this.dataGridViewInscritsActivite.RowHeadersWidth = 51;
             this.dataGridViewInscritsActivite.RowTemplate.Height = 24;
-            this.dataGridViewInscritsActivite.Size = new System.Drawing.Size(481, 293);
+            this.dataGridViewInscritsActivite.Size = new System.Drawing.Size(641, 361);
             this.dataGridViewInscritsActivite.TabIndex = 1;
-            // 
-            // bindSrcInscriptions
-            // 
-            this.bindSrcInscriptions.DataSource = typeof(GestionOrganisationCongres.Congressiste);
-            // 
-            // bindSrcNonInscrits
-            // 
-            this.bindSrcNonInscrits.DataSource = typeof(GestionOrganisationCongres.Congressiste);
-            // 
-            // idActiviteDataGridViewTextBoxColumn
-            // 
-            this.idActiviteDataGridViewTextBoxColumn.DataPropertyName = "idActivite";
-            this.idActiviteDataGridViewTextBoxColumn.HeaderText = "N° activité";
-            this.idActiviteDataGridViewTextBoxColumn.Name = "idActiviteDataGridViewTextBoxColumn";
-            this.idActiviteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idActiviteDataGridViewTextBoxColumn.Width = 81;
-            // 
-            // designationDataGridViewTextBoxColumn
-            // 
-            this.designationDataGridViewTextBoxColumn.DataPropertyName = "designation";
-            this.designationDataGridViewTextBoxColumn.HeaderText = "Désignation";
-            this.designationDataGridViewTextBoxColumn.Name = "designationDataGridViewTextBoxColumn";
-            this.designationDataGridViewTextBoxColumn.ReadOnly = true;
-            this.designationDataGridViewTextBoxColumn.Width = 88;
-            // 
-            // prixDataGridViewTextBoxColumn
-            // 
-            this.prixDataGridViewTextBoxColumn.DataPropertyName = "prix";
-            this.prixDataGridViewTextBoxColumn.HeaderText = "Prix";
-            this.prixDataGridViewTextBoxColumn.Name = "prixDataGridViewTextBoxColumn";
-            this.prixDataGridViewTextBoxColumn.ReadOnly = true;
-            this.prixDataGridViewTextBoxColumn.Width = 49;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateDataGridViewTextBoxColumn.Width = 55;
-            // 
-            // heureDebutDataGridViewTextBoxColumn
-            // 
-            this.heureDebutDataGridViewTextBoxColumn.DataPropertyName = "heureDebut";
-            this.heureDebutDataGridViewTextBoxColumn.HeaderText = "Heure de début";
-            this.heureDebutDataGridViewTextBoxColumn.Name = "heureDebutDataGridViewTextBoxColumn";
-            this.heureDebutDataGridViewTextBoxColumn.ReadOnly = true;
-            this.heureDebutDataGridViewTextBoxColumn.Width = 97;
-            // 
-            // nbPlacesMaxDataGridViewTextBoxColumn
-            // 
-            this.nbPlacesMaxDataGridViewTextBoxColumn.DataPropertyName = "nbPlacesMax";
-            this.nbPlacesMaxDataGridViewTextBoxColumn.HeaderText = "Nombre de places max";
-            this.nbPlacesMaxDataGridViewTextBoxColumn.Name = "nbPlacesMaxDataGridViewTextBoxColumn";
-            this.nbPlacesMaxDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nbPlacesMaxDataGridViewTextBoxColumn.Width = 111;
             // 
             // numInscriptionDataGridViewTextBoxColumn
             // 
             this.numInscriptionDataGridViewTextBoxColumn.DataPropertyName = "numInscription";
             this.numInscriptionDataGridViewTextBoxColumn.HeaderText = "N° inscription";
+            this.numInscriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.numInscriptionDataGridViewTextBoxColumn.Name = "numInscriptionDataGridViewTextBoxColumn";
             this.numInscriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numInscriptionDataGridViewTextBoxColumn.Width = 125;
             // 
             // nomDataGridViewTextBoxColumn
             // 
             this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
             this.nomDataGridViewTextBoxColumn.HeaderText = "Nom";
+            this.nomDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
             this.nomDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomDataGridViewTextBoxColumn.Width = 125;
             // 
             // prenomDataGridViewTextBoxColumn
             // 
             this.prenomDataGridViewTextBoxColumn.DataPropertyName = "prenom";
             this.prenomDataGridViewTextBoxColumn.HeaderText = "Prénom";
+            this.prenomDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.prenomDataGridViewTextBoxColumn.Name = "prenomDataGridViewTextBoxColumn";
             this.prenomDataGridViewTextBoxColumn.ReadOnly = true;
+            this.prenomDataGridViewTextBoxColumn.Width = 125;
             // 
             // adresseDataGridViewTextBoxColumn
             // 
             this.adresseDataGridViewTextBoxColumn.DataPropertyName = "adresse";
             this.adresseDataGridViewTextBoxColumn.HeaderText = "Adresse";
+            this.adresseDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
             this.adresseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.adresseDataGridViewTextBoxColumn.Width = 125;
             // 
             // cpDataGridViewTextBoxColumn
             // 
             this.cpDataGridViewTextBoxColumn.DataPropertyName = "cp";
             this.cpDataGridViewTextBoxColumn.HeaderText = "Code postal";
+            this.cpDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cpDataGridViewTextBoxColumn.Name = "cpDataGridViewTextBoxColumn";
             this.cpDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cpDataGridViewTextBoxColumn.Width = 125;
             // 
             // villeDataGridViewTextBoxColumn
             // 
             this.villeDataGridViewTextBoxColumn.DataPropertyName = "ville";
             this.villeDataGridViewTextBoxColumn.HeaderText = "Ville";
+            this.villeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.villeDataGridViewTextBoxColumn.Name = "villeDataGridViewTextBoxColumn";
             this.villeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.villeDataGridViewTextBoxColumn.Width = 125;
             // 
             // telDataGridViewTextBoxColumn
             // 
             this.telDataGridViewTextBoxColumn.DataPropertyName = "tel";
             this.telDataGridViewTextBoxColumn.HeaderText = "Téléphone";
+            this.telDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.telDataGridViewTextBoxColumn.Name = "telDataGridViewTextBoxColumn";
             this.telDataGridViewTextBoxColumn.ReadOnly = true;
+            this.telDataGridViewTextBoxColumn.Width = 125;
             // 
             // acompteDataGridViewTextBoxColumn
             // 
             this.acompteDataGridViewTextBoxColumn.DataPropertyName = "acompte";
             this.acompteDataGridViewTextBoxColumn.HeaderText = "Acompte";
+            this.acompteDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.acompteDataGridViewTextBoxColumn.Name = "acompteDataGridViewTextBoxColumn";
             this.acompteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.acompteDataGridViewTextBoxColumn.Width = 125;
             // 
             // idLigueDataGridViewTextBoxColumn
             // 
             this.idLigueDataGridViewTextBoxColumn.DataPropertyName = "Ligue";
             this.idLigueDataGridViewTextBoxColumn.HeaderText = "Ligue";
+            this.idLigueDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idLigueDataGridViewTextBoxColumn.Name = "idLigueDataGridViewTextBoxColumn";
             this.idLigueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idLigueDataGridViewTextBoxColumn.Width = 125;
             // 
             // hotelDataGridViewTextBoxColumn
             // 
             this.hotelDataGridViewTextBoxColumn.DataPropertyName = "Hotel";
             this.hotelDataGridViewTextBoxColumn.HeaderText = "Hotel";
+            this.hotelDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.hotelDataGridViewTextBoxColumn.Name = "hotelDataGridViewTextBoxColumn";
             this.hotelDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hotelDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // bindSrcInscriptions
+            // 
+            this.bindSrcInscriptions.DataSource = typeof(GestionOrganisationCongres.Congressiste);
             // 
             // FrmGestionActivite
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 472);
+            this.ClientSize = new System.Drawing.Size(1271, 581);
             this.Controls.Add(this.tabControlActivite);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmGestionActivite";
             this.Text = "Gestion Activité";
             this.Load += new System.EventHandler(this.FrmGestionActivite_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bindSrcNonInscrits)).EndInit();
             this.tabControlActivite.ResumeLayout(false);
             this.listeActivite.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActiviter)).EndInit();
@@ -558,7 +592,6 @@
             this.detailsActivite.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInscritsActivite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindSrcInscriptions)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindSrcNonInscrits)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -577,7 +610,6 @@
         private System.Windows.Forms.Button btSupprimerInscritActivite;
         private System.Windows.Forms.Button btAjouterInscritActivite;
         private System.Windows.Forms.Label lblNonInscrits;
-        private System.Windows.Forms.ComboBox comboBoxNonInscrits;
         private System.Windows.Forms.TextBox txtBoxDesignationActiviter;
         private System.Windows.Forms.DateTimePicker dateTimePickerActiviter;
         private System.Windows.Forms.Label lblPrixActivite;
