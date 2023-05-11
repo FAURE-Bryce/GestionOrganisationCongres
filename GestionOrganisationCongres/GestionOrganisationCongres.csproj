@@ -149,6 +149,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Activite.datasource" />
+    <None Include="Properties\DataSources\Categorie.datasource" />
     <None Include="Properties\DataSources\Congressiste.datasource" />
     <None Include="Properties\DataSources\Hotel.datasource" />
     <None Include="Properties\DataSources\Ligue.datasource" />
