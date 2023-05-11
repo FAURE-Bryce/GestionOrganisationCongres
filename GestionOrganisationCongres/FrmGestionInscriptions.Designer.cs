@@ -33,6 +33,16 @@
             this.ListeCongressistes = new System.Windows.Forms.TabPage();
             this.btAjouterCongressiste = new System.Windows.Forms.Button();
             this.dataGridViewListCongressiste = new System.Windows.Forms.DataGridView();
+            this.numInscriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prenomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.villeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acompteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idLigueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindSrcInscriptions = new System.Windows.Forms.BindingSource(this.components);
             this.DetailsCongressiste = new System.Windows.Forms.TabPage();
             this.lblEuro2 = new System.Windows.Forms.Label();
@@ -43,7 +53,6 @@
             this.lblMontantTotal = new System.Windows.Forms.Label();
             this.btValiderModifCongressiste = new System.Windows.Forms.Button();
             this.btAnnulerModifCongressiste = new System.Windows.Forms.Button();
-            this.maskedTxtBoxAcompteCongressiste = new System.Windows.Forms.MaskedTextBox();
             this.comboBoxLigueCongressiste = new System.Windows.Forms.ComboBox();
             this.txtBoxVilleCongressiste = new System.Windows.Forms.TextBox();
             this.txtBoxAdresseCongressiste = new System.Windows.Forms.TextBox();
@@ -52,6 +61,7 @@
             this.lblLigueCongressiste = new System.Windows.Forms.Label();
             this.lblAcompteCongressiste = new System.Windows.Forms.Label();
             this.comboBoxHotelCongressiste = new System.Windows.Forms.ComboBox();
+            this.bindSrcHotels = new System.Windows.Forms.BindingSource(this.components);
             this.txtBoxNomCongressiste = new System.Windows.Forms.TextBox();
             this.maskedTxtBoxCpCongressiste = new System.Windows.Forms.MaskedTextBox();
             this.maskedTxtBoxTelCongressiste = new System.Windows.Forms.MaskedTextBox();
@@ -75,26 +85,17 @@
             this.comboBoxAjouterActiviteCongressiste = new System.Windows.Forms.ComboBox();
             this.lblActivite = new System.Windows.Forms.Label();
             this.dataGridViewActiviteCongressiste = new System.Windows.Forms.DataGridView();
-            this.numInscriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prenomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.villeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.acompteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idLigueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hotelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindSrcHotels = new System.Windows.Forms.BindingSource(this.components);
+            this.txtBoxAcompte = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.ListeCongressistes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListCongressiste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindSrcInscriptions)).BeginInit();
             this.DetailsCongressiste.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindSrcHotels)).BeginInit();
             this.ListeParticipations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActiviteCongressiste)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindSrcHotels)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -163,12 +164,93 @@
             this.dataGridViewListCongressiste.Size = new System.Drawing.Size(877, 357);
             this.dataGridViewListCongressiste.TabIndex = 2;
             // 
+            // numInscriptionDataGridViewTextBoxColumn
+            // 
+            this.numInscriptionDataGridViewTextBoxColumn.DataPropertyName = "numInscription";
+            this.numInscriptionDataGridViewTextBoxColumn.HeaderText = "N° d\'inscription";
+            this.numInscriptionDataGridViewTextBoxColumn.Name = "numInscriptionDataGridViewTextBoxColumn";
+            this.numInscriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numInscriptionDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // nomDataGridViewTextBoxColumn
+            // 
+            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
+            this.nomDataGridViewTextBoxColumn.HeaderText = "Nom";
+            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
+            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomDataGridViewTextBoxColumn.Width = 54;
+            // 
+            // prenomDataGridViewTextBoxColumn
+            // 
+            this.prenomDataGridViewTextBoxColumn.DataPropertyName = "prenom";
+            this.prenomDataGridViewTextBoxColumn.HeaderText = "Prénom";
+            this.prenomDataGridViewTextBoxColumn.Name = "prenomDataGridViewTextBoxColumn";
+            this.prenomDataGridViewTextBoxColumn.ReadOnly = true;
+            this.prenomDataGridViewTextBoxColumn.Width = 68;
+            // 
+            // adresseDataGridViewTextBoxColumn
+            // 
+            this.adresseDataGridViewTextBoxColumn.DataPropertyName = "adresse";
+            this.adresseDataGridViewTextBoxColumn.HeaderText = "Adresse";
+            this.adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
+            this.adresseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.adresseDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // cpDataGridViewTextBoxColumn
+            // 
+            this.cpDataGridViewTextBoxColumn.DataPropertyName = "cp";
+            this.cpDataGridViewTextBoxColumn.HeaderText = "Code postal";
+            this.cpDataGridViewTextBoxColumn.Name = "cpDataGridViewTextBoxColumn";
+            this.cpDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cpDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // villeDataGridViewTextBoxColumn
+            // 
+            this.villeDataGridViewTextBoxColumn.DataPropertyName = "ville";
+            this.villeDataGridViewTextBoxColumn.HeaderText = "Ville";
+            this.villeDataGridViewTextBoxColumn.Name = "villeDataGridViewTextBoxColumn";
+            this.villeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.villeDataGridViewTextBoxColumn.Width = 51;
+            // 
+            // telDataGridViewTextBoxColumn
+            // 
+            this.telDataGridViewTextBoxColumn.DataPropertyName = "tel";
+            this.telDataGridViewTextBoxColumn.HeaderText = "N° de téléphone";
+            this.telDataGridViewTextBoxColumn.Name = "telDataGridViewTextBoxColumn";
+            this.telDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // acompteDataGridViewTextBoxColumn
+            // 
+            this.acompteDataGridViewTextBoxColumn.DataPropertyName = "acompte";
+            this.acompteDataGridViewTextBoxColumn.HeaderText = "Acompte versé";
+            this.acompteDataGridViewTextBoxColumn.Name = "acompteDataGridViewTextBoxColumn";
+            this.acompteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.acompteDataGridViewTextBoxColumn.Width = 95;
+            // 
+            // idLigueDataGridViewTextBoxColumn
+            // 
+            this.idLigueDataGridViewTextBoxColumn.DataPropertyName = "Ligue";
+            this.idLigueDataGridViewTextBoxColumn.HeaderText = "Ligue";
+            this.idLigueDataGridViewTextBoxColumn.Name = "idLigueDataGridViewTextBoxColumn";
+            this.idLigueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idLigueDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // hotelDataGridViewTextBoxColumn
+            // 
+            this.hotelDataGridViewTextBoxColumn.DataPropertyName = "Hotel";
+            this.hotelDataGridViewTextBoxColumn.HeaderText = "Hotel";
+            this.hotelDataGridViewTextBoxColumn.Name = "hotelDataGridViewTextBoxColumn";
+            this.hotelDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hotelDataGridViewTextBoxColumn.Width = 57;
+            // 
             // bindSrcInscriptions
             // 
             this.bindSrcInscriptions.DataSource = typeof(GestionOrganisationCongres.Congressiste);
             // 
             // DetailsCongressiste
             // 
+            this.DetailsCongressiste.Controls.Add(this.label1);
+            this.DetailsCongressiste.Controls.Add(this.txtBoxAcompte);
             this.DetailsCongressiste.Controls.Add(this.lblEuro2);
             this.DetailsCongressiste.Controls.Add(this.lblEuro);
             this.DetailsCongressiste.Controls.Add(this.lbRestePayerValeur);
@@ -177,7 +259,6 @@
             this.DetailsCongressiste.Controls.Add(this.lblMontantTotal);
             this.DetailsCongressiste.Controls.Add(this.btValiderModifCongressiste);
             this.DetailsCongressiste.Controls.Add(this.btAnnulerModifCongressiste);
-            this.DetailsCongressiste.Controls.Add(this.maskedTxtBoxAcompteCongressiste);
             this.DetailsCongressiste.Controls.Add(this.comboBoxLigueCongressiste);
             this.DetailsCongressiste.Controls.Add(this.txtBoxVilleCongressiste);
             this.DetailsCongressiste.Controls.Add(this.txtBoxAdresseCongressiste);
@@ -293,16 +374,6 @@
             this.btAnnulerModifCongressiste.Text = "Annuler";
             this.btAnnulerModifCongressiste.UseVisualStyleBackColor = false;
             // 
-            // maskedTxtBoxAcompteCongressiste
-            // 
-            this.maskedTxtBoxAcompteCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.maskedTxtBoxAcompteCongressiste.Location = new System.Drawing.Point(256, 226);
-            this.maskedTxtBoxAcompteCongressiste.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTxtBoxAcompteCongressiste.Mask = "99999";
-            this.maskedTxtBoxAcompteCongressiste.Name = "maskedTxtBoxAcompteCongressiste";
-            this.maskedTxtBoxAcompteCongressiste.Size = new System.Drawing.Size(76, 23);
-            this.maskedTxtBoxAcompteCongressiste.TabIndex = 43;
-            // 
             // comboBoxLigueCongressiste
             // 
             this.comboBoxLigueCongressiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -385,6 +456,10 @@
             this.comboBoxHotelCongressiste.Name = "comboBoxHotelCongressiste";
             this.comboBoxHotelCongressiste.Size = new System.Drawing.Size(240, 24);
             this.comboBoxHotelCongressiste.TabIndex = 22;
+            // 
+            // bindSrcHotels
+            // 
+            this.bindSrcHotels.DataSource = typeof(GestionOrganisationCongres.Hotel);
             // 
             // txtBoxNomCongressiste
             // 
@@ -647,88 +722,22 @@
             this.dataGridViewActiviteCongressiste.Size = new System.Drawing.Size(394, 223);
             this.dataGridViewActiviteCongressiste.TabIndex = 0;
             // 
-            // numInscriptionDataGridViewTextBoxColumn
+            // txtBoxAcompte
             // 
-            this.numInscriptionDataGridViewTextBoxColumn.DataPropertyName = "numInscription";
-            this.numInscriptionDataGridViewTextBoxColumn.HeaderText = "N° d\'inscription";
-            this.numInscriptionDataGridViewTextBoxColumn.Name = "numInscriptionDataGridViewTextBoxColumn";
-            this.numInscriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numInscriptionDataGridViewTextBoxColumn.Width = 102;
+            this.txtBoxAcompte.Location = new System.Drawing.Point(251, 227);
+            this.txtBoxAcompte.Name = "txtBoxAcompte";
+            this.txtBoxAcompte.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxAcompte.TabIndex = 52;
             // 
-            // nomDataGridViewTextBoxColumn
+            // label1
             // 
-            this.nomDataGridViewTextBoxColumn.DataPropertyName = "nom";
-            this.nomDataGridViewTextBoxColumn.HeaderText = "Nom";
-            this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            this.nomDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomDataGridViewTextBoxColumn.Width = 54;
-            // 
-            // prenomDataGridViewTextBoxColumn
-            // 
-            this.prenomDataGridViewTextBoxColumn.DataPropertyName = "prenom";
-            this.prenomDataGridViewTextBoxColumn.HeaderText = "Prénom";
-            this.prenomDataGridViewTextBoxColumn.Name = "prenomDataGridViewTextBoxColumn";
-            this.prenomDataGridViewTextBoxColumn.ReadOnly = true;
-            this.prenomDataGridViewTextBoxColumn.Width = 68;
-            // 
-            // adresseDataGridViewTextBoxColumn
-            // 
-            this.adresseDataGridViewTextBoxColumn.DataPropertyName = "adresse";
-            this.adresseDataGridViewTextBoxColumn.HeaderText = "Adresse";
-            this.adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
-            this.adresseDataGridViewTextBoxColumn.ReadOnly = true;
-            this.adresseDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // cpDataGridViewTextBoxColumn
-            // 
-            this.cpDataGridViewTextBoxColumn.DataPropertyName = "cp";
-            this.cpDataGridViewTextBoxColumn.HeaderText = "Code postal";
-            this.cpDataGridViewTextBoxColumn.Name = "cpDataGridViewTextBoxColumn";
-            this.cpDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cpDataGridViewTextBoxColumn.Width = 88;
-            // 
-            // villeDataGridViewTextBoxColumn
-            // 
-            this.villeDataGridViewTextBoxColumn.DataPropertyName = "ville";
-            this.villeDataGridViewTextBoxColumn.HeaderText = "Ville";
-            this.villeDataGridViewTextBoxColumn.Name = "villeDataGridViewTextBoxColumn";
-            this.villeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.villeDataGridViewTextBoxColumn.Width = 51;
-            // 
-            // telDataGridViewTextBoxColumn
-            // 
-            this.telDataGridViewTextBoxColumn.DataPropertyName = "tel";
-            this.telDataGridViewTextBoxColumn.HeaderText = "N° de téléphone";
-            this.telDataGridViewTextBoxColumn.Name = "telDataGridViewTextBoxColumn";
-            this.telDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // acompteDataGridViewTextBoxColumn
-            // 
-            this.acompteDataGridViewTextBoxColumn.DataPropertyName = "acompte";
-            this.acompteDataGridViewTextBoxColumn.HeaderText = "Acompte versé";
-            this.acompteDataGridViewTextBoxColumn.Name = "acompteDataGridViewTextBoxColumn";
-            this.acompteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.acompteDataGridViewTextBoxColumn.Width = 95;
-            // 
-            // idLigueDataGridViewTextBoxColumn
-            // 
-            this.idLigueDataGridViewTextBoxColumn.DataPropertyName = "Ligue";
-            this.idLigueDataGridViewTextBoxColumn.HeaderText = "Ligue";
-            this.idLigueDataGridViewTextBoxColumn.Name = "idLigueDataGridViewTextBoxColumn";
-            this.idLigueDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idLigueDataGridViewTextBoxColumn.Width = 58;
-            // 
-            // hotelDataGridViewTextBoxColumn
-            // 
-            this.hotelDataGridViewTextBoxColumn.DataPropertyName = "Hotel";
-            this.hotelDataGridViewTextBoxColumn.HeaderText = "Hotel";
-            this.hotelDataGridViewTextBoxColumn.Name = "hotelDataGridViewTextBoxColumn";
-            this.hotelDataGridViewTextBoxColumn.ReadOnly = true;
-            this.hotelDataGridViewTextBoxColumn.Width = 57;
-            // 
-            // bindSrcHotels
-            // 
-            this.bindSrcHotels.DataSource = typeof(GestionOrganisationCongres.Hotel);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(368, 227);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 18);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "€";
             // 
             // FrmGestionInscriptions
             // 
@@ -746,11 +755,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindSrcInscriptions)).EndInit();
             this.DetailsCongressiste.ResumeLayout(false);
             this.DetailsCongressiste.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindSrcHotels)).EndInit();
             this.ListeParticipations.ResumeLayout(false);
             this.ListeParticipations.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActiviteCongressiste)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindSrcHotels)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -777,7 +786,6 @@
         private System.Windows.Forms.Label lblHotelCongressiste;
         private System.Windows.Forms.Label lblLigueCongressiste;
         private System.Windows.Forms.Label lblAcompteCongressiste;
-        private System.Windows.Forms.MaskedTextBox maskedTxtBoxAcompteCongressiste;
         private System.Windows.Forms.ComboBox comboBoxLigueCongressiste;
         private System.Windows.Forms.TextBox txtBoxVilleCongressiste;
         private System.Windows.Forms.TextBox txtBoxAdresseCongressiste;
@@ -814,5 +822,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idLigueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hotelDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bindSrcHotels;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtBoxAcompte;
     }
 }
