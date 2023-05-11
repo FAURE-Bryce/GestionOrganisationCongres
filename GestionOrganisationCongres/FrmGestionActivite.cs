@@ -38,9 +38,9 @@ namespace GestionOrganisationCongres
         }
 
 
-        //private void bindSrcActivites_CurrentChanged(object sender, EventArgs e)
-        //{
-        //    bindSrcInscriptions.DataSource = ((Activite)bindSrcActivites.Current).Congressistes.ToList();
-        //}
+        private void bindSrcActivites_CurrentChanged(object sender, EventArgs e)
+        {
+            bindSrcInscriptions.DataSource = ((Activite)bindSrcActivites.Current).Congressistes.ToList();
+        }
     }
 }

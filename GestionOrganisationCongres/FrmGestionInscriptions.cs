@@ -28,7 +28,8 @@ namespace GestionOrganisationCongres
                 context.Congressistes.Load();
 
                 bindSrcInscriptions.DataSource = context.Congressistes.Local.ToBindingList();
-                bindSrcHotels.DataSource = context.Hotels.ToList();
+                bindSrcHotel.DataSource = context.Hotels.ToList();
+                bindSrcLigue.DataSource = context.Ligues.ToList();
             }
             catch (Exception ex)
             {

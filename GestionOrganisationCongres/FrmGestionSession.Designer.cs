@@ -64,7 +64,6 @@
             this.prixDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomPresidentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idSalleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.congressistesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlSession.SuspendLayout();
             this.listeSession.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSession)).BeginInit();
@@ -122,8 +121,7 @@
             this.nbPlacesMaxDataGridViewTextBoxColumn,
             this.prixDataGridViewTextBoxColumn,
             this.nomPresidentDataGridViewTextBoxColumn,
-            this.idSalleDataGridViewTextBoxColumn,
-            this.congressistesDataGridViewTextBoxColumn});
+            this.idSalleDataGridViewTextBoxColumn});
             this.dataGridViewSession.DataSource = this.bindSrcSessions;
             this.dataGridViewSession.Location = new System.Drawing.Point(2, 5);
             this.dataGridViewSession.Margin = new System.Windows.Forms.Padding(2);
@@ -469,15 +467,6 @@
             this.idSalleDataGridViewTextBoxColumn.ReadOnly = true;
             this.idSalleDataGridViewTextBoxColumn.Width = 125;
             // 
-            // congressistesDataGridViewTextBoxColumn
-            // 
-            this.congressistesDataGridViewTextBoxColumn.DataPropertyName = "Congressistes";
-            this.congressistesDataGridViewTextBoxColumn.HeaderText = "Congressistes";
-            this.congressistesDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.congressistesDataGridViewTextBoxColumn.Name = "congressistesDataGridViewTextBoxColumn";
-            this.congressistesDataGridViewTextBoxColumn.ReadOnly = true;
-            this.congressistesDataGridViewTextBoxColumn.Width = 125;
-            // 
             // FrmGestionSession
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -536,7 +525,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn prixDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomPresidentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idSalleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn congressistesDataGridViewTextBoxColumn;
     }
 }
 
