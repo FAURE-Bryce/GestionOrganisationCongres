@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="gestionCongresModeleStoreContainer" CdmEntityContainer="gestionCongresEntities">
+    <EntitySetMapping Name="Activites">
+      <EntityTypeMapping TypeName="gestionCongresModele.Activite">
+        <MappingFragment StoreEntitySet="Activite">
+          <ScalarProperty Name="idActivite" ColumnName="idActivite" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="prix" ColumnName="prix" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="heureDebut" ColumnName="heureDebut" />
+          <ScalarProperty Name="nbPlacesMax" ColumnName="nbPlacesMax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Congressistes">
+      <EntityTypeMapping TypeName="gestionCongresModele.Congressiste">
+        <MappingFragment StoreEntitySet="Congressiste">
+          <ScalarProperty Name="numInscription" ColumnName="numInscription" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="adresse" ColumnName="adresse" />
+          <ScalarProperty Name="cp" ColumnName="cp" />
+          <ScalarProperty Name="ville" ColumnName="ville" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="acompte" ColumnName="acompte" />
+          <ScalarProperty Name="idHotel" ColumnName="idHotel" />
+          <ScalarProperty Name="idLigue" ColumnName="idLigue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hotels">
+      <EntityTypeMapping TypeName="gestionCongresModele.Hotel">
+        <MappingFragment StoreEntitySet="Hotel">
+          <ScalarProperty Name="idHotel" ColumnName="idHotel" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="adresse" ColumnName="adresse" />
+          <ScalarProperty Name="cp" ColumnName="cp" />
+          <ScalarProperty Name="ville" ColumnName="ville" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="prixChambre" ColumnName="prixChambre" />
+          <ScalarProperty Name="idCateg" ColumnName="idCateg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sessions">
+      <EntityTypeMapping TypeName="gestionCongresModele.Session">
+        <MappingFragment StoreEntitySet="Session">
+          <ScalarProperty Name="numSession" ColumnName="numSession" />
+          <ScalarProperty Name="theme" ColumnName="theme" />
+          <ScalarProperty Name="heureDebut" ColumnName="heureDebut" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="nbPlacesMax" ColumnName="nbPlacesMax" />
+          <ScalarProperty Name="prix" ColumnName="prix" />
+          <ScalarProperty Name="nomPresident" ColumnName="nomPresident" />
+          <ScalarProperty Name="idSalle" ColumnName="idSalle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Inscrire" TypeName="gestionCongresModele.Inscrire" StoreEntitySet="Inscrire">
+      <EndProperty Name="Activite">
+        <ScalarProperty Name="idActivite" ColumnName="idActivite" />
+      </EndProperty>
+      <EndProperty Name="Congressiste">
+        <ScalarProperty Name="numInscription" ColumnName="numInscription" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Participer" TypeName="gestionCongresModele.Participer" StoreEntitySet="Participer">
+      <EndProperty Name="Congressiste">
+        <ScalarProperty Name="numInscription" ColumnName="numInscription" />
+      </EndProperty>
+      <EndProperty Name="Session">
+        <ScalarProperty Name="numSession" ColumnName="numSession" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="gestionCongresModele.Categorie">
+        <MappingFragment StoreEntitySet="Categorie">
+          <ScalarProperty Name="nbEtoiles" ColumnName="nbEtoiles" />
+          <ScalarProperty Name="idCateg" ColumnName="idCateg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ligues">
+      <EntityTypeMapping TypeName="gestionCongresModele.Ligue">
+        <MappingFragment StoreEntitySet="Ligue">
+          <ScalarProperty Name="ville" ColumnName="ville" />
+          <ScalarProperty Name="cp" ColumnName="cp" />
+          <ScalarProperty Name="adresse" ColumnName="adresse" />
+          <ScalarProperty Name="nomLigue" ColumnName="nomLigue" />
+          <ScalarProperty Name="idLigue" ColumnName="idLigue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salles">
+      <EntityTypeMapping TypeName="gestionCongresModele.Salle">
+        <MappingFragment StoreEntitySet="Salle">
+          <ScalarProperty Name="nomSalle" ColumnName="nomSalle" />
+          <ScalarProperty Name="idSalle" ColumnName="idSalle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
