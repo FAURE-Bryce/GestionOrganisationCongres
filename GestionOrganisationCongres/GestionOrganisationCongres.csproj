@@ -95,6 +95,7 @@
     <Compile Include="Ligue.cs">
       <DependentUpon>ModeleGestion.tt</DependentUpon>
     </Compile>
+    <Compile Include="Salle_suite.cs" />
     <Compile Include="Ligue_suite.cs" />
     <Compile Include="ModeleGestion.Context.cs">
       <AutoGen>True</AutoGen>
@@ -151,6 +152,7 @@
     <None Include="Properties\DataSources\Activite.datasource" />
     <None Include="Properties\DataSources\Congressiste.datasource" />
     <None Include="Properties\DataSources\Hotel.datasource" />
+    <None Include="Properties\DataSources\Salle.datasource" />
     <None Include="Properties\DataSources\Session.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
