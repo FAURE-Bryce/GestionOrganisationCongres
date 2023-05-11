@@ -33,6 +33,15 @@
             this.listeSession = new System.Windows.Forms.TabPage();
             this.btAjouterSession = new System.Windows.Forms.Button();
             this.dataGridViewSession = new System.Windows.Forms.DataGridView();
+            this.numSessionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.themeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.heureDebutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nbPlacesMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prixDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomPresidentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSalleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.congressistesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindSrcSessions = new System.Windows.Forms.BindingSource(this.components);
             this.detailsSession = new System.Windows.Forms.TabPage();
             this.txtBoxPrixSession = new System.Windows.Forms.TextBox();
@@ -48,6 +57,7 @@
             this.txtBoxThemeSession = new System.Windows.Forms.TextBox();
             this.dateTimePickerSession = new System.Windows.Forms.DateTimePicker();
             this.comboBoxSalleSession = new System.Windows.Forms.ComboBox();
+            this.salleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblSalleSession = new System.Windows.Forms.Label();
             this.lblPrixSession = new System.Windows.Forms.Label();
             this.lblNbPlacesMaxSession = new System.Windows.Forms.Label();
@@ -56,20 +66,12 @@
             this.lblThemeSession = new System.Windows.Forms.Label();
             this.btSupprimerSession = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.numSessionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.themeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.heureDebutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nbPlacesMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prixDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomPresidentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idSalleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.congressistesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlSession.SuspendLayout();
             this.listeSession.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSession)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindSrcSessions)).BeginInit();
             this.detailsSession.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.salleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,22 +79,22 @@
             // 
             this.tabControlSession.Controls.Add(this.listeSession);
             this.tabControlSession.Controls.Add(this.detailsSession);
-            this.tabControlSession.Location = new System.Drawing.Point(9, 10);
-            this.tabControlSession.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControlSession.Location = new System.Drawing.Point(12, 12);
+            this.tabControlSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControlSession.Name = "tabControlSession";
             this.tabControlSession.SelectedIndex = 0;
-            this.tabControlSession.Size = new System.Drawing.Size(766, 472);
+            this.tabControlSession.Size = new System.Drawing.Size(1021, 581);
             this.tabControlSession.TabIndex = 0;
             // 
             // listeSession
             // 
             this.listeSession.Controls.Add(this.btAjouterSession);
             this.listeSession.Controls.Add(this.dataGridViewSession);
-            this.listeSession.Location = new System.Drawing.Point(4, 22);
-            this.listeSession.Margin = new System.Windows.Forms.Padding(2);
+            this.listeSession.Location = new System.Drawing.Point(4, 25);
+            this.listeSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listeSession.Name = "listeSession";
-            this.listeSession.Padding = new System.Windows.Forms.Padding(2);
-            this.listeSession.Size = new System.Drawing.Size(758, 446);
+            this.listeSession.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listeSession.Size = new System.Drawing.Size(1013, 552);
             this.listeSession.TabIndex = 0;
             this.listeSession.Text = "Liste";
             this.listeSession.UseVisualStyleBackColor = true;
@@ -100,10 +102,10 @@
             // btAjouterSession
             // 
             this.btAjouterSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btAjouterSession.Location = new System.Drawing.Point(244, 365);
-            this.btAjouterSession.Margin = new System.Windows.Forms.Padding(2);
+            this.btAjouterSession.Location = new System.Drawing.Point(325, 449);
+            this.btAjouterSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btAjouterSession.Name = "btAjouterSession";
-            this.btAjouterSession.Size = new System.Drawing.Size(155, 24);
+            this.btAjouterSession.Size = new System.Drawing.Size(207, 30);
             this.btAjouterSession.TabIndex = 1;
             this.btAjouterSession.Text = "Ajouter une session";
             this.btAjouterSession.UseVisualStyleBackColor = true;
@@ -125,277 +127,14 @@
             this.idSalleDataGridViewTextBoxColumn,
             this.congressistesDataGridViewTextBoxColumn});
             this.dataGridViewSession.DataSource = this.bindSrcSessions;
-            this.dataGridViewSession.Location = new System.Drawing.Point(2, 5);
-            this.dataGridViewSession.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewSession.Location = new System.Drawing.Point(3, 6);
+            this.dataGridViewSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewSession.Name = "dataGridViewSession";
             this.dataGridViewSession.ReadOnly = true;
             this.dataGridViewSession.RowHeadersWidth = 51;
             this.dataGridViewSession.RowTemplate.Height = 24;
-            this.dataGridViewSession.Size = new System.Drawing.Size(641, 357);
+            this.dataGridViewSession.Size = new System.Drawing.Size(855, 439);
             this.dataGridViewSession.TabIndex = 0;
-            // 
-            // bindSrcSessions
-            // 
-            this.bindSrcSessions.DataSource = typeof(GestionOrganisationCongres.Session);
-            // 
-            // detailsSession
-            // 
-            this.detailsSession.Controls.Add(this.txtBoxPrixSession);
-            this.detailsSession.Controls.Add(this.txtBoxNombrePlacesMaxSession);
-            this.detailsSession.Controls.Add(this.btValiderModifSession);
-            this.detailsSession.Controls.Add(this.btAnnulerModifSession);
-            this.detailsSession.Controls.Add(this.comboBoxHeureDebut);
-            this.detailsSession.Controls.Add(this.lblInscrits);
-            this.detailsSession.Controls.Add(this.btSupprimerInscritSession);
-            this.detailsSession.Controls.Add(this.btAjouterInscritSession);
-            this.detailsSession.Controls.Add(this.lblNonInscrits);
-            this.detailsSession.Controls.Add(this.comboBoxNonInscrits);
-            this.detailsSession.Controls.Add(this.txtBoxThemeSession);
-            this.detailsSession.Controls.Add(this.dateTimePickerSession);
-            this.detailsSession.Controls.Add(this.comboBoxSalleSession);
-            this.detailsSession.Controls.Add(this.lblSalleSession);
-            this.detailsSession.Controls.Add(this.lblPrixSession);
-            this.detailsSession.Controls.Add(this.lblNbPlacesMaxSession);
-            this.detailsSession.Controls.Add(this.lblHeureDebutSession);
-            this.detailsSession.Controls.Add(this.lblDateSession);
-            this.detailsSession.Controls.Add(this.lblThemeSession);
-            this.detailsSession.Controls.Add(this.btSupprimerSession);
-            this.detailsSession.Controls.Add(this.dataGridView2);
-            this.detailsSession.Location = new System.Drawing.Point(4, 22);
-            this.detailsSession.Margin = new System.Windows.Forms.Padding(2);
-            this.detailsSession.Name = "detailsSession";
-            this.detailsSession.Padding = new System.Windows.Forms.Padding(2);
-            this.detailsSession.Size = new System.Drawing.Size(758, 446);
-            this.detailsSession.TabIndex = 1;
-            this.detailsSession.Text = "Détails";
-            this.detailsSession.UseVisualStyleBackColor = true;
-            // 
-            // txtBoxPrixSession
-            // 
-            this.txtBoxPrixSession.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcSessions, "prix", true));
-            this.txtBoxPrixSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxPrixSession.Location = new System.Drawing.Point(84, 247);
-            this.txtBoxPrixSession.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBoxPrixSession.Name = "txtBoxPrixSession";
-            this.txtBoxPrixSession.Size = new System.Drawing.Size(92, 23);
-            this.txtBoxPrixSession.TabIndex = 50;
-            // 
-            // txtBoxNombrePlacesMaxSession
-            // 
-            this.txtBoxNombrePlacesMaxSession.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcSessions, "nbPlacesMax", true));
-            this.txtBoxNombrePlacesMaxSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxNombrePlacesMaxSession.Location = new System.Drawing.Point(185, 170);
-            this.txtBoxNombrePlacesMaxSession.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBoxNombrePlacesMaxSession.Name = "txtBoxNombrePlacesMaxSession";
-            this.txtBoxNombrePlacesMaxSession.Size = new System.Drawing.Size(75, 23);
-            this.txtBoxNombrePlacesMaxSession.TabIndex = 49;
-            // 
-            // btValiderModifSession
-            // 
-            this.btValiderModifSession.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btValiderModifSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btValiderModifSession.Location = new System.Drawing.Point(51, 325);
-            this.btValiderModifSession.Margin = new System.Windows.Forms.Padding(2);
-            this.btValiderModifSession.Name = "btValiderModifSession";
-            this.btValiderModifSession.Size = new System.Drawing.Size(88, 39);
-            this.btValiderModifSession.TabIndex = 48;
-            this.btValiderModifSession.Text = "Valider";
-            this.btValiderModifSession.UseVisualStyleBackColor = false;
-            // 
-            // btAnnulerModifSession
-            // 
-            this.btAnnulerModifSession.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btAnnulerModifSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btAnnulerModifSession.Location = new System.Drawing.Point(215, 325);
-            this.btAnnulerModifSession.Margin = new System.Windows.Forms.Padding(2);
-            this.btAnnulerModifSession.Name = "btAnnulerModifSession";
-            this.btAnnulerModifSession.Size = new System.Drawing.Size(86, 39);
-            this.btAnnulerModifSession.TabIndex = 47;
-            this.btAnnulerModifSession.Text = "Annuler";
-            this.btAnnulerModifSession.UseVisualStyleBackColor = false;
-            // 
-            // comboBoxHeureDebut
-            // 
-            this.comboBoxHeureDebut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.comboBoxHeureDebut.FormattingEnabled = true;
-            this.comboBoxHeureDebut.Location = new System.Drawing.Point(143, 76);
-            this.comboBoxHeureDebut.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxHeureDebut.Name = "comboBoxHeureDebut";
-            this.comboBoxHeureDebut.Size = new System.Drawing.Size(92, 24);
-            this.comboBoxHeureDebut.TabIndex = 3;
-            // 
-            // lblInscrits
-            // 
-            this.lblInscrits.AutoSize = true;
-            this.lblInscrits.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInscrits.Location = new System.Drawing.Point(341, 11);
-            this.lblInscrits.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblInscrits.Name = "lblInscrits";
-            this.lblInscrits.Size = new System.Drawing.Size(64, 17);
-            this.lblInscrits.TabIndex = 18;
-            this.lblInscrits.Text = "Inscrits : ";
-            // 
-            // btSupprimerInscritSession
-            // 
-            this.btSupprimerInscritSession.BackColor = System.Drawing.Color.LightPink;
-            this.btSupprimerInscritSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSupprimerInscritSession.Location = new System.Drawing.Point(462, 340);
-            this.btSupprimerInscritSession.Margin = new System.Windows.Forms.Padding(2);
-            this.btSupprimerInscritSession.Name = "btSupprimerInscritSession";
-            this.btSupprimerInscritSession.Size = new System.Drawing.Size(146, 57);
-            this.btSupprimerInscritSession.TabIndex = 11;
-            this.btSupprimerInscritSession.Text = "Supprimer un inscrit";
-            this.btSupprimerInscritSession.UseVisualStyleBackColor = false;
-            // 
-            // btAjouterInscritSession
-            // 
-            this.btAjouterInscritSession.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btAjouterInscritSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAjouterInscritSession.Location = new System.Drawing.Point(647, 277);
-            this.btAjouterInscritSession.Margin = new System.Windows.Forms.Padding(2);
-            this.btAjouterInscritSession.Name = "btAjouterInscritSession";
-            this.btAjouterInscritSession.Size = new System.Drawing.Size(90, 43);
-            this.btAjouterInscritSession.TabIndex = 10;
-            this.btAjouterInscritSession.Text = "Ajouter";
-            this.btAjouterInscritSession.UseVisualStyleBackColor = false;
-            // 
-            // lblNonInscrits
-            // 
-            this.lblNonInscrits.AutoSize = true;
-            this.lblNonInscrits.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNonInscrits.Location = new System.Drawing.Point(341, 291);
-            this.lblNonInscrits.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNonInscrits.Name = "lblNonInscrits";
-            this.lblNonInscrits.Size = new System.Drawing.Size(94, 17);
-            this.lblNonInscrits.TabIndex = 15;
-            this.lblNonInscrits.Text = "Non inscrits : ";
-            // 
-            // comboBoxNonInscrits
-            // 
-            this.comboBoxNonInscrits.FormattingEnabled = true;
-            this.comboBoxNonInscrits.Location = new System.Drawing.Point(462, 288);
-            this.comboBoxNonInscrits.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxNonInscrits.Name = "comboBoxNonInscrits";
-            this.comboBoxNonInscrits.Size = new System.Drawing.Size(160, 21);
-            this.comboBoxNonInscrits.TabIndex = 9;
-            // 
-            // txtBoxThemeSession
-            // 
-            this.txtBoxThemeSession.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcSessions, "theme", true));
-            this.txtBoxThemeSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxThemeSession.Location = new System.Drawing.Point(88, 32);
-            this.txtBoxThemeSession.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBoxThemeSession.Name = "txtBoxThemeSession";
-            this.txtBoxThemeSession.Size = new System.Drawing.Size(198, 23);
-            this.txtBoxThemeSession.TabIndex = 2;
-            // 
-            // dateTimePickerSession
-            // 
-            this.dateTimePickerSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dateTimePickerSession.Location = new System.Drawing.Point(84, 121);
-            this.dateTimePickerSession.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePickerSession.Name = "dateTimePickerSession";
-            this.dateTimePickerSession.Size = new System.Drawing.Size(151, 23);
-            this.dateTimePickerSession.TabIndex = 4;
-            // 
-            // comboBoxSalleSession
-            // 
-            this.comboBoxSalleSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.comboBoxSalleSession.FormattingEnabled = true;
-            this.comboBoxSalleSession.Location = new System.Drawing.Point(84, 209);
-            this.comboBoxSalleSession.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxSalleSession.Name = "comboBoxSalleSession";
-            this.comboBoxSalleSession.Size = new System.Drawing.Size(92, 24);
-            this.comboBoxSalleSession.TabIndex = 6;
-            // 
-            // lblSalleSession
-            // 
-            this.lblSalleSession.AutoSize = true;
-            this.lblSalleSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblSalleSession.Location = new System.Drawing.Point(20, 212);
-            this.lblSalleSession.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSalleSession.Name = "lblSalleSession";
-            this.lblSalleSession.Size = new System.Drawing.Size(51, 17);
-            this.lblSalleSession.TabIndex = 8;
-            this.lblSalleSession.Text = "Salle : ";
-            // 
-            // lblPrixSession
-            // 
-            this.lblPrixSession.AutoSize = true;
-            this.lblPrixSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblPrixSession.Location = new System.Drawing.Point(20, 252);
-            this.lblPrixSession.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPrixSession.Name = "lblPrixSession";
-            this.lblPrixSession.Size = new System.Drawing.Size(43, 17);
-            this.lblPrixSession.TabIndex = 7;
-            this.lblPrixSession.Text = "Prix : ";
-            // 
-            // lblNbPlacesMaxSession
-            // 
-            this.lblNbPlacesMaxSession.AutoSize = true;
-            this.lblNbPlacesMaxSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblNbPlacesMaxSession.Location = new System.Drawing.Point(20, 170);
-            this.lblNbPlacesMaxSession.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNbPlacesMaxSession.Name = "lblNbPlacesMaxSession";
-            this.lblNbPlacesMaxSession.Size = new System.Drawing.Size(164, 17);
-            this.lblNbPlacesMaxSession.TabIndex = 6;
-            this.lblNbPlacesMaxSession.Text = "Nombre de places max : ";
-            // 
-            // lblHeureDebutSession
-            // 
-            this.lblHeureDebutSession.AutoSize = true;
-            this.lblHeureDebutSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblHeureDebutSession.Location = new System.Drawing.Point(20, 79);
-            this.lblHeureDebutSession.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblHeureDebutSession.Name = "lblHeureDebutSession";
-            this.lblHeureDebutSession.Size = new System.Drawing.Size(119, 17);
-            this.lblHeureDebutSession.TabIndex = 5;
-            this.lblHeureDebutSession.Text = "Heure de début : ";
-            // 
-            // lblDateSession
-            // 
-            this.lblDateSession.AutoSize = true;
-            this.lblDateSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblDateSession.Location = new System.Drawing.Point(20, 126);
-            this.lblDateSession.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDateSession.Name = "lblDateSession";
-            this.lblDateSession.Size = new System.Drawing.Size(50, 17);
-            this.lblDateSession.TabIndex = 4;
-            this.lblDateSession.Text = "Date : ";
-            // 
-            // lblThemeSession
-            // 
-            this.lblThemeSession.AutoSize = true;
-            this.lblThemeSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblThemeSession.Location = new System.Drawing.Point(20, 35);
-            this.lblThemeSession.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblThemeSession.Name = "lblThemeSession";
-            this.lblThemeSession.Size = new System.Drawing.Size(64, 17);
-            this.lblThemeSession.TabIndex = 3;
-            this.lblThemeSession.Text = "Thème : ";
-            // 
-            // btSupprimerSession
-            // 
-            this.btSupprimerSession.BackColor = System.Drawing.Color.LightPink;
-            this.btSupprimerSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btSupprimerSession.Location = new System.Drawing.Point(12, 325);
-            this.btSupprimerSession.Margin = new System.Windows.Forms.Padding(2);
-            this.btSupprimerSession.Name = "btSupprimerSession";
-            this.btSupprimerSession.Size = new System.Drawing.Size(172, 58);
-            this.btSupprimerSession.TabIndex = 12;
-            this.btSupprimerSession.Text = "Supprimer la session";
-            this.btSupprimerSession.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(344, 30);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(381, 239);
-            this.dataGridView2.TabIndex = 1;
             // 
             // numSessionDataGridViewTextBoxColumn
             // 
@@ -478,13 +217,276 @@
             this.congressistesDataGridViewTextBoxColumn.ReadOnly = true;
             this.congressistesDataGridViewTextBoxColumn.Width = 125;
             // 
+            // bindSrcSessions
+            // 
+            this.bindSrcSessions.DataSource = typeof(GestionOrganisationCongres.Session);
+            // 
+            // detailsSession
+            // 
+            this.detailsSession.Controls.Add(this.txtBoxPrixSession);
+            this.detailsSession.Controls.Add(this.txtBoxNombrePlacesMaxSession);
+            this.detailsSession.Controls.Add(this.btValiderModifSession);
+            this.detailsSession.Controls.Add(this.btAnnulerModifSession);
+            this.detailsSession.Controls.Add(this.comboBoxHeureDebut);
+            this.detailsSession.Controls.Add(this.lblInscrits);
+            this.detailsSession.Controls.Add(this.btSupprimerInscritSession);
+            this.detailsSession.Controls.Add(this.btAjouterInscritSession);
+            this.detailsSession.Controls.Add(this.lblNonInscrits);
+            this.detailsSession.Controls.Add(this.comboBoxNonInscrits);
+            this.detailsSession.Controls.Add(this.txtBoxThemeSession);
+            this.detailsSession.Controls.Add(this.dateTimePickerSession);
+            this.detailsSession.Controls.Add(this.comboBoxSalleSession);
+            this.detailsSession.Controls.Add(this.lblSalleSession);
+            this.detailsSession.Controls.Add(this.lblPrixSession);
+            this.detailsSession.Controls.Add(this.lblNbPlacesMaxSession);
+            this.detailsSession.Controls.Add(this.lblHeureDebutSession);
+            this.detailsSession.Controls.Add(this.lblDateSession);
+            this.detailsSession.Controls.Add(this.lblThemeSession);
+            this.detailsSession.Controls.Add(this.btSupprimerSession);
+            this.detailsSession.Controls.Add(this.dataGridView2);
+            this.detailsSession.Location = new System.Drawing.Point(4, 25);
+            this.detailsSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.detailsSession.Name = "detailsSession";
+            this.detailsSession.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.detailsSession.Size = new System.Drawing.Size(1013, 552);
+            this.detailsSession.TabIndex = 1;
+            this.detailsSession.Text = "Détails";
+            this.detailsSession.UseVisualStyleBackColor = true;
+            // 
+            // txtBoxPrixSession
+            // 
+            this.txtBoxPrixSession.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcSessions, "prix", true));
+            this.txtBoxPrixSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBoxPrixSession.Location = new System.Drawing.Point(112, 304);
+            this.txtBoxPrixSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxPrixSession.Name = "txtBoxPrixSession";
+            this.txtBoxPrixSession.Size = new System.Drawing.Size(121, 26);
+            this.txtBoxPrixSession.TabIndex = 50;
+            // 
+            // txtBoxNombrePlacesMaxSession
+            // 
+            this.txtBoxNombrePlacesMaxSession.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcSessions, "nbPlacesMax", true));
+            this.txtBoxNombrePlacesMaxSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBoxNombrePlacesMaxSession.Location = new System.Drawing.Point(247, 209);
+            this.txtBoxNombrePlacesMaxSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxNombrePlacesMaxSession.Name = "txtBoxNombrePlacesMaxSession";
+            this.txtBoxNombrePlacesMaxSession.Size = new System.Drawing.Size(99, 26);
+            this.txtBoxNombrePlacesMaxSession.TabIndex = 49;
+            // 
+            // btValiderModifSession
+            // 
+            this.btValiderModifSession.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btValiderModifSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btValiderModifSession.Location = new System.Drawing.Point(68, 400);
+            this.btValiderModifSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btValiderModifSession.Name = "btValiderModifSession";
+            this.btValiderModifSession.Size = new System.Drawing.Size(117, 48);
+            this.btValiderModifSession.TabIndex = 48;
+            this.btValiderModifSession.Text = "Valider";
+            this.btValiderModifSession.UseVisualStyleBackColor = false;
+            // 
+            // btAnnulerModifSession
+            // 
+            this.btAnnulerModifSession.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btAnnulerModifSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btAnnulerModifSession.Location = new System.Drawing.Point(287, 400);
+            this.btAnnulerModifSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btAnnulerModifSession.Name = "btAnnulerModifSession";
+            this.btAnnulerModifSession.Size = new System.Drawing.Size(115, 48);
+            this.btAnnulerModifSession.TabIndex = 47;
+            this.btAnnulerModifSession.Text = "Annuler";
+            this.btAnnulerModifSession.UseVisualStyleBackColor = false;
+            // 
+            // comboBoxHeureDebut
+            // 
+            this.comboBoxHeureDebut.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.bindSrcSessions, "heureDebut", true));
+            this.comboBoxHeureDebut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.comboBoxHeureDebut.FormattingEnabled = true;
+            this.comboBoxHeureDebut.Location = new System.Drawing.Point(191, 94);
+            this.comboBoxHeureDebut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxHeureDebut.Name = "comboBoxHeureDebut";
+            this.comboBoxHeureDebut.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxHeureDebut.TabIndex = 3;
+            // 
+            // lblInscrits
+            // 
+            this.lblInscrits.AutoSize = true;
+            this.lblInscrits.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInscrits.Location = new System.Drawing.Point(455, 14);
+            this.lblInscrits.Name = "lblInscrits";
+            this.lblInscrits.Size = new System.Drawing.Size(79, 20);
+            this.lblInscrits.TabIndex = 18;
+            this.lblInscrits.Text = "Inscrits : ";
+            // 
+            // btSupprimerInscritSession
+            // 
+            this.btSupprimerInscritSession.BackColor = System.Drawing.Color.LightPink;
+            this.btSupprimerInscritSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSupprimerInscritSession.Location = new System.Drawing.Point(616, 418);
+            this.btSupprimerInscritSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btSupprimerInscritSession.Name = "btSupprimerInscritSession";
+            this.btSupprimerInscritSession.Size = new System.Drawing.Size(195, 70);
+            this.btSupprimerInscritSession.TabIndex = 11;
+            this.btSupprimerInscritSession.Text = "Supprimer un inscrit";
+            this.btSupprimerInscritSession.UseVisualStyleBackColor = false;
+            // 
+            // btAjouterInscritSession
+            // 
+            this.btAjouterInscritSession.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btAjouterInscritSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAjouterInscritSession.Location = new System.Drawing.Point(863, 341);
+            this.btAjouterInscritSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btAjouterInscritSession.Name = "btAjouterInscritSession";
+            this.btAjouterInscritSession.Size = new System.Drawing.Size(120, 53);
+            this.btAjouterInscritSession.TabIndex = 10;
+            this.btAjouterInscritSession.Text = "Ajouter";
+            this.btAjouterInscritSession.UseVisualStyleBackColor = false;
+            // 
+            // lblNonInscrits
+            // 
+            this.lblNonInscrits.AutoSize = true;
+            this.lblNonInscrits.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNonInscrits.Location = new System.Drawing.Point(455, 358);
+            this.lblNonInscrits.Name = "lblNonInscrits";
+            this.lblNonInscrits.Size = new System.Drawing.Size(114, 20);
+            this.lblNonInscrits.TabIndex = 15;
+            this.lblNonInscrits.Text = "Non inscrits : ";
+            // 
+            // comboBoxNonInscrits
+            // 
+            this.comboBoxNonInscrits.FormattingEnabled = true;
+            this.comboBoxNonInscrits.Location = new System.Drawing.Point(616, 354);
+            this.comboBoxNonInscrits.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxNonInscrits.Name = "comboBoxNonInscrits";
+            this.comboBoxNonInscrits.Size = new System.Drawing.Size(212, 24);
+            this.comboBoxNonInscrits.TabIndex = 9;
+            // 
+            // txtBoxThemeSession
+            // 
+            this.txtBoxThemeSession.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcSessions, "theme", true));
+            this.txtBoxThemeSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBoxThemeSession.Location = new System.Drawing.Point(117, 39);
+            this.txtBoxThemeSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBoxThemeSession.Name = "txtBoxThemeSession";
+            this.txtBoxThemeSession.Size = new System.Drawing.Size(263, 26);
+            this.txtBoxThemeSession.TabIndex = 2;
+            // 
+            // dateTimePickerSession
+            // 
+            this.dateTimePickerSession.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindSrcSessions, "date", true));
+            this.dateTimePickerSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dateTimePickerSession.Location = new System.Drawing.Point(112, 149);
+            this.dateTimePickerSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePickerSession.Name = "dateTimePickerSession";
+            this.dateTimePickerSession.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePickerSession.TabIndex = 4;
+            // 
+            // comboBoxSalleSession
+            // 
+            this.comboBoxSalleSession.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcSessions, "Salle", true));
+            this.comboBoxSalleSession.DataSource = this.salleBindingSource;
+            this.comboBoxSalleSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.comboBoxSalleSession.FormattingEnabled = true;
+            this.comboBoxSalleSession.Location = new System.Drawing.Point(112, 257);
+            this.comboBoxSalleSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxSalleSession.Name = "comboBoxSalleSession";
+            this.comboBoxSalleSession.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxSalleSession.TabIndex = 6;
+            // 
+            // salleBindingSource
+            // 
+            this.salleBindingSource.DataSource = typeof(GestionOrganisationCongres.Salle);
+            // 
+            // lblSalleSession
+            // 
+            this.lblSalleSession.AutoSize = true;
+            this.lblSalleSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblSalleSession.Location = new System.Drawing.Point(27, 261);
+            this.lblSalleSession.Name = "lblSalleSession";
+            this.lblSalleSession.Size = new System.Drawing.Size(61, 20);
+            this.lblSalleSession.TabIndex = 8;
+            this.lblSalleSession.Text = "Salle : ";
+            // 
+            // lblPrixSession
+            // 
+            this.lblPrixSession.AutoSize = true;
+            this.lblPrixSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblPrixSession.Location = new System.Drawing.Point(27, 310);
+            this.lblPrixSession.Name = "lblPrixSession";
+            this.lblPrixSession.Size = new System.Drawing.Size(53, 20);
+            this.lblPrixSession.TabIndex = 7;
+            this.lblPrixSession.Text = "Prix : ";
+            // 
+            // lblNbPlacesMaxSession
+            // 
+            this.lblNbPlacesMaxSession.AutoSize = true;
+            this.lblNbPlacesMaxSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblNbPlacesMaxSession.Location = new System.Drawing.Point(27, 209);
+            this.lblNbPlacesMaxSession.Name = "lblNbPlacesMaxSession";
+            this.lblNbPlacesMaxSession.Size = new System.Drawing.Size(196, 20);
+            this.lblNbPlacesMaxSession.TabIndex = 6;
+            this.lblNbPlacesMaxSession.Text = "Nombre de places max : ";
+            // 
+            // lblHeureDebutSession
+            // 
+            this.lblHeureDebutSession.AutoSize = true;
+            this.lblHeureDebutSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblHeureDebutSession.Location = new System.Drawing.Point(27, 97);
+            this.lblHeureDebutSession.Name = "lblHeureDebutSession";
+            this.lblHeureDebutSession.Size = new System.Drawing.Size(139, 20);
+            this.lblHeureDebutSession.TabIndex = 5;
+            this.lblHeureDebutSession.Text = "Heure de début : ";
+            // 
+            // lblDateSession
+            // 
+            this.lblDateSession.AutoSize = true;
+            this.lblDateSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblDateSession.Location = new System.Drawing.Point(27, 155);
+            this.lblDateSession.Name = "lblDateSession";
+            this.lblDateSession.Size = new System.Drawing.Size(60, 20);
+            this.lblDateSession.TabIndex = 4;
+            this.lblDateSession.Text = "Date : ";
+            // 
+            // lblThemeSession
+            // 
+            this.lblThemeSession.AutoSize = true;
+            this.lblThemeSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblThemeSession.Location = new System.Drawing.Point(27, 43);
+            this.lblThemeSession.Name = "lblThemeSession";
+            this.lblThemeSession.Size = new System.Drawing.Size(75, 20);
+            this.lblThemeSession.TabIndex = 3;
+            this.lblThemeSession.Text = "Thème : ";
+            // 
+            // btSupprimerSession
+            // 
+            this.btSupprimerSession.BackColor = System.Drawing.Color.LightPink;
+            this.btSupprimerSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btSupprimerSession.Location = new System.Drawing.Point(16, 400);
+            this.btSupprimerSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btSupprimerSession.Name = "btSupprimerSession";
+            this.btSupprimerSession.Size = new System.Drawing.Size(229, 71);
+            this.btSupprimerSession.TabIndex = 12;
+            this.btSupprimerSession.Text = "Supprimer la session";
+            this.btSupprimerSession.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(459, 37);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(508, 294);
+            this.dataGridView2.TabIndex = 1;
+            // 
             // FrmGestionSession
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 493);
+            this.ClientSize = new System.Drawing.Size(1060, 607);
             this.Controls.Add(this.tabControlSession);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmGestionSession";
             this.Text = "Gestion Session";
             this.Load += new System.EventHandler(this.FrmGestionSession_Load);
@@ -494,6 +496,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindSrcSessions)).EndInit();
             this.detailsSession.ResumeLayout(false);
             this.detailsSession.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.salleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
@@ -537,6 +540,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomPresidentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idSalleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn congressistesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource salleBindingSource;
     }
 }
 
