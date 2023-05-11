@@ -60,3 +60,4 @@ C:\Users\faure\Desktop\Projet Group\GestionOrganisationCongres\GestionOrganisati
 C:\Users\faure\Desktop\Projet Group\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.csproj.CopyComplete
 C:\Users\faure\Desktop\Projet Group\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.exe
 C:\Users\faure\Desktop\Projet Group\GestionOrganisationCongres\GestionOrganisationCongres\obj\Debug\GestionOrganisationCongres.pdb
+C:\Users\n.pauly\Desktop\gestionCongres\GestionOrganisationCongres\GestionOrganisationCongres\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
