@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -137,11 +138,10 @@ namespace GestionOrganisationCongres
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Le film n'a pu pas être supprimé", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //erreur avec le add or update
-                    //context.Activites.AddOrUpdate(activiteSelect);
-                    //context.Entry(activiteSelect).State = EntityState.Unchanged;
-                    //bindSrcActivites.ResetBindings(false);
+                    MessageBox.Show(ex.Message, "L'activité n'a pu pas être supprimé", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    context.Activites.AddOrUpdate(activiteSelect);
+                    context.Entry(activiteSelect).State = EntityState.Unchanged;
+                    bindSrcActivites.ResetBindings(false);
 
                 }
             }
