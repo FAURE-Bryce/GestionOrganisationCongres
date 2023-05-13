@@ -48,7 +48,8 @@ namespace GestionOrganisationCongres
             //lbMontantTotalValue.Text += context.montantTotal(((Congressiste)bindSrcInscriptions.Current).numInscription).ToString();
             bindSrcActivite.DataSource = ((Congressiste)bindSrcInscriptions.Current).Activites.ToList();
             bindSrcSession.DataSource = ((Congressiste)bindSrcInscriptions.Current).Sessions.ToList();
-            // A FAIRE PROCEDURES STOCKEES QUI RECUPERENT LES ACTIVITES ET SESSIONS DISPONIBLES
+            bindSrcActivitesDispo.DataSource = context.GetActivitesPasInscrit(((Congressiste)bindSrcInscriptions.Current).numInscription).ToList();
+            bindSrcSessionsDispo.DataSource = context.GetSessionsPasInscrit(((Congressiste)bindSrcInscriptions.Current).numInscription).ToList();
 
         }
 
@@ -126,14 +127,98 @@ namespace GestionOrganisationCongres
 
         private void btAjouterActiviteCongressiste_Click(object sender, EventArgs e)
         {
-            FrmGestionActivite frmAct = new FrmGestionActivite();
-            frmAct.ShowDialog();
+            try
+            {
+
+                ((Congressiste)bindSrcInscriptions.Current).Activites.Add((Activite)bindSrcActivitesDispo.Current);
+                context.SaveChanges();
+                bindSrcActivite.Add((Activite)bindSrcActivitesDispo.Current);
+                bindSrcActivitesDispo.RemoveCurrent();
+
+
+                MessageBox.Show("Le congressiste a bien été ajouté à l'activité", "Information", MessageBoxButtons.OK);
+
+            }
+            catch
+            {
+                ((Congressiste)bindSrcInscriptions.Current).Activites.Remove((Activite)bindSrcActivitesDispo.Current);
+                context.Entry((Congressiste)bindSrcInscriptions.Current).State = EntityState.Unchanged;
+                MessageBox.Show("Le congressiste n'a pu pas être ajouté à l'activité", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         private void btAjouterSessionCongressiste_Click(object sender, EventArgs e)
         {
-            FrmGestionSession frmSession = new FrmGestionSession();
-            frmSession.ShowDialog();
+            try
+            {
+
+                ((Congressiste)bindSrcInscriptions.Current).Sessions.Add((Session)bindSrcSessionsDispo.Current);
+                context.SaveChanges();
+                bindSrcSession.Add((Session)bindSrcSessionsDispo.Current);
+                bindSrcSessionsDispo.RemoveCurrent();
+
+
+                MessageBox.Show("Le congressiste a bien été ajouté à la session", "Information", MessageBoxButtons.OK);
+
+            }
+            catch
+            {
+                ((Congressiste)bindSrcInscriptions.Current).Sessions.Remove((Session)bindSrcSessionsDispo.Current);
+                context.Entry((Congressiste)bindSrcInscriptions.Current).State = EntityState.Unchanged;
+                MessageBox.Show("Le congressiste n'a pu pas être ajouté à la session", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void btSupprimerActiviteCongressiste_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Etes-vous sûr de vouloir supprimer ce congressiste de l'activité? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                try
+                {
+                    ((Congressiste)bindSrcInscriptions.Current).Activites.Remove((Activite)bindSrcActivite.Current);
+                    context.SaveChanges();
+                    bindSrcActivitesDispo.Add((Activite)bindSrcActivite.Current);
+                    bindSrcActivite.RemoveCurrent();
+
+                    MessageBox.Show("Congressiste supprimé de l'activité", "Information", MessageBoxButtons.OK);
+
+                }
+                catch
+                {
+                    ((Congressiste)bindSrcInscriptions.Current).Activites.Add((Activite)bindSrcActivite.Current);
+                    context.Entry((Congressiste)bindSrcInscriptions.Current).State = EntityState.Unchanged;
+                    MessageBox.Show("Le congressiste n'a pu pas être supprimé de l'activité", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+        }
+
+        private void btSupprimerSessionCongressiste_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Etes-vous sûr de vouloir supprimer ce congressiste de la session? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                try
+                {
+                    ((Congressiste)bindSrcInscriptions.Current).Sessions.Remove((Session)bindSrcSession.Current);
+                    context.SaveChanges();
+                    bindSrcSessionsDispo.Add((Session)bindSrcSession.Current);
+                    bindSrcSession.RemoveCurrent();
+
+                    MessageBox.Show("Congressiste supprimé de la session", "Information", MessageBoxButtons.OK);
+
+                }
+                catch
+                {
+                    ((Congressiste)bindSrcInscriptions.Current).Sessions.Add((Session)bindSrcSession.Current);
+                    context.Entry((Congressiste)bindSrcInscriptions.Current).State = EntityState.Unchanged;
+                    MessageBox.Show("Le congressiste n'a pu pas être supprimé de la session", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
         }
     }
 }

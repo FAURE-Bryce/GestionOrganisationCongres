@@ -97,5 +97,41 @@ namespace GestionOrganisationCongres
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Congressiste>("GetCongressistesDisponiblesBySession", mergeOption, idSParameter);
         }
+    
+        public virtual ObjectResult<Activite> GetActivitesPasInscrit(Nullable<int> idC)
+        {
+            var idCParameter = idC.HasValue ?
+                new ObjectParameter("idC", idC) :
+                new ObjectParameter("idC", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Activite>("GetActivitesPasInscrit", idCParameter);
+        }
+    
+        public virtual ObjectResult<Activite> GetActivitesPasInscrit(Nullable<int> idC, MergeOption mergeOption)
+        {
+            var idCParameter = idC.HasValue ?
+                new ObjectParameter("idC", idC) :
+                new ObjectParameter("idC", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Activite>("GetActivitesPasInscrit", mergeOption, idCParameter);
+        }
+    
+        public virtual ObjectResult<Session> GetSessionsPasInscrit(Nullable<int> idC)
+        {
+            var idCParameter = idC.HasValue ?
+                new ObjectParameter("idC", idC) :
+                new ObjectParameter("idC", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Session>("GetSessionsPasInscrit", idCParameter);
+        }
+    
+        public virtual ObjectResult<Session> GetSessionsPasInscrit(Nullable<int> idC, MergeOption mergeOption)
+        {
+            var idCParameter = idC.HasValue ?
+                new ObjectParameter("idC", idC) :
+                new ObjectParameter("idC", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Session>("GetSessionsPasInscrit", mergeOption, idCParameter);
+        }
     }
 }

@@ -62,10 +62,16 @@
       <DependentUpon>ModeleGestion.tt</DependentUpon>
     </Compile>
     <Compile Include="Congressiste_suite.cs" />
+    <Compile Include="GetActivitesPasInscrit_Result.cs">
+      <DependentUpon>ModeleGestion.tt</DependentUpon>
+    </Compile>
     <Compile Include="GetCongressistesDisponiblesByActivite_Result.cs">
       <DependentUpon>ModeleGestion.tt</DependentUpon>
     </Compile>
     <Compile Include="GetCongressistesDisponiblesBySession_Result.cs">
+      <DependentUpon>ModeleGestion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetSessionsPasInscrit_Result.cs">
       <DependentUpon>ModeleGestion.tt</DependentUpon>
     </Compile>
     <Compile Include="Hotel_suite.cs" />

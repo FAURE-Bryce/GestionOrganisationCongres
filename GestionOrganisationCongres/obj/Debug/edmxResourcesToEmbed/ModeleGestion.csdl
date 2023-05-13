@@ -129,6 +129,12 @@
     <FunctionImport Name="GetCongressistesDisponiblesBySession" EntitySet="Congressistes" ReturnType="Collection(gestionCongresModele.Congressiste)">
       <Parameter Name="idS" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="GetActivitesPasInscrit" EntitySet="Activites" ReturnType="Collection(gestionCongresModele.Activite)">
+      <Parameter Name="idC" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSessionsPasInscrit" EntitySet="Sessions" ReturnType="Collection(gestionCongresModele.Session)">
+      <Parameter Name="idC" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Categorie">
     <Key>
@@ -202,5 +208,23 @@
     <Property Type="Int32" Name="numInscription" Nullable="false" />
     <Property Type="String" Name="nom" Nullable="false" MaxLength="50" />
     <Property Type="String" Name="prenom" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetActivitesPasInscrit_Result">
+    <Property Type="Int32" Name="idActivite" Nullable="false" />
+    <Property Type="String" Name="designation" Nullable="false" MaxLength="150" />
+    <Property Type="Decimal" Name="prix" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="DateTime" Name="date" Nullable="false" />
+    <Property Type="String" Name="heureDebut" Nullable="false" MaxLength="5" />
+    <Property Type="Int32" Name="nbPlacesMax" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetSessionsPasInscrit_Result">
+    <Property Type="Int32" Name="numSession" Nullable="false" />
+    <Property Type="String" Name="theme" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="heureDebut" Nullable="false" MaxLength="5" />
+    <Property Type="DateTime" Name="date" Nullable="false" />
+    <Property Type="Int32" Name="nbPlacesMax" Nullable="false" />
+    <Property Type="Decimal" Name="prix" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="String" Name="nomPresident" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="idSalle" Nullable="false" />
   </ComplexType>
 </Schema>

@@ -102,5 +102,7 @@
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="GetCongressistesDisponiblesByActivite" FunctionName="gestionCongresModele.Store.GetCongressistesDisponiblesByActivite" />
     <FunctionImportMapping FunctionImportName="GetCongressistesDisponiblesBySession" FunctionName="gestionCongresModele.Store.GetCongressistesDisponiblesBySession" />
+    <FunctionImportMapping FunctionImportName="GetActivitesPasInscrit" FunctionName="gestionCongresModele.Store.GetActivitesPasInscrit" />
+    <FunctionImportMapping FunctionImportName="GetSessionsPasInscrit" FunctionName="gestionCongresModele.Store.GetSessionsPasInscrit" />
   </EntityContainerMapping>
 </Mapping>

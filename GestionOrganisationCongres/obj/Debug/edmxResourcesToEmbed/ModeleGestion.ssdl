@@ -188,11 +188,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="GetActivitesPasInscrit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idC" Type="int" Mode="In" />
+  </Function>
   <Function Name="GetCongressistesDisponiblesByActivite" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idA" Type="int" Mode="In" />
   </Function>
   <Function Name="GetCongressistesDisponiblesBySession" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idS" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSessionsPasInscrit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idC" Type="int" Mode="In" />
   </Function>
   <Function Name="montantTotal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idCongressiste" Type="int" Mode="In" />

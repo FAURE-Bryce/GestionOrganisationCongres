@@ -193,11 +193,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="GetActivitesPasInscrit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idC" Type="int" Mode="In" />
+        </Function>
         <Function Name="GetCongressistesDisponiblesByActivite" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idA" Type="int" Mode="In" />
         </Function>
         <Function Name="GetCongressistesDisponiblesBySession" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idS" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetSessionsPasInscrit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idC" Type="int" Mode="In" />
         </Function>
         <Function Name="montantTotal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idCongressiste" Type="int" Mode="In" />
@@ -380,10 +386,16 @@
             <End Role="Session" EntitySet="Sessions" />
           </AssociationSet>
           <FunctionImport Name="GetCongressistesDisponiblesByActivite" EntitySet="Congressistes" ReturnType="Collection(gestionCongresModele.Congressiste)">
-            <Parameter Name="idA" Mode="In" Type="Int32" />
+          <Parameter Name="idA" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetCongressistesDisponiblesBySession" EntitySet="Congressistes" ReturnType="Collection(gestionCongresModele.Congressiste)">
-            <Parameter Name="idS" Mode="In" Type="Int32" />
+          <Parameter Name="idS" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetActivitesPasInscrit" EntitySet="Activites" ReturnType="Collection(gestionCongresModele.Activite)">
+            <Parameter Name="idC" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetSessionsPasInscrit" EntitySet="Sessions" ReturnType="Collection(gestionCongresModele.Session)">
+            <Parameter Name="idC" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Categorie">
@@ -458,6 +470,24 @@
           <Property Type="Int32" Name="numInscription" Nullable="false" />
           <Property Type="String" Name="nom" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="prenom" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetActivitesPasInscrit_Result">
+          <Property Type="Int32" Name="idActivite" Nullable="false" />
+          <Property Type="String" Name="designation" Nullable="false" MaxLength="150" />
+          <Property Type="Decimal" Name="prix" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="DateTime" Name="date" Nullable="false" />
+          <Property Type="String" Name="heureDebut" Nullable="false" MaxLength="5" />
+          <Property Type="Int32" Name="nbPlacesMax" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetSessionsPasInscrit_Result">
+          <Property Type="Int32" Name="numSession" Nullable="false" />
+          <Property Type="String" Name="theme" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="heureDebut" Nullable="false" MaxLength="5" />
+          <Property Type="DateTime" Name="date" Nullable="false" />
+          <Property Type="Int32" Name="nbPlacesMax" Nullable="false" />
+          <Property Type="Decimal" Name="prix" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="String" Name="nomPresident" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="idSalle" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -567,6 +597,10 @@
           <FunctionImportMapping FunctionImportName="GetCongressistesDisponiblesByActivite" FunctionName="gestionCongresModele.Store.GetCongressistesDisponiblesByActivite">
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetCongressistesDisponiblesBySession" FunctionName="gestionCongresModele.Store.GetCongressistesDisponiblesBySession">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetActivitesPasInscrit" FunctionName="gestionCongresModele.Store.GetActivitesPasInscrit">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetSessionsPasInscrit" FunctionName="gestionCongresModele.Store.GetSessionsPasInscrit">
           </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>

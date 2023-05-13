@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GestionOrganisationCongres
 {
@@ -32,6 +33,12 @@ namespace GestionOrganisationCongres
                 context.Activites.Load();
 
                 bindSrcActivites.DataSource = context.Activites.Local.ToBindingList();
+
+                //ajout des heures dans la comboBox
+                string[] heures = { "09:00", "14:30" };
+                comboBoxHeureActivite.Items.AddRange(heures);
+
+
             }
             catch (Exception ex)
             {

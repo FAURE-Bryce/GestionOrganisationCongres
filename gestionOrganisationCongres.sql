@@ -21,6 +21,9 @@ GRANT EXECUTE ON GetCongressistesDisponiblesBySession TO GestOrgaCongres;
 GRANT EXECUTE ON nbPlacesActivite TO GestOrgaCongres;
 GRANT EXECUTE ON montantTotal TO GestOrgaCongres;
 GRANT EXECUTE ON NbPlacesBySession TO GestOrgaCongres;
+GRANT EXECUTE ON GetActivitesPasInscrit TO GestOrgaCongres;
+GRANT EXECUTE ON GetSessionsPasInscrit TO GestOrgaCongres;
+
 
 
 /* Création des tables */
@@ -402,3 +405,19 @@ AS
 	SELECT numInscription,nom, prenom, adresse,cp,ville,tel,acompte,idHotel,idLigue
 	FROM CONGRESSISTE C
 	WHERE NOT EXISTS(SELECT * FROM PARTICIPER P WHERE numSession=@idS AND P.numInscription=C.numInscription)
+
+/*Récupère les activités où le congressiste n'est pas inscrit */
+go
+CREATE OR ALTER PROCEDURE GetActivitesPasInscrit(@idC int)
+AS 
+	SELECT idActivite, designation, prix, date, heureDebut, nbPlacesMax
+	FROM ACTIVITE A
+	WHERE NOT EXISTS(SELECT * FROM INSCRIRE I WHERE numInscription=@idC AND A.idActivite=I.idActivite)
+
+/*Récupère les sessions où le congressiste n'est pas inscrit */
+go
+CREATE OR ALTER PROCEDURE GetSessionsPasInscrit(@idC int)
+AS 
+	SELECT numSession, theme, heureDebut, date, nbPlacesMax, prix, nomPresident, idSalle
+	FROM SESSION S
+	WHERE NOT EXISTS(SELECT * FROM PARTICIPER P WHERE numInscription=@idC AND S.numSession=P.numSession)
