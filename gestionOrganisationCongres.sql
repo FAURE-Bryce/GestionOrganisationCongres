@@ -367,6 +367,8 @@ BEGIN
         throw 50002, 'Il ne peut pas y avoir plus de 5 sessions sur une même demi-journée', 0
 END
 
+
+
 /* Obtient le nombre de places disponibles à une activité donnée Bryce*/
 go
 CREATE or ALTER Procedure nbPlacesActivite

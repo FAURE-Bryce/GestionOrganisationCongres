@@ -77,14 +77,14 @@ namespace GestionOrganisationCongres
                  try
                  {
                     bindSrcHotels.EndEdit();
-                    ((Hotel)bindSrcHotels.Current).idCateg = ((Categorie)bindSrcCategorie.Current).idCateg;
+                    //((Hotel)bindSrcHotels.Current).idCateg = ((Categorie)bindSrcCategorie.Current).idCateg;
 
                     context.SaveChanges();
 
                     MessageBox.Show("Nouvel hôtel ajouté", "Ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     bindSrcHotels.ResetCurrentItem();
-                    ajout = false;
+                    this.ajout = false;
 
                  }
                  catch (Exception ex)
@@ -122,8 +122,11 @@ namespace GestionOrganisationCongres
            
         }
 
-
-        // Relève une erreur puis supprime seulement visuellement (pas de la BDD) = conflit avec l'hotel où loge les congressistes
+        /// <summary>
+        /// En cliquant, cela active la suppression de l'hôtel sélectionné.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btSupprimerHotel_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet hôtel ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
@@ -138,9 +141,9 @@ namespace GestionOrganisationCongres
                     MessageBox.Show("L'hôtel a bien été supprimé", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     tabControlHotel.SelectedIndex = 0;
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show(ex.Message, "L'hôtel n'a pas pu être supprimé", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("L'hôtel n'a pas pu être supprimé car un congressiste au moins a prévu d'y séjourner","Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     context.Entry(hotelSelect).State = EntityState.Unchanged;
                 }
             }
