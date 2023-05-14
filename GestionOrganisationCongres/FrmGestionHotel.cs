@@ -26,7 +26,7 @@ namespace GestionOrganisationCongres
             {
                 btAnnulerAjoutHotel.Visible = false;
                 btSupprimerHotel.Visible = true;
-                btValiderHotel.Visible = true;
+
                 context = new gestionCongresEntities();
 
                 context.Hotels.Load();
@@ -62,11 +62,14 @@ namespace GestionOrganisationCongres
         {
             MessageBox.Show("Ajout Annulé", "Annulation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            bindSrcHotels.ResetBindings(false);
+            bindSrcHotels.CancelEdit();
             tabControlHotel.SelectedIndex = 0;
+
+            this.ajout = false;
 
             btAnnulerAjoutHotel.Visible = false;
             btSupprimerHotel.Visible = true;
-            btValiderHotel.Visible = false;
         }
 
         // Rien ne se passe lors du click (erreur ?) + La categorie ne peut pas être changée + SEULEMENT LORS DE LA CREATION -> la modif marche
@@ -85,6 +88,8 @@ namespace GestionOrganisationCongres
 
                     bindSrcHotels.ResetCurrentItem();
                     this.ajout = false;
+
+                    tabControlHotel.SelectedIndex = 0;
 
                  }
                  catch (Exception ex)
