@@ -52,6 +52,8 @@ namespace GestionOrganisationCongres
         {
             bindSrcInscriptions.DataSource = ((Activite)bindSrcActivites.Current).Congressistes.ToList();
             bindSrcNonInscrits.DataSource = context.GetCongressistesDisponiblesByActivite(((Activite)bindSrcActivites.Current).idActivite).ToList();
+            //NE FONCTIONNE PAS 
+            //lblPlacesDispoValeur.Text = context.nbPlacesActivite(((Activite)bindSrcActivites.Current).idActivite).FirstOrDefault().ToString();
         }
 
         private void btAjouterInscritActivite_Click(object sender, EventArgs e)
@@ -85,10 +87,11 @@ namespace GestionOrganisationCongres
             btSupprimerActivite.Visible = btAjouterInscritActivite.Enabled = btSupprimerInscritActivite.Enabled = false;
         }
 
-        //quand annule crée une ligne 
         private void btAnnulerModifActivite_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Ajout de l'activité annulé", "Information", MessageBoxButtons.OK);
+            bindSrcActivites.ResetBindings(false);
+            bindSrcActivites.CancelEdit();
             tabControlActivite.SelectedIndex = 0;
             btSupprimerActivite.Visible = btAjouterInscritActivite.Enabled = btSupprimerInscritActivite.Enabled = true;
         }

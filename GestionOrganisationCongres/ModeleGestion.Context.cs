@@ -35,31 +35,22 @@ namespace GestionOrganisationCongres
         public virtual DbSet<Ligue> Ligues { get; set; }
         public virtual DbSet<Salle> Salles { get; set; }
     
-        public virtual int montantTotal(Nullable<int> idCongressiste, ObjectParameter total)
-        {
-            var idCongressisteParameter = idCongressiste.HasValue ?
-                new ObjectParameter("idCongressiste", idCongressiste) :
-                new ObjectParameter("idCongressiste", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("montantTotal", idCongressisteParameter, total);
-        }
-    
-        public virtual int nbPlacesActivite(Nullable<int> uneActivite)
+        public virtual ObjectResult<Nullable<int>> nbPlacesActivite(Nullable<int> uneActivite)
         {
             var uneActiviteParameter = uneActivite.HasValue ?
                 new ObjectParameter("uneActivite", uneActivite) :
                 new ObjectParameter("uneActivite", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("nbPlacesActivite", uneActiviteParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("nbPlacesActivite", uneActiviteParameter);
         }
     
-        public virtual int NbPlacesBySession(Nullable<int> numSession)
+        public virtual ObjectResult<Nullable<int>> NbPlacesBySession(Nullable<int> numSession)
         {
             var numSessionParameter = numSession.HasValue ?
                 new ObjectParameter("numSession", numSession) :
                 new ObjectParameter("numSession", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NbPlacesBySession", numSessionParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("NbPlacesBySession", numSessionParameter);
         }
     
         public virtual ObjectResult<Congressiste> GetCongressistesDisponiblesByActivite(Nullable<int> idA)
@@ -132,6 +123,15 @@ namespace GestionOrganisationCongres
                 new ObjectParameter("idC", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Session>("GetSessionsPasInscrit", mergeOption, idCParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<decimal>> montantTotal(Nullable<int> idCongressiste)
+        {
+            var idCongressisteParameter = idCongressiste.HasValue ?
+                new ObjectParameter("idCongressiste", idCongressiste) :
+                new ObjectParameter("idCongressiste", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("montantTotal", idCongressisteParameter);
         }
     }
 }

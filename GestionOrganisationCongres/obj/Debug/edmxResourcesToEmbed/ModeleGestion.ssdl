@@ -202,7 +202,6 @@
   </Function>
   <Function Name="montantTotal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idCongressiste" Type="int" Mode="In" />
-    <Parameter Name="total" Type="decimal" Mode="InOut" />
   </Function>
   <Function Name="nbPlacesActivite" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="uneActivite" Type="int" Mode="In" />

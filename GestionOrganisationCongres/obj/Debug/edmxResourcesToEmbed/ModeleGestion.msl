@@ -104,5 +104,8 @@
     <FunctionImportMapping FunctionImportName="GetCongressistesDisponiblesBySession" FunctionName="gestionCongresModele.Store.GetCongressistesDisponiblesBySession" />
     <FunctionImportMapping FunctionImportName="GetActivitesPasInscrit" FunctionName="gestionCongresModele.Store.GetActivitesPasInscrit" />
     <FunctionImportMapping FunctionImportName="GetSessionsPasInscrit" FunctionName="gestionCongresModele.Store.GetSessionsPasInscrit" />
+    <FunctionImportMapping FunctionImportName="montantTotal" FunctionName="gestionCongresModele.Store.montantTotal" />
+    <FunctionImportMapping FunctionImportName="nbPlacesActivite" FunctionName="gestionCongresModele.Store.nbPlacesActivite" />
+    <FunctionImportMapping FunctionImportName="NbPlacesBySession" FunctionName="gestionCongresModele.Store.NbPlacesBySession" />
   </EntityContainerMapping>
 </Mapping>

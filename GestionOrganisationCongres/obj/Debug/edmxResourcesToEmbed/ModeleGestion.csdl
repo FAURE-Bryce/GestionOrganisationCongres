@@ -98,14 +98,10 @@
       <End Role="Congressiste" EntitySet="Congressistes" />
       <End Role="Session" EntitySet="Sessions" />
     </AssociationSet>
-    <FunctionImport Name="montantTotal">
-      <Parameter Name="idCongressiste" Mode="In" Type="Int32" />
-      <Parameter Name="total" Mode="InOut" Type="Decimal" />
-    </FunctionImport>
-    <FunctionImport Name="nbPlacesActivite">
+    <FunctionImport Name="nbPlacesActivite" ReturnType="Collection(Int32)">
       <Parameter Name="uneActivite" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="NbPlacesBySession">
+    <FunctionImport Name="NbPlacesBySession" ReturnType="Collection(Int32)">
       <Parameter Name="numSession" Mode="In" Type="Int32" />
     </FunctionImport>
     <EntitySet Name="Categories" EntityType="gestionCongresModele.Categorie" />
@@ -134,6 +130,9 @@
     </FunctionImport>
     <FunctionImport Name="GetSessionsPasInscrit" EntitySet="Sessions" ReturnType="Collection(gestionCongresModele.Session)">
       <Parameter Name="idC" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="montantTotal" ReturnType="Collection(Decimal)">
+      <Parameter Name="idCongressiste" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
   <EntityType Name="Categorie">

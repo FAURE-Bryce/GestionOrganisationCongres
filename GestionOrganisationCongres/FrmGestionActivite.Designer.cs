@@ -73,6 +73,8 @@
             this.idLigueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hotelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindSrcInscriptions = new System.Windows.Forms.BindingSource(this.components);
+            this.lblPlacesDispo = new System.Windows.Forms.Label();
+            this.lblPlacesDispoValeur = new System.Windows.Forms.Label();
             comboBoxNonInscrits = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindSrcNonInscrits)).BeginInit();
             this.tabControlActivite.SuspendLayout();
@@ -91,7 +93,7 @@
             comboBoxNonInscrits.DisplayMember = "numInscription";
             comboBoxNonInscrits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             comboBoxNonInscrits.FormattingEnabled = true;
-            comboBoxNonInscrits.Location = new System.Drawing.Point(693, 409);
+            comboBoxNonInscrits.Location = new System.Drawing.Point(711, 383);
             comboBoxNonInscrits.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             comboBoxNonInscrits.Name = "comboBoxNonInscrits";
             comboBoxNonInscrits.Size = new System.Drawing.Size(399, 24);
@@ -226,6 +228,8 @@
             // 
             // detailsActivite
             // 
+            this.detailsActivite.Controls.Add(this.lblPlacesDispoValeur);
+            this.detailsActivite.Controls.Add(this.lblPlacesDispo);
             this.detailsActivite.Controls.Add(this.lblEuro);
             this.detailsActivite.Controls.Add(this.txtBoxNbPlacesMax);
             this.detailsActivite.Controls.Add(this.txtBoxPrix);
@@ -337,10 +341,10 @@
             // 
             this.btSupprimerInscritActivite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btSupprimerInscritActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSupprimerInscritActivite.Location = new System.Drawing.Point(769, 452);
+            this.btSupprimerInscritActivite.Location = new System.Drawing.Point(725, 461);
             this.btSupprimerInscritActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btSupprimerInscritActivite.Name = "btSupprimerInscritActivite";
-            this.btSupprimerInscritActivite.Size = new System.Drawing.Size(296, 58);
+            this.btSupprimerInscritActivite.Size = new System.Drawing.Size(296, 47);
             this.btSupprimerInscritActivite.TabIndex = 11;
             this.btSupprimerInscritActivite.Text = "Supprimer un inscrit";
             this.btSupprimerInscritActivite.UseVisualStyleBackColor = false;
@@ -350,10 +354,10 @@
             // 
             this.btAjouterInscritActivite.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.btAjouterInscritActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAjouterInscritActivite.Location = new System.Drawing.Point(1099, 398);
+            this.btAjouterInscritActivite.Location = new System.Drawing.Point(1118, 367);
             this.btAjouterInscritActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btAjouterInscritActivite.Name = "btAjouterInscritActivite";
-            this.btAjouterInscritActivite.Size = new System.Drawing.Size(139, 53);
+            this.btAjouterInscritActivite.Size = new System.Drawing.Size(127, 40);
             this.btAjouterInscritActivite.TabIndex = 10;
             this.btAjouterInscritActivite.Text = "Ajouter";
             this.btAjouterInscritActivite.UseVisualStyleBackColor = false;
@@ -363,7 +367,7 @@
             // 
             this.lblNonInscrits.AutoSize = true;
             this.lblNonInscrits.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNonInscrits.Location = new System.Drawing.Point(563, 410);
+            this.lblNonInscrits.Location = new System.Drawing.Point(580, 383);
             this.lblNonInscrits.Name = "lblNonInscrits";
             this.lblNonInscrits.Size = new System.Drawing.Size(114, 20);
             this.lblNonInscrits.TabIndex = 15;
@@ -476,7 +480,7 @@
             this.dataGridViewInscritsActivite.ReadOnly = true;
             this.dataGridViewInscritsActivite.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridViewInscritsActivite.RowTemplate.Height = 24;
-            this.dataGridViewInscritsActivite.Size = new System.Drawing.Size(641, 361);
+            this.dataGridViewInscritsActivite.Size = new System.Drawing.Size(641, 330);
             this.dataGridViewInscritsActivite.TabIndex = 1;
             // 
             // numInscriptionDataGridViewTextBoxColumn
@@ -563,7 +567,7 @@
             // hotelDataGridViewTextBoxColumn
             // 
             this.hotelDataGridViewTextBoxColumn.DataPropertyName = "Hotel";
-            this.hotelDataGridViewTextBoxColumn.HeaderText = "Hotel";
+            this.hotelDataGridViewTextBoxColumn.HeaderText = "Hôtel";
             this.hotelDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.hotelDataGridViewTextBoxColumn.Name = "hotelDataGridViewTextBoxColumn";
             this.hotelDataGridViewTextBoxColumn.ReadOnly = true;
@@ -572,6 +576,26 @@
             // bindSrcInscriptions
             // 
             this.bindSrcInscriptions.DataSource = typeof(GestionOrganisationCongres.Congressiste);
+            // 
+            // lblPlacesDispo
+            // 
+            this.lblPlacesDispo.AutoSize = true;
+            this.lblPlacesDispo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlacesDispo.Location = new System.Drawing.Point(580, 424);
+            this.lblPlacesDispo.Name = "lblPlacesDispo";
+            this.lblPlacesDispo.Size = new System.Drawing.Size(159, 20);
+            this.lblPlacesDispo.TabIndex = 53;
+            this.lblPlacesDispo.Text = "Places disponibles :";
+            // 
+            // lblPlacesDispoValeur
+            // 
+            this.lblPlacesDispoValeur.AutoSize = true;
+            this.lblPlacesDispoValeur.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlacesDispoValeur.Location = new System.Drawing.Point(771, 424);
+            this.lblPlacesDispoValeur.Name = "lblPlacesDispoValeur";
+            this.lblPlacesDispoValeur.Size = new System.Drawing.Size(15, 20);
+            this.lblPlacesDispoValeur.TabIndex = 54;
+            this.lblPlacesDispoValeur.Text = "-";
             // 
             // FrmGestionActivite
             // 
@@ -647,6 +671,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn acompteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idLigueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hotelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblPlacesDispoValeur;
+        private System.Windows.Forms.Label lblPlacesDispo;
         //>>>>>>> 2c348f127734a4d8cadb9d8420acdb701185dc4c
     }
 }

@@ -207,7 +207,6 @@
         </Function>
         <Function Name="montantTotal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idCongressiste" Type="int" Mode="In" />
-          <Parameter Name="total" Type="decimal" Mode="InOut" />
         </Function>
         <Function Name="nbPlacesActivite" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="uneActivite" Type="int" Mode="In" />
@@ -360,15 +359,11 @@
             <End Role="Congressiste" EntitySet="Congressistes" />
             <End Role="Session" EntitySet="Sessions" />
           </AssociationSet>
-          <FunctionImport Name="montantTotal">
-            <Parameter Name="idCongressiste" Mode="In" Type="Int32" />
-            <Parameter Name="total" Mode="InOut" Type="Decimal" />
+          <FunctionImport Name="nbPlacesActivite" ReturnType="Collection(Int32)">
+          <Parameter Name="uneActivite" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="nbPlacesActivite">
-            <Parameter Name="uneActivite" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="NbPlacesBySession">
-            <Parameter Name="numSession" Mode="In" Type="Int32" />
+          <FunctionImport Name="NbPlacesBySession" ReturnType="Collection(Int32)">
+          <Parameter Name="numSession" Mode="In" Type="Int32" />
           </FunctionImport>
           <EntitySet Name="Categories" EntityType="gestionCongresModele.Categorie" />
           <EntitySet Name="Ligues" EntityType="gestionCongresModele.Ligue" />
@@ -392,10 +387,13 @@
           <Parameter Name="idS" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetActivitesPasInscrit" EntitySet="Activites" ReturnType="Collection(gestionCongresModele.Activite)">
-            <Parameter Name="idC" Mode="In" Type="Int32" />
+          <Parameter Name="idC" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetSessionsPasInscrit" EntitySet="Sessions" ReturnType="Collection(gestionCongresModele.Session)">
-            <Parameter Name="idC" Mode="In" Type="Int32" />
+          <Parameter Name="idC" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="montantTotal" ReturnType="Collection(Decimal)">
+            <Parameter Name="idCongressiste" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Categorie">
@@ -602,6 +600,9 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetSessionsPasInscrit" FunctionName="gestionCongresModele.Store.GetSessionsPasInscrit">
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="montantTotal" FunctionName="gestionCongresModele.Store.montantTotal" />
+          <FunctionImportMapping FunctionImportName="nbPlacesActivite" FunctionName="gestionCongresModele.Store.nbPlacesActivite" />
+          <FunctionImportMapping FunctionImportName="NbPlacesBySession" FunctionName="gestionCongresModele.Store.NbPlacesBySession" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

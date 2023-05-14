@@ -44,8 +44,12 @@ namespace GestionOrganisationCongres
 
         private void bindSrcInscriptions_CurrentChanged(object sender, EventArgs e)
         {
-            //problème avec la procédure stockée donne en paramètre le total 
-            //lbMontantTotalValue.Text += context.montantTotal(((Congressiste)bindSrcInscriptions.Current).numInscription).ToString();
+            decimal? montantT = context.montantTotal(((Congressiste)bindSrcInscriptions.Current).numInscription).FirstOrDefault();
+            decimal? reste = montantT - ((Congressiste)bindSrcInscriptions.Current).acompte;
+
+            lbRestePayerValeur.Text = reste.ToString();
+            lbMontantTotalValue.Text = montantT.ToString();
+
             bindSrcActivite.DataSource = ((Congressiste)bindSrcInscriptions.Current).Activites.ToList();
             bindSrcSession.DataSource = ((Congressiste)bindSrcInscriptions.Current).Sessions.ToList();
             bindSrcActivitesDispo.DataSource = context.GetActivitesPasInscrit(((Congressiste)bindSrcInscriptions.Current).numInscription).ToList();
@@ -86,6 +90,8 @@ namespace GestionOrganisationCongres
         private void btAnnulerModifCongressiste_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Ajout annulé", "Information", MessageBoxButtons.OK);
+            bindSrcInscriptions.ResetBindings(false);
+            bindSrcInscriptions.CancelEdit();
             tabControlInscription.SelectedIndex = 0;
         }
 

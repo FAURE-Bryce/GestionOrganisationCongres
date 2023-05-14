@@ -320,7 +320,7 @@ AS
 /* Création de la procédure stockée Montant total       Nina*/
 
 go
-CREATE OR ALTER PROCEDURE montantTotal @idCongressiste int, @total decimal(10,2) output
+CREATE OR ALTER PROCEDURE montantTotal @idCongressiste int
 AS
 BEGIN  
 	DECLARE @prixActivite decimal(10,2), @prixSession decimal(10,2), @prixHotel decimal(10,2)    
@@ -339,7 +339,7 @@ BEGIN
     JOIN Congressiste C on C.idHotel = H.idHotel 
     WHERE numInscription = @idCongressiste    
 	
-	SET @total = @prixActivite + @prixSession + @prixHotel
+	SELECT (@prixActivite + @prixSession + @prixHotel);
 END;	
 
 go
@@ -389,6 +389,21 @@ BEGIN
 	SET @nbPlacesDispo = 0;
 	
 END;
+
+/*Une inscription n'est pas possible si il ne reste plus de places dans l'activité */
+--TRIGGER QUI NE FONCTIONNE PAS 
+go
+CREATE OR ALTER TRIGGER TI_Inscrire ON Inscrire
+AFTER INSERT
+AS
+BEGIN 
+	DECLARE @idA int, @nbP INT;
+	SET @idA = (SELECT idActivite FROM INSERTED);
+	EXECUTE @nbP = nbPlacesActivite @idA
+	
+	IF(@nbP = 0)
+		throw 50001, 'Il ne reste plus de places disponibles',0
+END	
 
 /* Retourne les congressistes ne participant pas à l'activité dont l'identifiant est passé en paramètre */
 go

@@ -129,6 +129,7 @@
     <Compile Include="Salle.cs">
       <DependentUpon>ModeleGestion.tt</DependentUpon>
     </Compile>
+    <Compile Include="Salle_suite.cs" />
     <Compile Include="Session.cs">
       <DependentUpon>ModeleGestion.tt</DependentUpon>
     </Compile>
