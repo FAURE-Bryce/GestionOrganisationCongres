@@ -167,6 +167,7 @@
     <None Include="Properties\DataSources\Congressiste.datasource" />
     <None Include="Properties\DataSources\Hotel.datasource" />
     <None Include="Properties\DataSources\Ligue.datasource" />
+    <None Include="Properties\DataSources\Salle.datasource" />
     <None Include="Properties\DataSources\Session.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

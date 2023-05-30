@@ -43,6 +43,8 @@
             this.nbPlacesMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindSrcActivites = new System.Windows.Forms.BindingSource(this.components);
             this.detailsActivite = new System.Windows.Forms.TabPage();
+            this.lblPlacesDispoValeur = new System.Windows.Forms.Label();
+            this.lblPlacesDispo = new System.Windows.Forms.Label();
             this.lblEuro = new System.Windows.Forms.Label();
             this.txtBoxNbPlacesMax = new System.Windows.Forms.TextBox();
             this.txtBoxPrix = new System.Windows.Forms.TextBox();
@@ -73,8 +75,6 @@
             this.idLigueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hotelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindSrcInscriptions = new System.Windows.Forms.BindingSource(this.components);
-            this.lblPlacesDispo = new System.Windows.Forms.Label();
-            this.lblPlacesDispoValeur = new System.Windows.Forms.Label();
             comboBoxNonInscrits = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindSrcNonInscrits)).BeginInit();
             this.tabControlActivite.SuspendLayout();
@@ -258,6 +258,26 @@
             this.detailsActivite.TabIndex = 1;
             this.detailsActivite.Text = "Détails";
             this.detailsActivite.UseVisualStyleBackColor = true;
+            // 
+            // lblPlacesDispoValeur
+            // 
+            this.lblPlacesDispoValeur.AutoSize = true;
+            this.lblPlacesDispoValeur.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlacesDispoValeur.Location = new System.Drawing.Point(771, 424);
+            this.lblPlacesDispoValeur.Name = "lblPlacesDispoValeur";
+            this.lblPlacesDispoValeur.Size = new System.Drawing.Size(15, 20);
+            this.lblPlacesDispoValeur.TabIndex = 54;
+            this.lblPlacesDispoValeur.Text = "-";
+            // 
+            // lblPlacesDispo
+            // 
+            this.lblPlacesDispo.AutoSize = true;
+            this.lblPlacesDispo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlacesDispo.Location = new System.Drawing.Point(580, 424);
+            this.lblPlacesDispo.Name = "lblPlacesDispo";
+            this.lblPlacesDispo.Size = new System.Drawing.Size(159, 20);
+            this.lblPlacesDispo.TabIndex = 53;
+            this.lblPlacesDispo.Text = "Places disponibles :";
             // 
             // lblEuro
             // 
@@ -576,26 +596,6 @@
             // bindSrcInscriptions
             // 
             this.bindSrcInscriptions.DataSource = typeof(GestionOrganisationCongres.Congressiste);
-            // 
-            // lblPlacesDispo
-            // 
-            this.lblPlacesDispo.AutoSize = true;
-            this.lblPlacesDispo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlacesDispo.Location = new System.Drawing.Point(580, 424);
-            this.lblPlacesDispo.Name = "lblPlacesDispo";
-            this.lblPlacesDispo.Size = new System.Drawing.Size(159, 20);
-            this.lblPlacesDispo.TabIndex = 53;
-            this.lblPlacesDispo.Text = "Places disponibles :";
-            // 
-            // lblPlacesDispoValeur
-            // 
-            this.lblPlacesDispoValeur.AutoSize = true;
-            this.lblPlacesDispoValeur.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlacesDispoValeur.Location = new System.Drawing.Point(771, 424);
-            this.lblPlacesDispoValeur.Name = "lblPlacesDispoValeur";
-            this.lblPlacesDispoValeur.Size = new System.Drawing.Size(15, 20);
-            this.lblPlacesDispoValeur.TabIndex = 54;
-            this.lblPlacesDispoValeur.Text = "-";
             // 
             // FrmGestionActivite
             // 

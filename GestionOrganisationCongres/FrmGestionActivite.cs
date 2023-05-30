@@ -181,7 +181,5 @@ namespace GestionOrganisationCongres
                 }
             }
         }
-
-        
     }
 }
