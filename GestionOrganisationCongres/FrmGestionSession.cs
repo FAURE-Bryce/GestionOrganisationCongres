@@ -14,11 +14,13 @@ namespace GestionOrganisationCongres
     public partial class FrmGestionSession : Form
     {
         gestionCongresEntities context;
+        private bool ajout = false;
         public FrmGestionSession()
         {
             InitializeComponent();
         }
 
+        // l'autoValidation est a disable mais le visuel se met à jour quant même  ! ! !
         private void FrmGestionSession_Load(object sender, EventArgs e)
         {
             try
@@ -65,6 +67,107 @@ namespace GestionOrganisationCongres
             }
 
             comboBoxHeureDebut.SelectedIndex = heureDebutOfSession;
+        }
+
+        private void btAjouterInscritSession_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                ((Session)bindSrcSessions.Current).Congressistes.Add((Congressiste)bindSrcNonInscrits.Current);
+                context.SaveChanges();
+                bindSrcInscrits.Add((Congressiste)bindSrcNonInscrits.Current);
+                bindSrcNonInscrits.RemoveCurrent();
+
+
+                MessageBox.Show("Congressiste ajouté à la session", "Information", MessageBoxButtons.OK);
+
+            }
+            catch
+            {
+                ((Session)bindSrcSessions.Current).Congressistes.Remove((Congressiste)bindSrcNonInscrits.Current);
+                context.Entry((Session)bindSrcSessions.Current).State = EntityState.Unchanged;
+                MessageBox.Show("Le congressiste n'a pu pas être ajouté à la session", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void btSupprimerInscritSession_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Etes-vous sûr de vouloir supprimer ce congressiste de la session ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                try
+                {
+                    ((Session)bindSrcSessions.Current).Congressistes.Remove((Congressiste)bindSrcInscrits.Current);
+                    context.SaveChanges();
+                    bindSrcNonInscrits.Add((Congressiste)bindSrcInscrits.Current);
+                    bindSrcInscrits.RemoveCurrent();
+
+                    MessageBox.Show("Congressiste supprimé de l'activité", "Information", MessageBoxButtons.OK);
+
+                }
+                catch
+                {
+                    ((Session)bindSrcSessions.Current).Congressistes.Add((Congressiste)bindSrcInscrits.Current);
+                    context.Entry((Activite)bindSrcInscrits.Current).State = EntityState.Unchanged;
+                    MessageBox.Show("Le congressiste n'a pu pas être supprimé de l'activité", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+        }
+
+        private void btValiderModifSession_Click(object sender, EventArgs e)
+        {
+            if (this.ajout)
+            {
+                try
+                {
+                    bindSrcSessions.EndEdit();
+                    context.SaveChanges();
+                    MessageBox.Show("Session ajoutée", "Information", MessageBoxButtons.OK);
+                    tabControlSession.SelectedIndex = 0;
+                    btSupprimerSession.Visible = btAjouterInscritSession.Enabled = btSupprimerInscritSession.Enabled = true;
+                    this.ajout = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Erreur lors de la modification de la session", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+            else
+            {
+                try
+                {
+                    bindSrcSessions.EndEdit();
+                    context.SaveChanges();
+                    MessageBox.Show("Session modifiée", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tabControlSession.SelectedIndex = 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Erreur lors de la modification d'une session", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+
+        private void btAjouterSession_Click(object sender, EventArgs e)
+        {
+            ajout = true;
+            tabControlSession.SelectedIndex = 1;
+            bindSrcSessions.AddNew();
+            btSupprimerSession.Visible = btAjouterInscritSession.Enabled = comboBoxNonInscrits.Enabled = btSupprimerInscritSession.Enabled = false;
+        }
+
+        private void btAnnulerModifSession_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ajout de la session annulé", "Information", MessageBoxButtons.OK);
+            bindSrcSessions.ResetBindings(false);
+            bindSrcSessions.CancelEdit();
+            tabControlSession.SelectedIndex = 0;
+            btSupprimerSession.Visible = btAjouterInscritSession.Enabled = btSupprimerInscritSession.Enabled = true;
         }
     }
 }

@@ -77,8 +77,6 @@
             this.idHotelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idLigueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hotelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activitesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sessionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ligueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindSrcInscrits = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlSession.SuspendLayout();
@@ -128,6 +126,7 @@
             this.btAjouterSession.TabIndex = 1;
             this.btAjouterSession.Text = "Ajouter une session";
             this.btAjouterSession.UseVisualStyleBackColor = false;
+            this.btAjouterSession.Click += new System.EventHandler(this.btAjouterSession_Click);
             // 
             // dataGridViewSession
             // 
@@ -297,6 +296,7 @@
             this.btValiderModifSession.TabIndex = 48;
             this.btValiderModifSession.Text = "Valider";
             this.btValiderModifSession.UseVisualStyleBackColor = false;
+            this.btValiderModifSession.Click += new System.EventHandler(this.btValiderModifSession_Click);
             // 
             // btAnnulerModifSession
             // 
@@ -309,6 +309,7 @@
             this.btAnnulerModifSession.TabIndex = 47;
             this.btAnnulerModifSession.Text = "Annuler";
             this.btAnnulerModifSession.UseVisualStyleBackColor = false;
+            this.btAnnulerModifSession.Click += new System.EventHandler(this.btAnnulerModifSession_Click);
             // 
             // comboBoxHeureDebut
             // 
@@ -342,6 +343,7 @@
             this.btSupprimerInscritSession.TabIndex = 11;
             this.btSupprimerInscritSession.Text = "Supprimer un inscrit";
             this.btSupprimerInscritSession.UseVisualStyleBackColor = false;
+            this.btSupprimerInscritSession.Click += new System.EventHandler(this.btSupprimerInscritSession_Click);
             // 
             // btAjouterInscritSession
             // 
@@ -354,6 +356,7 @@
             this.btAjouterInscritSession.TabIndex = 10;
             this.btAjouterInscritSession.Text = "Ajouter";
             this.btAjouterInscritSession.UseVisualStyleBackColor = false;
+            this.btAjouterInscritSession.Click += new System.EventHandler(this.btAjouterInscritSession_Click);
             // 
             // lblNonInscrits
             // 
@@ -493,6 +496,7 @@
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numInscriptionDataGridViewTextBoxColumn,
@@ -506,8 +510,6 @@
             this.idHotelDataGridViewTextBoxColumn,
             this.idLigueDataGridViewTextBoxColumn,
             this.hotelDataGridViewTextBoxColumn,
-            this.activitesDataGridViewTextBoxColumn,
-            this.sessionsDataGridViewTextBoxColumn,
             this.ligueDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.bindSrcInscrits;
             this.dataGridView2.Location = new System.Drawing.Point(459, 37);
@@ -527,7 +529,7 @@
             this.numInscriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.numInscriptionDataGridViewTextBoxColumn.Name = "numInscriptionDataGridViewTextBoxColumn";
             this.numInscriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numInscriptionDataGridViewTextBoxColumn.Width = 125;
+            this.numInscriptionDataGridViewTextBoxColumn.Width = 121;
             // 
             // nomDataGridViewTextBoxColumn
             // 
@@ -536,7 +538,7 @@
             this.nomDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
             this.nomDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomDataGridViewTextBoxColumn.Width = 125;
+            this.nomDataGridViewTextBoxColumn.Width = 62;
             // 
             // prenomDataGridViewTextBoxColumn
             // 
@@ -545,7 +547,7 @@
             this.prenomDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.prenomDataGridViewTextBoxColumn.Name = "prenomDataGridViewTextBoxColumn";
             this.prenomDataGridViewTextBoxColumn.ReadOnly = true;
-            this.prenomDataGridViewTextBoxColumn.Width = 125;
+            this.prenomDataGridViewTextBoxColumn.Width = 82;
             // 
             // adresseDataGridViewTextBoxColumn
             // 
@@ -554,7 +556,7 @@
             this.adresseDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
             this.adresseDataGridViewTextBoxColumn.ReadOnly = true;
-            this.adresseDataGridViewTextBoxColumn.Width = 125;
+            this.adresseDataGridViewTextBoxColumn.Width = 86;
             // 
             // cpDataGridViewTextBoxColumn
             // 
@@ -563,7 +565,7 @@
             this.cpDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cpDataGridViewTextBoxColumn.Name = "cpDataGridViewTextBoxColumn";
             this.cpDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cpDataGridViewTextBoxColumn.Width = 125;
+            this.cpDataGridViewTextBoxColumn.Width = 51;
             // 
             // villeDataGridViewTextBoxColumn
             // 
@@ -572,7 +574,7 @@
             this.villeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.villeDataGridViewTextBoxColumn.Name = "villeDataGridViewTextBoxColumn";
             this.villeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.villeDataGridViewTextBoxColumn.Width = 125;
+            this.villeDataGridViewTextBoxColumn.Width = 60;
             // 
             // telDataGridViewTextBoxColumn
             // 
@@ -581,7 +583,7 @@
             this.telDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.telDataGridViewTextBoxColumn.Name = "telDataGridViewTextBoxColumn";
             this.telDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telDataGridViewTextBoxColumn.Width = 125;
+            this.telDataGridViewTextBoxColumn.Width = 50;
             // 
             // acompteDataGridViewTextBoxColumn
             // 
@@ -590,7 +592,7 @@
             this.acompteDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.acompteDataGridViewTextBoxColumn.Name = "acompteDataGridViewTextBoxColumn";
             this.acompteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.acompteDataGridViewTextBoxColumn.Width = 125;
+            this.acompteDataGridViewTextBoxColumn.Width = 89;
             // 
             // idHotelDataGridViewTextBoxColumn
             // 
@@ -599,7 +601,7 @@
             this.idHotelDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idHotelDataGridViewTextBoxColumn.Name = "idHotelDataGridViewTextBoxColumn";
             this.idHotelDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idHotelDataGridViewTextBoxColumn.Width = 125;
+            this.idHotelDataGridViewTextBoxColumn.Width = 79;
             // 
             // idLigueDataGridViewTextBoxColumn
             // 
@@ -608,7 +610,7 @@
             this.idLigueDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idLigueDataGridViewTextBoxColumn.Name = "idLigueDataGridViewTextBoxColumn";
             this.idLigueDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idLigueDataGridViewTextBoxColumn.Width = 125;
+            this.idLigueDataGridViewTextBoxColumn.Width = 80;
             // 
             // hotelDataGridViewTextBoxColumn
             // 
@@ -617,25 +619,7 @@
             this.hotelDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.hotelDataGridViewTextBoxColumn.Name = "hotelDataGridViewTextBoxColumn";
             this.hotelDataGridViewTextBoxColumn.ReadOnly = true;
-            this.hotelDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // activitesDataGridViewTextBoxColumn
-            // 
-            this.activitesDataGridViewTextBoxColumn.DataPropertyName = "Activites";
-            this.activitesDataGridViewTextBoxColumn.HeaderText = "Activites";
-            this.activitesDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.activitesDataGridViewTextBoxColumn.Name = "activitesDataGridViewTextBoxColumn";
-            this.activitesDataGridViewTextBoxColumn.ReadOnly = true;
-            this.activitesDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // sessionsDataGridViewTextBoxColumn
-            // 
-            this.sessionsDataGridViewTextBoxColumn.DataPropertyName = "Sessions";
-            this.sessionsDataGridViewTextBoxColumn.HeaderText = "Sessions";
-            this.sessionsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sessionsDataGridViewTextBoxColumn.Name = "sessionsDataGridViewTextBoxColumn";
-            this.sessionsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sessionsDataGridViewTextBoxColumn.Width = 125;
+            this.hotelDataGridViewTextBoxColumn.Width = 68;
             // 
             // ligueDataGridViewTextBoxColumn
             // 
@@ -644,7 +628,7 @@
             this.ligueDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.ligueDataGridViewTextBoxColumn.Name = "ligueDataGridViewTextBoxColumn";
             this.ligueDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ligueDataGridViewTextBoxColumn.Width = 125;
+            this.ligueDataGridViewTextBoxColumn.Width = 69;
             // 
             // bindSrcInscrits
             // 
@@ -654,6 +638,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.ClientSize = new System.Drawing.Size(1060, 607);
             this.Controls.Add(this.tabControlSession);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -712,6 +697,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomPresidentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idSalleDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bindSrcSalle;
+        private System.Windows.Forms.BindingSource bindSrcInscrits;
+        private System.Windows.Forms.BindingSource bindSrcNonInscrits;
         private System.Windows.Forms.DataGridViewTextBoxColumn numInscriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prenomDataGridViewTextBoxColumn;
@@ -723,11 +710,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idHotelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idLigueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hotelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn activitesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sessionsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ligueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource bindSrcInscrits;
-        private System.Windows.Forms.BindingSource bindSrcNonInscrits;
     }
 }
 
