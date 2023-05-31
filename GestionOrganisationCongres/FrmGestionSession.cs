@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,6 @@ namespace GestionOrganisationCongres
             InitializeComponent();
         }
 
-        // l'autoValidation est a disable mais le visuel se met à jour quant même  ! ! !
         private void FrmGestionSession_Load(object sender, EventArgs e)
         {
             try
@@ -58,37 +58,34 @@ namespace GestionOrganisationCongres
             }
         }
 
-        private void tabControlSession_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int heureDebutOfSession = 0;
-            if (((Session)bindSrcSessions.Current).heureDebut == "14:30")
-            {
-                heureDebutOfSession = 1;
-            }
-
-            comboBoxHeureDebut.SelectedIndex = heureDebutOfSession;
-        }
-
         private void btAjouterInscritSession_Click(object sender, EventArgs e)
         {
             try
             {
+                //if (context.NbPlacesBySession(((Session)bindSrcSessions.Current).numSession) != null)
+                //{
+                //    int temp = int.TryParse(context.NbPlacesBySession(((Session)bindSrcSessions.Current).numSession));
+                //}
+                
+                if (((Session)bindSrcSessions.Current).nbPlacesMax >= (((Session)bindSrcSessions.Current).Congressistes.Count + 1))
+                {
+                    ((Session)bindSrcSessions.Current).Congressistes.Add((Congressiste)bindSrcNonInscrits.Current);
+                    context.SaveChanges();
+                    bindSrcInscrits.Add((Congressiste)bindSrcNonInscrits.Current);
+                    bindSrcNonInscrits.RemoveCurrent();
 
-                ((Session)bindSrcSessions.Current).Congressistes.Add((Congressiste)bindSrcNonInscrits.Current);
-                context.SaveChanges();
-                bindSrcInscrits.Add((Congressiste)bindSrcNonInscrits.Current);
-                bindSrcNonInscrits.RemoveCurrent();
-
-
-                MessageBox.Show("Congressiste ajouté à la session", "Information", MessageBoxButtons.OK);
-
+                    MessageBox.Show("Congressiste ajouté à la session", "Information", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Le congressiste n'a pu pas être ajouté à la session car le nombre de place max est atteint", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch
             {
                 ((Session)bindSrcSessions.Current).Congressistes.Remove((Congressiste)bindSrcNonInscrits.Current);
                 context.Entry((Session)bindSrcSessions.Current).State = EntityState.Unchanged;
                 MessageBox.Show("Le congressiste n'a pu pas être ajouté à la session", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
 
@@ -127,12 +124,12 @@ namespace GestionOrganisationCongres
                     context.SaveChanges();
                     MessageBox.Show("Session ajoutée", "Information", MessageBoxButtons.OK);
                     tabControlSession.SelectedIndex = 0;
-                    btSupprimerSession.Visible = btAjouterInscritSession.Enabled = btSupprimerInscritSession.Enabled = true;
+                    btSupprimerSession.Visible = btAjouterInscritSession.Enabled = comboBoxNonInscrits.Enabled = btSupprimerInscritSession.Enabled = true;
                     this.ajout = false;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Erreur lors de la modification de la session", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Erreur lors de l'ajout de la session", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
             }
@@ -159,6 +156,7 @@ namespace GestionOrganisationCongres
             tabControlSession.SelectedIndex = 1;
             bindSrcSessions.AddNew();
             btSupprimerSession.Visible = btAjouterInscritSession.Enabled = comboBoxNonInscrits.Enabled = btSupprimerInscritSession.Enabled = false;
+            ((Session)bindSrcSessions.Current).heureDebut = "9:00";
         }
 
         private void btAnnulerModifSession_Click(object sender, EventArgs e)
@@ -167,7 +165,31 @@ namespace GestionOrganisationCongres
             bindSrcSessions.ResetBindings(false);
             bindSrcSessions.CancelEdit();
             tabControlSession.SelectedIndex = 0;
-            btSupprimerSession.Visible = btAjouterInscritSession.Enabled = btSupprimerInscritSession.Enabled = true;
+            btSupprimerSession.Visible = btAjouterInscritSession.Enabled = comboBoxNonInscrits.Enabled = btSupprimerInscritSession.Enabled = true;
+        }
+
+        private void btSupprimerSession_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Etes-vous sûr de vouloir supprimer cette session ? Cela supprimera également tous les congressistes qui y participent", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Session sessionSelect = (Session)bindSrcSessions.Current;
+                try
+                {
+                    sessionSelect.Congressistes.Clear();
+                    context.Sessions.Remove(sessionSelect);
+                    context.SaveChanges();
+                    MessageBox.Show("Session supprimé", "Information", MessageBoxButtons.OK);
+                    tabControlSession.SelectedIndex = 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "La session n'a pu pas être supprimé", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    context.Sessions.AddOrUpdate(sessionSelect);
+                    context.Entry(sessionSelect).State = EntityState.Unchanged;
+                    bindSrcSessions.ResetBindings(false);
+
+                }
+            }
         }
     }
 }
