@@ -49,6 +49,7 @@ namespace GestionOrganisationCongres
         {
             bindSrcInscrits.DataSource = ((Session)bindSrcSessions.Current).Congressistes.ToList();
             bindSrcNonInscrits.DataSource = context.GetCongressistesDisponiblesBySession(((Session)bindSrcSessions.Current).numSession).ToList();
+            lblnbPlacesDispoValeur.Text = context.NbPlacesBySession(((Session)bindSrcSessions.Current).numSession).FirstOrDefault().ToString();
 
             comboBoxNonInscrits.Enabled = true;
 

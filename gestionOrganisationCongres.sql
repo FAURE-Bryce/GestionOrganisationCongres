@@ -152,7 +152,7 @@ INSERT INTO SESSION (theme, heureDebut, date, nbPlacesMax, prix, nomPresident, i
 					('L''autoévaluation des habitudes nutritionnelles','14:30','20/06/2023',25,20.00,'Mendes',3),
 					('Quel contrôle médical préalable à la pratique sportive à l’étranger ?','09:00','21/06/2023',25,10.00,'Dufour',4),
 					('Session de fermeture','14:30','21/06/2023',20,15.00,'Garcia',2);
-select * from Session					
+					
 INSERT INTO LIGUE (nomLigue, adresse, cp, ville) VALUES 
 				  ('Ligue Lorraine de Tennis','Maison Régionale des Sports de Lorraine 13 Rue Jean Moulin',54510,'Tomblaine'),
 				  ('Ligue Football Occitanie','615 Avenue Dr Jacques Fourcade',34000,'Montpellier'),
@@ -206,7 +206,7 @@ INSERT INTO Activite (designation, prix, date, heureDebut, nbPlacesMax) VALUES
 				     ('Escalade de bloc : pour grimpeurs débutants et confirmés', 7.00, '2023-06-19', '14:30', 10),
 					 ('Course en sacs', 3.00, '2023-06-19', '14:30', 40),
 					 ('Cours intensif de Salsa: réservé aux danseurs confirmés', 45.00, '2023-06-19', '09:00', 10),
-					 ('Inititation à l''apnée', 12.00, '2023-06-19', '09:00', 4), 
+					 ('Initiation à l''apnée', 12.00, '2023-06-19', '09:00', 4), 
 					 ('Découverte de la Spéléologie', 40.00, '2023-06-19', '14:30', 3),
 					 ('Démonstration de figures de sports extrêmes', 4.00, '2023-06-20', '09:00', 40),
 					 ('Course de Karting', 13.00, '2023-06-20', '14:30', 8),
@@ -301,12 +301,12 @@ BEGIN
 	deallocate cursSesActivites
 END
 	
-/*Obtient le nombre de places disponibles à une session donnée Bryce*/
+/*Obtient le nombre de places disponibles à une session donnée utilisé dans le trigger Adeline*/
 go
-CREATE OR ALTER PROCEDURE NbPlacesBySession @numSession int
+CREATE OR ALTER PROCEDURE NbPlacesBySessionO @numSession int, @nbP int OUTPUT
 AS
-Begin
-	declare @nbPlacesDispo int;
+BEGIN
+	DECLARE @nbPlacesDispo int;
 
 	SELECT @nbPlacesDispo=(S.nbPlacesMax-COUNT(numInscription)) 
 	FROM Participer P
@@ -320,12 +320,38 @@ Begin
 	END
 
 	IF(@nbPlacesDispo is null)
-	begin
+	BEGIN
 		SET @nbPlacesDispo = (select nbPlacesMax from Session where numSession = @numSession);
-	end
+	END
 
-	Select @nbPlacesDispo;
-End;
+	SET @nbP = @nbPlacesDispo;
+END;
+
+/*Obtient le nombre de places disponibles à une session donnée Adeline*/
+go
+CREATE OR ALTER PROCEDURE NbPlacesBySession @numSession int
+AS
+BEGIN
+	DECLARE @nbPlacesDispo int;
+
+	SELECT @nbPlacesDispo=(S.nbPlacesMax-COUNT(numInscription)) 
+	FROM Participer P
+	JOIN Session S ON S.numSession=P.numSession
+	WHERE s.numSession=@numSession
+	GROUP BY S.nbPlacesMax
+
+	IF(@nbPlacesDispo < 0)
+	BEGIN
+		SET @nbPlacesDispo = 0;
+	END
+
+	IF(@nbPlacesDispo is null)
+	BEGIN
+		SET @nbPlacesDispo = (select nbPlacesMax from Session where numSession = @numSession);
+	END
+
+	SELECT @nbPlacesDispo;
+END;
 /* Création de la procédure stockée Montant total       Nina*/
 
 go
@@ -381,6 +407,33 @@ END
 
 
 
+/* Obtient le nombre de places disponibles à une activité donnée utilisé dans le trigger Bryce*/
+go
+CREATE or ALTER Procedure nbPlacesActiviteO @uneActivite int, @nbP int OUTPUT
+AS
+BEGIN    
+	declare @nbPlacesDispo int;
+
+	SELECT @nbPlacesDispo=(A.nbPlacesMax-COUNT(numInscription)) 
+	FROM INSCRIRE I
+	JOIN Activite A ON A.idActivite=I.idActivite
+	WHERE A.idActivite=@uneActivite
+	GROUP BY A.nbPlacesMax
+
+	IF(@nbPlacesDispo < 0)
+	BEGIN
+		SET @nbPlacesDispo = 0;
+	END
+
+	IF(@nbPlacesDispo is null)
+	begin
+		SET @nbPlacesDispo = (select nbPlacesMax from Activite where idActivite = @uneActivite);
+	end
+
+	SET @nbP = @nbPlacesDispo;
+	
+END;
+
 /* Obtient le nombre de places disponibles à une activité donnée Bryce*/
 go
 CREATE or ALTER Procedure nbPlacesActivite @uneActivite int
@@ -404,39 +457,48 @@ BEGIN
 		SET @nbPlacesDispo = (select nbPlacesMax from Activite where idActivite = @uneActivite);
 	end
 
-	Select @nbPlacesDispo;
+	SELECT @nbPlacesDispo;
 	
 END;
 
 /*Une inscription n'est pas possible si il ne reste plus de places dans l'activité */
 go
 CREATE OR ALTER TRIGGER TI_Inscrire ON Inscrire
-AFTER INSERT
+INSTEAD OF INSERT
 AS
 BEGIN 
 	DECLARE @idA int, @nbP INT;
-	SET @idA = (SELECT idActivite FROM INSERTED);
-	EXECUTE @nbP = nbPlacesActivite @idA
-	
+
+	SELECT @idA = idActivite FROM INSERTED;
+
+	EXECUTE nbPlacesActiviteO @idA, @nbP OUTPUT;
+
 	IF(@nbP = 0)
 		throw 50001, 'Il ne reste plus de places disponibles',0
+	ELSE
+		INSERT INTO INSCRIRE(idActivite,numInscription) VALUES (@idA,(SELECT numInscription FROM INSERTED));
+
 END	
 
 /*Une participation n'est pas possible si il ne reste plus de places dans la session */
 go
 CREATE OR ALTER TRIGGER TI_Participer ON Participer
-AFTER INSERT
+INSTEAD OF INSERT
 AS
 BEGIN 
-	DECLARE @numN int, @nbP INT;
-	SET @numN = (SELECT numSession FROM INSERTED);
-	EXECUTE @nbP = NbPlacesBySession @numN
-	
+	DECLARE @idS int, @nbP INT;
+
+	SELECT @idS = numSession FROM INSERTED;
+
+	EXECUTE NbPlacesBySessionO @idS, @nbP OUTPUT;
+
 	IF(@nbP = 0)
 		throw 50001, 'Il ne reste plus de places disponibles',0
+	ELSE
+		INSERT INTO PARTICIPER(numSession,numInscription) VALUES (@idS,(SELECT numInscription FROM INSERTED));
 END	
 
-/* Retourne les congressistes ne participant pas à l'activité dont l'identifiant est passé en paramètre */
+/* Retourne les congressistes ne participant pas à l'activité dont l'identifiant est passé en paramètre Adeline */
 go
 CREATE OR ALTER PROCEDURE GetCongressistesDisponiblesByActivite (@idA int)
 AS 
@@ -444,7 +506,7 @@ AS
 	FROM CONGRESSISTE C
 	WHERE NOT EXISTS(SELECT * FROM INSCRIRE I WHERE idActivite=@idA AND I.numInscription=C.numInscription)
 
-/* Retourne les congressistes ne participant pas à la session dont l'identifiant est passé en paramètre */
+/* Retourne les congressistes ne participant pas à la session dont l'identifiant est passé en paramètre Adeline */
 go
 CREATE OR ALTER PROCEDURE GetCongressistesDisponiblesBySession(@idS int)
 AS 
@@ -452,7 +514,7 @@ AS
 	FROM CONGRESSISTE C
 	WHERE NOT EXISTS(SELECT * FROM PARTICIPER P WHERE numSession=@idS AND P.numInscription=C.numInscription)
 
-/*Récupère les activités où le congressiste n'est pas inscrit */
+/*Récupère les activités où le congressiste n'est pas inscrit Adeline */
 go
 CREATE OR ALTER PROCEDURE GetActivitesPasInscrit(@idC int)
 AS 
@@ -460,10 +522,14 @@ AS
 	FROM ACTIVITE A
 	WHERE NOT EXISTS(SELECT * FROM INSCRIRE I WHERE numInscription=@idC AND A.idActivite=I.idActivite)
 
-/*Récupère les sessions où le congressiste n'est pas inscrit */
+/*Récupère les sessions où le congressiste n'est pas inscrit Adeline */
 go
 CREATE OR ALTER PROCEDURE GetSessionsPasInscrit(@idC int)
 AS 
 	SELECT numSession, theme, heureDebut, date, nbPlacesMax, prix, nomPresident, idSalle
 	FROM SESSION S
 	WHERE NOT EXISTS(SELECT * FROM PARTICIPER P WHERE numInscription=@idC AND S.numSession=P.numSession)
+
+	INSERT INTO INSCRIRE(idActivite,numInscription) VALUES (2,2)
+
+

@@ -43,6 +43,8 @@
             this.idSalleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindSrcSessions = new System.Windows.Forms.BindingSource(this.components);
             this.detailsSession = new System.Windows.Forms.TabPage();
+            this.lblnbPlacesDispoValeur = new System.Windows.Forms.Label();
+            this.lblnbPlacesDispo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxNomPresidentSession = new System.Windows.Forms.TextBox();
             this.lblNomPresidentSession = new System.Windows.Forms.Label();
@@ -236,6 +238,8 @@
             // 
             // detailsSession
             // 
+            this.detailsSession.Controls.Add(this.lblnbPlacesDispoValeur);
+            this.detailsSession.Controls.Add(this.lblnbPlacesDispo);
             this.detailsSession.Controls.Add(this.label1);
             this.detailsSession.Controls.Add(this.txtBoxNomPresidentSession);
             this.detailsSession.Controls.Add(this.lblNomPresidentSession);
@@ -267,6 +271,26 @@
             this.detailsSession.TabIndex = 1;
             this.detailsSession.Text = "Détails";
             this.detailsSession.UseVisualStyleBackColor = true;
+            // 
+            // lblnbPlacesDispoValeur
+            // 
+            this.lblnbPlacesDispoValeur.AutoSize = true;
+            this.lblnbPlacesDispoValeur.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnbPlacesDispoValeur.Location = new System.Drawing.Point(758, 450);
+            this.lblnbPlacesDispoValeur.Name = "lblnbPlacesDispoValeur";
+            this.lblnbPlacesDispoValeur.Size = new System.Drawing.Size(15, 20);
+            this.lblnbPlacesDispoValeur.TabIndex = 63;
+            this.lblnbPlacesDispoValeur.Text = "-";
+            // 
+            // lblnbPlacesDispo
+            // 
+            this.lblnbPlacesDispo.AutoSize = true;
+            this.lblnbPlacesDispo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnbPlacesDispo.Location = new System.Drawing.Point(580, 450);
+            this.lblnbPlacesDispo.Name = "lblnbPlacesDispo";
+            this.lblnbPlacesDispo.Size = new System.Drawing.Size(159, 20);
+            this.lblnbPlacesDispo.TabIndex = 62;
+            this.lblnbPlacesDispo.Text = "Places disponibles :";
             // 
             // label1
             // 
@@ -739,6 +763,8 @@
         private System.Windows.Forms.TextBox txtBoxNomPresidentSession;
         private System.Windows.Forms.Label lblNomPresidentSession;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblnbPlacesDispo;
+        private System.Windows.Forms.Label lblnbPlacesDispoValeur;
     }
 }
 

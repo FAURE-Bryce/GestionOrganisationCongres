@@ -88,16 +88,14 @@
             // 
             // comboBoxNonInscrits
             // 
-            comboBoxNonInscrits.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.bindSrcNonInscrits, "numInscription", true));
             comboBoxNonInscrits.DataSource = this.bindSrcNonInscrits;
-            comboBoxNonInscrits.DisplayMember = "numInscription";
             comboBoxNonInscrits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             comboBoxNonInscrits.FormattingEnabled = true;
-            comboBoxNonInscrits.Location = new System.Drawing.Point(711, 383);
+            comboBoxNonInscrits.Location = new System.Drawing.Point(700, 379);
             comboBoxNonInscrits.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             comboBoxNonInscrits.Name = "comboBoxNonInscrits";
             comboBoxNonInscrits.Size = new System.Drawing.Size(399, 24);
-            comboBoxNonInscrits.TabIndex = 9;
+            comboBoxNonInscrits.TabIndex = 55;
             // 
             // bindSrcNonInscrits
             // 
@@ -228,6 +226,7 @@
             // 
             // detailsActivite
             // 
+            this.detailsActivite.Controls.Add(comboBoxNonInscrits);
             this.detailsActivite.Controls.Add(this.lblPlacesDispoValeur);
             this.detailsActivite.Controls.Add(this.lblPlacesDispo);
             this.detailsActivite.Controls.Add(this.lblEuro);
@@ -240,7 +239,6 @@
             this.detailsActivite.Controls.Add(this.btSupprimerInscritActivite);
             this.detailsActivite.Controls.Add(this.btAjouterInscritActivite);
             this.detailsActivite.Controls.Add(this.lblNonInscrits);
-            this.detailsActivite.Controls.Add(comboBoxNonInscrits);
             this.detailsActivite.Controls.Add(this.txtBoxDesignationActivite);
             this.detailsActivite.Controls.Add(this.dateTimePickerActiviter);
             this.detailsActivite.Controls.Add(this.lblPrixActivite);
@@ -263,7 +261,7 @@
             // 
             this.lblPlacesDispoValeur.AutoSize = true;
             this.lblPlacesDispoValeur.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlacesDispoValeur.Location = new System.Drawing.Point(771, 424);
+            this.lblPlacesDispoValeur.Location = new System.Drawing.Point(770, 424);
             this.lblPlacesDispoValeur.Name = "lblPlacesDispoValeur";
             this.lblPlacesDispoValeur.Size = new System.Drawing.Size(15, 20);
             this.lblPlacesDispoValeur.TabIndex = 54;
@@ -497,10 +495,12 @@
             this.dataGridViewInscritsActivite.DataSource = this.bindSrcInscriptions;
             this.dataGridViewInscritsActivite.Location = new System.Drawing.Point(584, 32);
             this.dataGridViewInscritsActivite.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewInscritsActivite.MultiSelect = false;
             this.dataGridViewInscritsActivite.Name = "dataGridViewInscritsActivite";
             this.dataGridViewInscritsActivite.ReadOnly = true;
             this.dataGridViewInscritsActivite.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridViewInscritsActivite.RowTemplate.Height = 24;
+            this.dataGridViewInscritsActivite.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewInscritsActivite.Size = new System.Drawing.Size(641, 330);
             this.dataGridViewInscritsActivite.TabIndex = 1;
             // 

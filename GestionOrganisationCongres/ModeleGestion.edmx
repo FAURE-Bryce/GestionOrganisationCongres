@@ -393,7 +393,7 @@
           <Parameter Name="idC" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="montantTotal" ReturnType="Collection(Decimal)">
-            <Parameter Name="idCongressiste" Mode="In" Type="Int32" />
+          <Parameter Name="idCongressiste" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Categorie">

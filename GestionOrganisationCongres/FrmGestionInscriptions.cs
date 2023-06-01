@@ -135,14 +135,19 @@ namespace GestionOrganisationCongres
         {
             try
             {
+                int nbPlacesActivite = (int)context.nbPlacesActivite(((Activite)bindSrcActivitesDispo.Current).idActivite).FirstOrDefault();
+                if (nbPlacesActivite != 0)
+                {
+                    ((Congressiste)bindSrcInscriptions.Current).Activites.Add((Activite)bindSrcActivitesDispo.Current);
+                    context.SaveChanges();
+                    bindSrcActivite.Add((Activite)bindSrcActivitesDispo.Current);
+                    bindSrcActivitesDispo.RemoveCurrent();
 
-                ((Congressiste)bindSrcInscriptions.Current).Activites.Add((Activite)bindSrcActivitesDispo.Current);
-                context.SaveChanges();
-                bindSrcActivite.Add((Activite)bindSrcActivitesDispo.Current);
-                bindSrcActivitesDispo.RemoveCurrent();
-
-
-                MessageBox.Show("Le congressiste a bien été ajouté à l'activité", "Information", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Le congressiste n'a pu pas être ajouté à la session car le nombre de place max est atteint", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
             catch
@@ -158,14 +163,18 @@ namespace GestionOrganisationCongres
         {
             try
             {
-
-                ((Congressiste)bindSrcInscriptions.Current).Sessions.Add((Session)bindSrcSessionsDispo.Current);
-                context.SaveChanges();
-                bindSrcSession.Add((Session)bindSrcSessionsDispo.Current);
-                bindSrcSessionsDispo.RemoveCurrent();
-
-
-                MessageBox.Show("Le congressiste a bien été ajouté à la session", "Information", MessageBoxButtons.OK);
+                int nbPlacesBySession = (int)context.NbPlacesBySession(((Session)bindSrcSessionsDispo.Current).numSession).FirstOrDefault();
+                if (nbPlacesBySession != 0)
+                {
+                    ((Congressiste)bindSrcInscriptions.Current).Sessions.Add((Session)bindSrcSessionsDispo.Current);
+                    context.SaveChanges();
+                    bindSrcSession.Add((Session)bindSrcSessionsDispo.Current);
+                    bindSrcSessionsDispo.RemoveCurrent();
+                }
+                else
+                {
+                    MessageBox.Show("Le congressiste n'a pu pas être ajouté à la session car le nombre de place max est atteint", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
             catch

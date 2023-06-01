@@ -53,6 +53,7 @@ namespace GestionOrganisationCongres
 
             bindSrcHotels.AddNew(); // Vide les lignes existantes
 
+
         }
 
     
@@ -90,8 +91,10 @@ namespace GestionOrganisationCongres
                     this.ajout = false;
 
                     tabControlHotel.SelectedIndex = 0;
+                    btSupprimerHotel.Visible = true;
+                    btAnnulerAjoutHotel.Visible = false;
 
-                 }
+                }
                  catch (Exception ex)
                  {
                         MessageBox.Show(ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);

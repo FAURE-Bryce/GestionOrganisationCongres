@@ -52,29 +52,33 @@ namespace GestionOrganisationCongres
         {
             bindSrcInscriptions.DataSource = ((Activite)bindSrcActivites.Current).Congressistes.ToList();
             bindSrcNonInscrits.DataSource = context.GetCongressistesDisponiblesByActivite(((Activite)bindSrcActivites.Current).idActivite).ToList();
-            //NE FONCTIONNE PAS 
-            //lblPlacesDispoValeur.Text = context.nbPlacesActivite(((Activite)bindSrcActivites.Current).idActivite).FirstOrDefault().ToString();
+            lblPlacesDispoValeur.Text = context.nbPlacesActivite(((Activite)bindSrcActivites.Current).idActivite).FirstOrDefault().ToString();
+
+            //comboBoxNonInscrits.Enabled = true;
+
+            //if (bindSrcNonInscrits.Count == 0)
+            //{
+            //    comboBoxNonInscrits.Enabled = false;
+            //}
         }
 
         private void btAjouterInscritActivite_Click(object sender, EventArgs e)
         {
             try
             {
-                ((Activite)bindSrcActivites.Current).Congressistes.Add((Congressiste)bindSrcNonInscrits.Current);
-                context.SaveChanges();
-                bindSrcInscriptions.Add((Congressiste)bindSrcNonInscrits.Current);
-                bindSrcNonInscrits.RemoveCurrent();
+                int nbPlacesActivite = (int)context.nbPlacesActivite(((Activite)bindSrcActivites.Current).idActivite).FirstOrDefault();
+                if (nbPlacesActivite != 0)
+                {
+                    ((Activite)bindSrcActivites.Current).Congressistes.Add((Congressiste)bindSrcNonInscrits.Current);
+                    context.SaveChanges();
+                    bindSrcInscriptions.Add((Congressiste)bindSrcNonInscrits.Current);
+                    bindSrcNonInscrits.RemoveCurrent();
 
-                MessageBox.Show("Congressiste ajouté à la session", "Information", MessageBoxButtons.OK);
-                //int nbPlacesActivite = (int)context.nbPlacesActivite(((Activite)bindSrcActivites.Current).idActivite).FirstOrDefault();
-                //if (nbPlacesActivite != 0)
-                //{
-
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Le congressiste n'a pu pas être ajouté à la session car le nombre de place max est atteint", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+                }
+                else
+                {
+                    MessageBox.Show("Le congressiste n'a pu pas être ajouté à la session car le nombre de place max est atteint", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch
             {
