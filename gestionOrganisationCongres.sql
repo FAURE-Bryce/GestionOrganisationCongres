@@ -301,22 +301,31 @@ BEGIN
 	deallocate cursSesActivites
 END
 	
-/*Obtient le nombre de places disponibles à une session donnée Adeline*/
+/*Obtient le nombre de places disponibles à une session donnée Bryce*/
 go
-CREATE OR ALTER PROCEDURE NbPlacesBySession (@numSession int)
+CREATE OR ALTER PROCEDURE NbPlacesBySession @numSession int
 AS
+Begin
 	declare @nbPlacesDispo int;
+
 	SELECT @nbPlacesDispo=(S.nbPlacesMax-COUNT(numInscription)) 
 	FROM Participer P
 	JOIN Session S ON S.numSession=P.numSession
 	WHERE s.numSession=@numSession
 	GROUP BY S.nbPlacesMax
 
-	IF(@nbPlacesDispo < 0 OR @nbPlacesDispo is null)
+	IF(@nbPlacesDispo < 0)
 	BEGIN
 		SET @nbPlacesDispo = 0;
 	END
 
+	IF(@nbPlacesDispo is null)
+	begin
+		SET @nbPlacesDispo = (select nbPlacesMax from Session where numSession = @numSession);
+	end
+
+	Select @nbPlacesDispo;
+End;
 /* Création de la procédure stockée Montant total       Nina*/
 
 go
@@ -374,19 +383,28 @@ END
 
 /* Obtient le nombre de places disponibles à une activité donnée Bryce*/
 go
-CREATE or ALTER Procedure nbPlacesActivite
-@uneActivite int
+CREATE or ALTER Procedure nbPlacesActivite @uneActivite int
 AS
 BEGIN    
 	declare @nbPlacesDispo int;
+
 	SELECT @nbPlacesDispo=(A.nbPlacesMax-COUNT(numInscription)) 
 	FROM INSCRIRE I
 	JOIN Activite A ON A.idActivite=I.idActivite
 	WHERE A.idActivite=@uneActivite
 	GROUP BY A.nbPlacesMax
 
-	IF(@nbPlacesDispo < 0 OR @nbPlacesDispo is null)
-	SET @nbPlacesDispo = 0;
+	IF(@nbPlacesDispo < 0)
+	BEGIN
+		SET @nbPlacesDispo = 0;
+	END
+
+	IF(@nbPlacesDispo is null)
+	begin
+		SET @nbPlacesDispo = (select nbPlacesMax from Activite where idActivite = @uneActivite);
+	end
+
+	Select @nbPlacesDispo;
 	
 END;
 
@@ -436,3 +454,4 @@ AS
 	SELECT numSession, theme, heureDebut, date, nbPlacesMax, prix, nomPresident, idSalle
 	FROM SESSION S
 	WHERE NOT EXISTS(SELECT * FROM PARTICIPER P WHERE numInscription=@idC AND S.numSession=P.numSession)
+

@@ -339,6 +339,7 @@
             // comboBoxHeureActivite
             // 
             this.comboBoxHeureActivite.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindSrcActivites, "heureDebut", true));
+            this.comboBoxHeureActivite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxHeureActivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBoxHeureActivite.FormattingEnabled = true;
             this.comboBoxHeureActivite.Location = new System.Drawing.Point(176, 103);

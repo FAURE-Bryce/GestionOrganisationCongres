@@ -60,15 +60,21 @@ namespace GestionOrganisationCongres
         {
             try
             {
-
                 ((Activite)bindSrcActivites.Current).Congressistes.Add((Congressiste)bindSrcNonInscrits.Current);
                 context.SaveChanges();
                 bindSrcInscriptions.Add((Congressiste)bindSrcNonInscrits.Current);
                 bindSrcNonInscrits.RemoveCurrent();
 
+                MessageBox.Show("Congressiste ajouté à la session", "Information", MessageBoxButtons.OK);
+                //int nbPlacesActivite = (int)context.nbPlacesActivite(((Activite)bindSrcActivites.Current).idActivite).FirstOrDefault();
+                //if (nbPlacesActivite != 0)
+                //{
 
-                MessageBox.Show("Congressiste ajouté à l'activité", "Information", MessageBoxButtons.OK);
-
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Le congressiste n'a pu pas être ajouté à la session car le nombre de place max est atteint", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
             }
             catch
             {
@@ -85,6 +91,8 @@ namespace GestionOrganisationCongres
             tabControlActivite.SelectedIndex = 1;
             bindSrcActivites.AddNew();
             btSupprimerActivite.Visible = btAjouterInscritActivite.Enabled = btSupprimerInscritActivite.Enabled = false;
+            ((Activite)bindSrcActivites.Current).heureDebut = "9:00";
+            ((Activite)bindSrcActivites.Current).date = DateTime.Today;
         }
 
         private void btAnnulerModifActivite_Click(object sender, EventArgs e)

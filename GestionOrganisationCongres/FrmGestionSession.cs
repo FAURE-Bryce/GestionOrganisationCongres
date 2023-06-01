@@ -62,12 +62,8 @@ namespace GestionOrganisationCongres
         {
             try
             {
-                //if (context.NbPlacesBySession(((Session)bindSrcSessions.Current).numSession) != null)
-                //{
-                //    int temp = int.TryParse(context.NbPlacesBySession(((Session)bindSrcSessions.Current).numSession));
-                //}
-                
-                if (((Session)bindSrcSessions.Current).nbPlacesMax >= (((Session)bindSrcSessions.Current).Congressistes.Count + 1))
+                int nbPlacesBySession = (int)context.NbPlacesBySession(((Session)bindSrcSessions.Current).numSession).FirstOrDefault();
+                if (nbPlacesBySession != 0)
                 {
                     ((Session)bindSrcSessions.Current).Congressistes.Add((Congressiste)bindSrcNonInscrits.Current);
                     context.SaveChanges();
@@ -157,6 +153,7 @@ namespace GestionOrganisationCongres
             bindSrcSessions.AddNew();
             btSupprimerSession.Visible = btAjouterInscritSession.Enabled = comboBoxNonInscrits.Enabled = btSupprimerInscritSession.Enabled = false;
             ((Session)bindSrcSessions.Current).heureDebut = "9:00";
+            ((Session)bindSrcSessions.Current).date = DateTime.Today;
         }
 
         private void btAnnulerModifSession_Click(object sender, EventArgs e)
