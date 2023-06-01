@@ -409,7 +409,6 @@ BEGIN
 END;
 
 /*Une inscription n'est pas possible si il ne reste plus de places dans l'activité */
---TRIGGER QUI NE FONCTIONNE PAS 
 go
 CREATE OR ALTER TRIGGER TI_Inscrire ON Inscrire
 AFTER INSERT
@@ -418,6 +417,20 @@ BEGIN
 	DECLARE @idA int, @nbP INT;
 	SET @idA = (SELECT idActivite FROM INSERTED);
 	EXECUTE @nbP = nbPlacesActivite @idA
+	
+	IF(@nbP = 0)
+		throw 50001, 'Il ne reste plus de places disponibles',0
+END	
+
+/*Une participation n'est pas possible si il ne reste plus de places dans la session */
+go
+CREATE OR ALTER TRIGGER TI_Participer ON Participer
+AFTER INSERT
+AS
+BEGIN 
+	DECLARE @numN int, @nbP INT;
+	SET @numN = (SELECT numSession FROM INSERTED);
+	EXECUTE @nbP = NbPlacesBySession @numN
 	
 	IF(@nbP = 0)
 		throw 50001, 'Il ne reste plus de places disponibles',0
@@ -454,4 +467,3 @@ AS
 	SELECT numSession, theme, heureDebut, date, nbPlacesMax, prix, nomPresident, idSalle
 	FROM SESSION S
 	WHERE NOT EXISTS(SELECT * FROM PARTICIPER P WHERE numInscription=@idC AND S.numSession=P.numSession)
-
